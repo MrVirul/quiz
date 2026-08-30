@@ -1,0 +1,379 @@
+[
+  {
+    "id": 1,
+    "lecture": "Lecture 1[cite: 1]",
+    "question": "According to the official lecture materials, what is the precise definition of an \"IT Service\"? [Select ONE][cite: 1]",
+    "answers": [
+      { "option": "A. A structured collection of physical servers, cloud nodes, and virtual switches that host enterprise-wide databases.[cite: 1]", "is_correct": false },
+      { "option": "B. A technology-enabled capability delivered to users to support a business or organizational need.[cite: 1]", "is_correct": true },
+      { "option": "C. A designed, controlled, and repeatable workflow that ensures operational activities are performed consistently.[cite: 1]", "is_correct": false },
+      { "option": "D. A formalized agreement between the central IT provider and external business customers defining service uptime.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answer is B according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 2,
+    "lecture": "Lecture 1[cite: 1]",
+    "question": "A university runs an online Learning Management System (LMS). During the final exam period, students access course materials, the IT support desk resolves login issues, and the physical servers, database, and campus network execute the platform. Which of the following statements accurately map this scenario to the Service Delivery Chain? [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. The students accessing the portal represent the \"Users\" component requesting or using the IT service.[cite: 1]", "is_correct": true },
+      { "option": "B. The IT support desk resolving access issues acts as the \"IT Process\" component that defines and manages the workflow.[cite: 1]", "is_correct": true },
+      { "option": "C. The physical servers, database, and network devices represent the \"Infrastructure\" component that runs the service.[cite: 1]", "is_correct": true },
+      { "option": "D. The learning continuing uninterrupted and academic operations flowing smoothly represent the \"Business Value\" component.[cite: 1]", "is_correct": true },
+      { "option": "E. The IT support desk's activity of resetting student passwords represents the \"Infrastructure\" component since it is handled by technical personnel.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answers are A, B, C, D according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 3,
+    "lecture": "Lecture 1[cite: 1]",
+    "question": "In the context of key actors and responsibilities in IT service delivery, which of the following statements correctly identifies the role of the Process Owner? [Select ONE][cite: 1]",
+    "answers": [
+      { "option": "A. The Process Owner is the actor who carries out daily tasks, resolves individual tickets, and records compliance evidence.[cite: 1]", "is_correct": false },
+      { "option": "B. The Process Owner is executive management who funds the service, sets strategic priorities, and assesses risks.[cite: 1]", "is_correct": false },
+      { "option": "C. The Process Owner is the individual accountable for the overall performance of the process, including KPIs and SLAs.[cite: 1]", "is_correct": true },
+      { "option": "D. The Process Owner is the external vendor or cloud provider who supplies technology and infrastructure support.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answer is C according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 4,
+    "lecture": "Lecture 1[cite: 1]",
+    "question": "A web application for online bank transactions depends on four infrastructure components: a database server, an authentication service, storage devices, and a network link. Analyze the scenario under the dependency concept and identify the correct outcomes of an authentication service failure. [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. A failure in the authentication service is localized and will never affect the performance of the web application itself.[cite: 1]", "is_correct": false },
+      { "option": "B. The web application may slow down, become completely unavailable, or suffer data corruption as a result of the dependency failure.[cite: 1]", "is_correct": true },
+      { "option": "C. The failure demonstrates that a dependency exists because the web application cannot function properly without the authentication service.[cite: 1]", "is_correct": true },
+      { "option": "D. The failure of the single authentication component can propagate and affect multiple related IT services that depend on it.[cite: 1]", "is_correct": true },
+      { "option": "E. The database server and storage devices will automatically replicate and host the authentication service to bypass the crash.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answers are B, C, D according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 5,
+    "lecture": "Lecture 1[cite: 1]",
+    "question": "Which of the following represents a correct classification of IT Assets, Risks, and Controls according to the definitions in Lecture 1? [Select ONE][cite: 1]",
+    "answers": [
+      { "option": "A. Asset: Access control policy | Risk: Security firewall | Control: Trojan malware[cite: 1]", "is_correct": false },
+      { "option": "B. Asset: Daily database backup | Risk: Network overload | Control: Client PC[cite: 1]", "is_correct": false },
+      { "option": "C. Asset: Core database applications | Risk: System outage or malware | Control: Access control & system monitoring[cite: 1]", "is_correct": true },
+      { "option": "D. Asset: Monitoring alert | Risk: Database server | Control: Data loss[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answer is C according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 6,
+    "lecture": "Lecture 1[cite: 1]",
+    "question": "During a student registration outage at a university, thousands of students overload the support desk, staff are unsure of the escalation path, there is no capacity planning review or incident communication plan, and the database server hit a bottleneck. How do these root causes map to the four-factor root-cause view of service outages? [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. Staff being unsure of the escalation path and users overloading support represent the 'People' factor.[cite: 1]", "is_correct": true },
+      { "option": "B. The database server bottle-necking represents the 'Technology' factor.[cite: 1]", "is_correct": true },
+      { "option": "C. The lack of capacity planning reviews, escalation paths, and incident communication plans represents the 'Process' factor.[cite: 1]", "is_correct": true },
+      { "option": "D. The failure of senior executives to approve capacity planning and disaster recovery (DR) investments represents the 'Governance' factor.[cite: 1]", "is_correct": true },
+      { "option": "E. The lack of a capacity planning review represents the 'Governance' factor because it involves senior executives directly reviewing log files.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answers are A, B, C, D according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 7,
+    "lecture": "Lecture 1[cite: 1]",
+    "question": "An IT team establishes a security perimeter using a physical firewall, implements a formal change approval workflow, schedules automated backup scripts, and hosts application servers in a cloud platform. Identify the correct statements that distinguish between IT Process and IT Infrastructure components. [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. The physical firewall and application servers are IT Infrastructure components because they are assets supporting the service.[cite: 1]", "is_correct": true },
+      { "option": "B. The change approval workflow and scheduled backups are IT Process components because they define how work is performed and managed.[cite: 1]", "is_correct": true },
+      { "option": "C. The physical firewall is an IT Process component because it regulates the network's data transmission processes.[cite: 1]", "is_correct": false },
+      { "option": "D. The scheduled backup script is an IT Infrastructure component because it generates backup data files on a storage drive.[cite: 1]", "is_correct": false },
+      { "option": "E. The cloud platform is an IT Infrastructure component as it represents virtualized compute resources supporting the application.[cite: 1]", "is_correct": true }
+    ],
+    "explanation": "Correct answers are A, B, E according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 8,
+    "lecture": "Lecture 1[cite: 1]",
+    "question": "According to the slides, what is the core rationale for establishing structured IT processes rather than relying solely on robust IT technology? [Select ONE][cite: 1]",
+    "answers": [
+      { "option": "A. Robust technology is self-managing, so structured processes are only needed to satisfy external audit compliance.[cite: 1]", "is_correct": false },
+      { "option": "B. Structured processes allow an organization to eliminate its physical data centers and run services with zero assets.[cite: 1]", "is_correct": false },
+      { "option": "C. Good infrastructure without good process still fails because structured processes avoid confusion during incidents, ensure requests follow correct paths, and make performance measurable.[cite: 1]", "is_correct": true },
+      { "option": "D. Structured processes guarantee that 100% of security risks and hardware failures are permanently prevented.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answer is C according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 9,
+    "lecture": "Lecture 2[cite: 1]",
+    "question": "An automated monitoring alert detects that disk space is critically low. It triggers a script that captures system logs. An IT technician reviews the logs, deletes temporary files, and updates the ticket. The user receives a notification, confirms that performance is restored, and the ticket is closed. Analyze how these events map to \"The Anatomy of an IT Process\". [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. The monitoring alert acts as a process Input that initiates the repeatable IT work.[cite: 1]", "is_correct": true },
+      { "option": "B. The technician reviewing the logs, deleting files, and updating the ticket represents the process Activities.[cite: 1]", "is_correct": true },
+      { "option": "C. The automated script, the ticketing system, and the technician are categorized as process Resources.[cite: 1]", "is_correct": true },
+      { "option": "D. The closed ticket and the system log files are categorized as process Controls because they restrict user actions.[cite: 1]", "is_correct": false },
+      { "option": "E. The user's performance confirmation and the final resolved ticket status represent the process Output.[cite: 1]", "is_correct": true }
+    ],
+    "explanation": "Correct answers are A, B, C, E according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 10,
+    "lecture": "Lecture 2[cite: 1]",
+    "question": "When designing a process flow for provisioning new user accounts, which of the following steps and rules must be implemented to maintain strict process controls and adhere to the security principle of \"least privilege\"? [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. The manager must formally approve the specific access scope required before IT assigns permissions.[cite: 1]", "is_correct": true },
+      { "option": "B. Permissions must be granted based strictly on the minimum access required for the user's specific role.[cite: 1]", "is_correct": true },
+      { "option": "C. All new employees should be granted administrative access during their probation period to speed up their onboarding.[cite: 1]", "is_correct": false },
+      { "option": "D. User access rights must be formally reviewed following probation or a change in their organizational role.[cite: 1]", "is_correct": true },
+      { "option": "E. The IT officer should immediately provision full access upon receiving a direct verbal request from the new employee.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answers are A, B, D according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 11,
+    "lecture": "Lecture 2[cite: 1]",
+    "question": "According to the RACI matrix rules taught in Lecture 2, which of the following statements represents a fundamental principle of accountability? [Select ONE][cite: 1]",
+    "answers": [
+      { "option": "A. To ensure complete collaborative ownership, every process activity must have multiple Accountable (A) roles.[cite: 1]", "is_correct": false },
+      { "option": "B. Only one role can be Accountable (A) for each activity, representing the person who owns the final outcome.[cite: 1]", "is_correct": true },
+      { "option": "C. The role that is Accountable (A) is also the one that must physically perform the activities and do the work.[cite: 1]", "is_correct": false },
+      { "option": "D. The role that is Consulted (C) has the ultimate authority to veto the decision of the Accountable (A) role.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answer is B according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 12,
+    "lecture": "Lecture 2[cite: 1]",
+    "question": "An IT department is organizing its documentation to achieve a high-level maturity certification. According to the \"Documentation Hierarchy,\" order the five documentation levels from the highest level of governance (most abstract rules) to the lowest level (most concrete evidence). [Select ONE][cite: 1]",
+    "answers": [
+      { "option": "A. Policy Procedure → Standard Work Instruction → Record[cite: 1]", "is_correct": false },
+      { "option": "B. Standard Policy Procedure → Work Instruction[cite: 1]", "is_correct": false },
+      { "option": "C. Policy Standard Procedure → Work Instruction → Record[cite: 1]", "is_correct": true },
+      { "option": "D. Policy Standard → Work Instruction → Procedure → Record[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answer is C according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 13,
+    "lecture": "Lecture 2[cite: 1]",
+    "question": "A junior service desk officer is assigned to handle a network switch outage. They quickly realize that resolving the issue requires deep configuration changes that exceed their access authority, technical skill limits, and SLA resolution times. Under correct process design, how should this exception path be managed? [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. The officer must escalate the issue, moving it to a higher level (e.g., the network specialist team) because it exceeds their skill, authority, or time limits.[cite: 1]", "is_correct": true },
+      { "option": "B. Escalation should be avoided as it represents a personal performance failure of the service desk officer.[cite: 1]", "is_correct": false },
+      { "option": "C. The network specialist team must obtain formal manager or system-owner approval before making sensitive database or switch configuration changes.[cite: 1]", "is_correct": true },
+      { "option": "D. The officer should attempt a temporary, undocumented patch to bypass the approval gate and restore the network quickly.[cite: 1]", "is_correct": false },
+      { "option": "E. The officer should close the ticket and open a new one to reset the SLA timer while they research a fix.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answers are A, C according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 14,
+    "lecture": "Lecture 2[cite: 1]",
+    "question": "A university IT service desk commits to a target that all critical LMS incidents must be responded to within 15 minutes and resolved within 2 hours. Internally, the IT manager tracks the team's average response time (which is currently 28 minutes) and the monthly ticket reopen rate (which is 8%). Which of the following statements correctly analyze these metrics? [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. The 15-minute response target and the 2-hour resolution target are Key Performance Indicators (KPIs).[cite: 1]", "is_correct": false },
+      { "option": "B. The 15-minute response target and the 2-hour resolution target represent a Service Level Agreement (SLA).[cite: 1]", "is_correct": true },
+      { "option": "C. The average response time of 28 minutes and the 8% reopen rate are internal Key Performance Indicators (KPIs).[cite: 1]", "is_correct": true },
+      { "option": "D. The current average response time KPI of 28 minutes indicates that the team is breaching their 15-minute critical incident response SLA.[cite: 1]", "is_correct": true },
+      { "option": "E. KPIs are used internally to measure process performance, which in turn helps the team verify if customer-facing SLAs are being met.[cite: 1]", "is_correct": true }
+    ],
+    "explanation": "Correct answers are B, C, D, E according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 15,
+    "lecture": "Lecture 2[cite: 1]",
+    "question": "An IT department is experiencing repeated Wi-Fi connectivity tickets. The manager applies the Deming Cycle (PDCA) to resolve this. Match the correct activities of the IT team to the corresponding PDCA phases. [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. The team analyzes ticket data, identifies that Wi-Fi tickets are delayed, and designs a triage checklist (Plan phase).[cite: 1]", "is_correct": true },
+      { "option": "B. The team pilots the triage checklist with a small group of support agents for two weeks (Do phase).[cite: 1]", "is_correct": true },
+      { "option": "C. The team compares the pilot response times and reopen rates against historical benchmarks using KPIs (Check phase).[cite: 1]", "is_correct": true },
+      { "option": "D. The team standardizes the triage checklist and updates the official Wi-Fi support procedure for all staff (Act phase).[cite: 1]", "is_correct": true },
+      { "option": "E. The team scraps the checklist because it added 5 minutes to the ticketing workflow and returns to ad-hoc methods (Act phase).[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answers are A, B, C, D according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 16,
+    "lecture": "Lecture 3[cite: 1]",
+    "question": "In the context of IT process governance and compliance, what is the fundamental difference between \"Frameworks\" and \"Standards\"? [Select ONE][cite: 1]",
+    "answers": [
+      { "option": "A. Frameworks specify mandatory legal regulations that cannot be modified, whereas standards are optional checklists designed by internal IT staff.[cite: 1]", "is_correct": false },
+      { "option": "B. Frameworks guide how to improve processes and practices, whereas standards define the minimum requirements that must be satisfied.[cite: 1]", "is_correct": true },
+      { "option": "C. Standards are subjective suggestions for organizational culture, whereas frameworks are precise, click-by-click work instructions for software.[cite: 1]", "is_correct": false },
+      { "option": "D. Frameworks focus exclusively on physical assets like servers, whereas standards focus exclusively on IT financial budgets.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answer is B according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 17,
+    "lecture": "Lecture 3[cite: 1]",
+    "question": "At the start of a semester, thousands of students complain that campus Wi-Fi is extremely slow, and lecturers experience drops. The IT department applies the ITIL Service Value System (SVS) to address this demand. Identify the correct actions that represent the application of the SVS. [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. They apply the Guiding Principle 'Start with the existing Wi-Fi infrastructure' to analyze current configuration before replacing physical switches.[cite: 1]", "is_correct": true },
+      { "option": "B. They rely on Governance to have university management approve a Wi-Fi upgrade budget and define performance targets.[cite: 1]", "is_correct": true },
+      { "option": "C. They use the Incident Management practice to restore Wi-Fi connectivity as quickly as possible during class hours.[cite: 1]", "is_correct": true },
+      { "option": "D. They bypass the Change Enablement practice to deploy switch upgrades immediately in the production environment without testing to save time.[cite: 1]", "is_correct": false },
+      { "option": "E. They achieve 'Value' by delivering a reliable Wi-Fi service that improves student satisfaction and the online teaching experience.[cite: 1]", "is_correct": true }
+    ],
+    "explanation": "Correct answers are A, B, C, E according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 18,
+    "lecture": "Lecture 3[cite: 1]",
+    "question": "A university IT division is struggling with five organizational issues. Using the framework selection table from Lecture 3, match each problem to its most suitable best-practice concept. [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. Slow service desk response is best addressed by ITIL incident, request, and service level management.[cite: 1]", "is_correct": true },
+      { "option": "B. Unclear IT accountability is best addressed by COBIT governance objectives, RACI, and controls.[cite: 1]", "is_correct": true },
+      { "option": "C. A need for formal audit evidence or certification is best addressed by ISO/IEC 20000 Service Management System (SMS).[cite: 1]", "is_correct": true },
+      { "option": "D. Repeated incidents are best addressed by ITIL problem management and continual improvement to find root causes.[cite: 1]", "is_correct": true },
+      { "option": "E. Uncontrolled infrastructure changes are best addressed by deleting change approval steps so technicians can work faster.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answers are A, B, C, D according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 19,
+    "lecture": "Lecture 3[cite: 1]",
+    "question": "Which of the following best describes the purpose and scope of the COBIT framework as published by ISACA? [Select ONE][cite: 1]",
+    "answers": [
+      { "option": "A. It is an operational manual that provides detailed instructions for scripting user accounts and performing hardware configurations.[cite: 1]", "is_correct": false },
+      { "option": "B. It is a business framework used for the governance and management of enterprise IT, focusing on executive oversight, strategic alignment, risk, and control accountability.[cite: 1]", "is_correct": true },
+      { "option": "C. It is a Type A management standard that specifies the minimum operational audit requirements for physical server rooms.[cite: 1]", "is_correct": false },
+      { "option": "D. It is a technical framework designed exclusively to configure software-defined containers and virtual network boundaries.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answer is B according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 20,
+    "lecture": "Lecture 3[cite: 1]",
+    "question": "An IT department is reorganizing its operating model to separate \"Governance\" from \"Management\". Which of the following statements correctly distinguish their activities and focus? [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. Evaluating stakeholder needs, directing priorities, and monitoring compliance represent the Governance focus, handled at the Board and executive leadership level.[cite: 1]", "is_correct": true },
+      { "option": "B. Planning, building, running, and monitoring operational performance represent the Management focus, handled by IT managers and operations teams.[cite: 1]", "is_correct": true },
+      { "option": "C. Governance is responsible for executing low-level scripts, whereas Management is responsible for setting high-level regulatory policies.[cite: 1]", "is_correct": false },
+      { "option": "D. A vital link exists between them: Management performance data is fed back to Governance to monitor value, risk, and compliance targets.[cite: 1]", "is_correct": true },
+      { "option": "E. Governance and Management are identical in scope, and separating them is discouraged in modern IT frameworks.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answers are A, B, D according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 21,
+    "lecture": "Lecture 3[cite: 1]",
+    "question": "What is the primary role of the ISO/IEC 20000 standard in IT process management, and when should an organization seek to use it? [Select ONE][cite: 1]",
+    "answers": [
+      { "option": "A. It is a voluntary coding framework used by software developers to build web applications.[cite: 1]", "is_correct": false },
+      { "option": "B. It is a formal Type A standard specifying requirements for an organization to establish, implement, maintain, and improve a Service Management System (SMS), used when formal evidence of control and auditability is needed.[cite: 1]", "is_correct": true },
+      { "option": "C. It is a vendor-led technical standard that prescribes exact firewall and switch configuration scripts.[cite: 1]", "is_correct": false },
+      { "option": "D. It is an informal guide that describes the physical dimensions of standard data center server racks.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answer is B according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 22,
+    "lecture": "Lecture 3[cite: 1]",
+    "question": "An IT department has fully documented roles and procedures for all its core service support workflows. However, the team does not track any operational metrics, KPIs, or SLAS. According to the Process Maturity model, what is the department's current maturity level, and what is the most realistic next step for improvement? [Select ONE][cite: 1]",
+    "answers": [
+      { "option": "A. Current Level: 1 (Ad-hoc); Next Step: Allow individual team members to handle incidents using personal judgment.[cite: 1]", "is_correct": false },
+      { "option": "B. Current Level: 2 (Repeatable); Next Step: Draft high-level, abstract corporate policies.[cite: 1]", "is_correct": false },
+      { "option": "C. Current Level: 3 (Defined); Next Step: Begin measuring process performance by tracking KPIs and SLAs (Level 4: Measured).[cite: 1]", "is_correct": true },
+      { "option": "D. Current Level: 4 (Measured); Next Step: Automate all procedures using machine learning (Level 5: Optimized).[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answer is C according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 23,
+    "lecture": "Lecture 3[cite: 1]",
+    "question": "A university IT division wants to implement a robust, multi-framework approach combining ITIL, COBIT, and ISO/IEC 20000. Which of the following correct outcomes and divisions of responsibility represent a successful combined framework integration? [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. COBIT is utilized at the executive board level to ensure risk oversight, strategic alignment, and clear decision accountability.[cite: 1]", "is_correct": true },
+      { "option": "B. ITIL is utilized by operational teams to establish standardized practices for incident handling, request fulfillment, and change management.[cite: 1]", "is_correct": true },
+      { "option": "C. ISO/IEC 20000 is used to establish a formal Service Management System (SMS) that provides auditable evidence and prepares the organization for certification.[cite: 1]", "is_correct": true },
+      { "option": "D. COBIT is used to write detailed, click-by-click instructions for network technicians, while ITIL is used to approve the university's overall IT budget.[cite: 1]", "is_correct": false },
+      { "option": "E. The combined use provides a governed, controlled, measurable, and continually improved IT service environment.[cite: 1]", "is_correct": true }
+    ],
+    "explanation": "Correct answers are A, B, C, E according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 24,
+    "lecture": "Lecture 4[cite: 1]",
+    "question": "According to the lecture on IT Process Automation, how are the three automation spectrum levels-Manual, Semi-automated, and Fully Automated-properly defined? [Select ONE][cite: 1]",
+    "answers": [
+      { "option": "A. Manual: Humans use physical tools; Semi-automated: Machines do the physical labor; Fully Automated: A central computer operates with no human presence on campus.[cite: 1]", "is_correct": false },
+      { "option": "B. Manual: A person performs most steps using judgement and direct action; Semi-automated: Some steps are automated, but humans approve or handle exceptions; Fully Automated: The system completes the process from trigger to closure under predefined rules.[cite: 1]", "is_correct": true },
+      { "option": "C. Manual: A technician writes scripting code; Semi-automated: Technicians use drag-and-drop tools; Fully Automated: Artificial intelligence writes all technical policies.[cite: 1]", "is_correct": false },
+      { "option": "D. Manual is the standard for high-security environments, whereas fully automated processes are strictly for non-secure lab environments.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answer is B according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 25,
+    "lecture": "Lecture 4[cite: 1]",
+    "question": "An IT manager wants to evaluate which IT tasks are prime candidates for automation. Based on the \"automation suitability test\" and criteria from Lecture 4, which of the following characteristics indicate high suitability? [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. The task has high volume (happens very frequently).[cite: 1]", "is_correct": true },
+      { "option": "B. The steps of the process are clear, stable, and highly repeatable.[cite: 1]", "is_correct": true },
+      { "option": "C. The decisions can be expressed as logical conditions (rule-based).[cite: 1]", "is_correct": true },
+      { "option": "D. The task involves extremely high risk where errors cannot be corrected or detected.[cite: 1]", "is_correct": false },
+      { "option": "E. The success and failure of the task are measurable and can be verified.[cite: 1]", "is_correct": true }
+    ],
+    "explanation": "Correct answers are A, B, C, E according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 26,
+    "lecture": "Lecture 4[cite: 1]",
+    "question": "Review the following four scenarios and determine their correct automation strategy based on the safety, risk, and control principles in Lecture 4: Scenario 1: A student forgets their LMS password, completes MFA, and correctly answers security questions. Scenario 2: A lecturer requests administrative access on the department server to install software. Scenario 3: A user submits an account request but leaves out their department and role. Scenario 4: A department manager requests the deletion of customer records from the production database. [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. Scenario 1 is suitable for Full Automation because it is high volume, rule-based, and identity is verified.[cite: 1]", "is_correct": true },
+      { "option": "B. Scenario 2 should be Semi-Automated with a mandatory human approval gate before granting administrative rights.[cite: 1]", "is_correct": true },
+      { "option": "C. Scenario 3 must follow an exception path and be escalated to a human because vital input details are missing.[cite: 1]", "is_correct": true },
+      { "option": "D. Scenario 4 should be Fully Automated to ensure rapid execution of organizational database requests.[cite: 1]", "is_correct": false },
+      { "option": "E. Scenario 4 should not be automated (or must require strict human intervention) because deleting database records is a high-risk, sensitive action.[cite: 1]", "is_correct": true }
+    ],
+    "explanation": "Correct answers are A, B, C, E according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 27,
+    "lecture": "Lecture 4[cite: 1]",
+    "question": "What is the primary role of \"Approval Gates\" in an automated IT process, and what information must they capture? [Select ONE][cite: 1]",
+    "answers": [
+      { "option": "A. They are designed to bypass the security policy of least privilege to speed up urgent network configurations.[cite: 1]", "is_correct": false },
+      { "option": "B. They are checkpoints before sensitive or irreversible actions that pause the workflow and must record who approved, when, and for what scope.[cite: 1]", "is_correct": true },
+      { "option": "C. They are scripts that automatically delete log files when a ticket is resolved to save disk space.[cite: 1]", "is_correct": false },
+      { "option": "D. They are automated loops that resubmit rejected requests continuously until they are approved.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answer is B according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 28,
+    "lecture": "Lecture 4[cite: 1]",
+    "question": "An IT team deploys an automated patch installation script across 500 virtual servers. Due to an untested configuration, the script causes an operating system crash on 150 production servers and fails silently without alerting. Which of the following risks and controls from Lecture 4 directly apply to this failure? [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. The crash demonstrates the 'Inadequate testing' risk, where an untested script can damage many systems quickly.[cite: 1]", "is_correct": true },
+      { "option": "B. The silent failure of the script demonstrates the 'Hidden failure' risk, where automation fails without monitoring and alerts.[cite: 1]", "is_correct": true },
+      { "option": "C. To mitigate this, a Rollback control should have been designed to restore the previous stable server state upon failure.[cite: 1]", "is_correct": true },
+      { "option": "D. To prevent such widespread impact, a Testing control should have been used to pilot the patch in a test environment first.[cite: 1]", "is_correct": true },
+      { "option": "E. To maximize efficiency, the script should have been granted permanent administrative credentials on all servers under the least privilege principle.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answers are A, B, C, D according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 29,
+    "lecture": "Lecture 4[cite: 1]",
+    "question": "According to the technical comparison in Lecture 4, how do Virtual Machines (VMs) and Containers differ, and what are their respective roles in process automation? [Select ONE][cite: 1]",
+    "answers": [
+      { "option": "A. VMs provide process-level isolation and start faster; Containers provide full OS-level isolation and start slower.[cite: 1]", "is_correct": false },
+      { "option": "B. VMs provide full OS-level isolation and usually start slower, supporting template-based server provisioning; Containers provide process-level isolation and usually start faster, supporting image-based application delivery.[cite: 1]", "is_correct": true },
+      { "option": "C. VMs are restricted to manual configuration and cannot be automated, while Containers are the only technology that supports scripts.[cite: 1]", "is_correct": false },
+      { "option": "D. VMs run on shared physical hardware, whereas Containers must run on dedicated physical servers with no sharing permitted.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answer is B according to the answer key.[cite: 1]"
+  },
+  {
+    "id": 30,
+    "lecture": "Lecture 4[cite: 1]",
+    "question": "A non-critical application server experiences repeated memory threshold spikes, triggering multiple separate alerts. The monitoring platform combines these alerts, automatically runs a script to restart the non-critical service, and verifies that the system health check returns \"OK\". Identify the concepts demonstrated in this scenario. [Select ALL that apply][cite: 1]",
+    "answers": [
+      { "option": "A. Combining multiple related alerts into a single incident represents Event Correlation.[cite: 1]", "is_correct": true },
+      { "option": "B. Automatically restarting the service and verifying that the health check is OK represents Automated Remediation.[cite: 1]", "is_correct": true },
+      { "option": "C. The IT team implements an important control by verifying the server condition first and limiting the scope before running the restart script.[cite: 1]", "is_correct": true },
+      { "option": "D. The system should continue generating individual alerts for every spike to ensure the service desk experiences maximum alert volume.[cite: 1]", "is_correct": false },
+      { "option": "E. The system should run remediation blindly on any database deletion alerts to prevent human intervention delays.[cite: 1]", "is_correct": false }
+    ],
+    "explanation": "Correct answers are A, B, C according to the answer key.[cite: 1]"
+  }
+]
