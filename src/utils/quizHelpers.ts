@@ -16,6 +16,13 @@ export function getQuestionTypeLabel(question: QuizQuestion): string {
     : '[Select ONE]';
 }
 
+export function getQuestionScenarios(question: QuizQuestion): string[] {
+  if (question.scenarios && question.scenarios.length > 0) {
+    return question.scenarios;
+  }
+  return [];
+}
+
 export function formatTime(seconds: number): string {
   const mins = Math.floor(seconds / 60);
   const secs = seconds % 60;
@@ -87,10 +94,22 @@ export function validateQuestions(questions: unknown): QuizQuestion[] {
       throw new Error(`Question ${q.id} must have at least one correct answer`);
     }
 
+    let scenarios: string[] | undefined;
+    if (q.scenarios !== undefined) {
+      if (
+        !Array.isArray(q.scenarios) ||
+        !q.scenarios.every((s) => typeof s === 'string')
+      ) {
+        throw new Error(`Question ${q.id} scenarios must be an array of strings`);
+      }
+      scenarios = q.scenarios;
+    }
+
     return {
       id: q.id,
       lecture: q.lecture,
       question: q.question,
+      scenarios,
       answers,
       explanation: typeof q.explanation === 'string' ? q.explanation : undefined,
     };

@@ -1,6 +1,7 @@
 import { QUIZ_TITLE, SUBJECT_NAME } from '../constants/quiz';
 import type { QuizScore } from '../types/quiz';
-import { getAnswerLabels } from '../utils/quizHelpers';
+import { getAnswerLabels, getQuestionScenarios } from '../utils/quizHelpers';
+import { ScenarioList } from './ScenarioList';
 
 interface AnswerReviewProps {
   score: QuizScore;
@@ -70,6 +71,8 @@ export function AnswerReview({ score, onBack, onRetake }: AnswerReviewProps) {
 
               <p className="mb-1 text-sm font-medium text-accent">{question.lecture}</p>
               <p className="mb-4 text-charcoal">{question.question}</p>
+
+              <ScenarioList scenarios={getQuestionScenarios(question)} />
 
               <div className="space-y-2 text-sm">
                 <p className="text-charcoal">

@@ -13,8 +13,8 @@ export function QuizWelcome({
 }: QuizWelcomeProps) {
   return (
     <div className="mx-auto flex min-h-screen max-w-lg flex-col justify-center px-6 py-12">
-      <p className="mb-2 text-sm font-medium text-accent">{SUBJECT_NAME}</p>
-      <h1 className="mb-6 text-3xl font-semibold text-charcoal">{QUIZ_TITLE}</h1>
+      <p className="mb-2 text-sm font-medium text-accent">{QUIZ_TITLE}</p>
+      <h1 className="mb-6 text-3xl font-semibold text-charcoal">{SUBJECT_NAME}</h1>
 
       <div className="mb-8 space-y-1 text-charcoal">
         <p className="text-lg">{questionCount} Questions</p>

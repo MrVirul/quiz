@@ -1,5 +1,10 @@
 import type { QuizQuestion } from '../types/quiz';
-import { getQuestionTypeLabel, isMultipleAnswerQuestion } from '../utils/quizHelpers';
+import {
+  getQuestionScenarios,
+  getQuestionTypeLabel,
+  isMultipleAnswerQuestion,
+} from '../utils/quizHelpers';
+import { ScenarioList } from './ScenarioList';
 
 interface QuestionCardProps {
   question: QuizQuestion;
@@ -32,6 +37,8 @@ export function QuestionCard({
         {getQuestionTypeLabel(question)}
       </p>
       <h2 className="mb-6 text-lg leading-relaxed text-charcoal">{question.question}</h2>
+
+      <ScenarioList scenarios={getQuestionScenarios(question)} />
 
       <div className="space-y-3">
         {question.answers.map((answer, index) => {

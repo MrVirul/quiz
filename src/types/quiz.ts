@@ -7,6 +7,7 @@ export interface QuizQuestion {
   id: number;
   lecture: string;
   question: string;
+  scenarios?: string[];
   answers: QuizAnswer[];
   explanation?: string;
 }
