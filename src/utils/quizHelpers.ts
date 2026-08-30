@@ -40,9 +40,8 @@ export function isQuestionAnswered(
 export function getAnswerLabels(
   answers: QuizAnswer[],
   indexes: number[]
-): string {
-  if (indexes.length === 0) return 'Not Answered';
-  return indexes.map((i) => answers[i]?.option ?? '').join(', ');
+): string[] {
+  return indexes.map((i) => answers[i]?.option ?? '').filter(Boolean);
 }
 
 export function validateQuestions(questions: unknown): QuizQuestion[] {

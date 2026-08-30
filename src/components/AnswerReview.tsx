@@ -47,6 +47,15 @@ export function AnswerReview({ score, onBack, onRetake }: AnswerReviewProps) {
               ? 'Correct'
               : 'Incorrect';
 
+          const userAnswerLabels = getAnswerLabels(
+            question.answers,
+            userSelectedIndexes
+          );
+          const correctAnswerLabels = getAnswerLabels(
+            question.answers,
+            correctIndexes
+          );
+
           return (
             <article
               key={question.id}
@@ -75,16 +84,26 @@ export function AnswerReview({ score, onBack, onRetake }: AnswerReviewProps) {
               <ScenarioList scenarios={getQuestionScenarios(question)} />
 
               <div className="space-y-2 text-sm">
-                <p className="text-charcoal">
+                <div className="text-charcoal">
                   <span className="font-medium">Your Answer:</span>
-                  <br />
-                  {getAnswerLabels(question.answers, userSelectedIndexes)}
-                </p>
-                <p className="text-charcoal">
+                  {userAnswerLabels.length === 0 ? (
+                    <span className="block">Not Answered</span>
+                  ) : (
+                    userAnswerLabels.map((label, i) => (
+                      <span key={`your-${i}`} className="block">
+                        {label}
+                      </span>
+                    ))
+                  )}
+                </div>
+                <div className="text-charcoal">
                   <span className="font-medium">Correct Answer:</span>
-                  <br />
-                  {getAnswerLabels(question.answers, correctIndexes)}
-                </p>
+                  {correctAnswerLabels.map((label, i) => (
+                    <span key={`correct-${i}`} className="block">
+                      {label}
+                    </span>
+                  ))}
+                </div>
                 {question.explanation && (
                   <p className="border-t border-gray-100 pt-3 text-charcoal">
                     <span className="font-medium">Explanation:</span>
