@@ -2,873 +2,721 @@
   {
     "id": 1,
     "lecture": "Lecture 1",
-    "question": "According to the official lecture materials, what is the precise definition of an \"IT Service\"? [Select ONE]",
+    "question": "A software development firm has secured a massive government contract. The CTO sets strategic goals, groups engineering teams into specialized units, and establishes reporting lines. Which management functions is the CTO performing? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. A structured collection of physical servers, cloud nodes, and virtual switches that host enterprise-wide databases.",
-        "is_correct": false
-      },
-      {
-        "option": "B. A technology-enabled capability delivered to users to support a business or organizational need.",
+        "option": "A. Planning",
         "is_correct": true
       },
       {
-        "option": "C. A designed, controlled, and repeatable workflow that ensures operational activities are performed consistently.",
+        "option": "B. Leading",
         "is_correct": false
       },
       {
-        "option": "D. A formalized agreement between the central IT provider and external business customers defining service uptime.",
+        "option": "C. Organizing",
+        "is_correct": true
+      },
+      {
+        "option": "D. Controlling",
         "is_correct": false
       }
     ],
-    "explanation": "Correct answer is B according to the answer key."
+    "explanation": "Correct answers are A and C. Setting goals is Planning, while grouping teams and creating reporting structures is Organizing."
   },
   {
     "id": 2,
     "lecture": "Lecture 1",
-    "question": "Which of the following statements accurately map this scenario to the Service Delivery Chain?",
-    "scenarios": [
-      "A university runs an online Learning Management System (LMS).",
-      "During the final exam period, students access course materials.",
-      "The IT support desk resolves login issues.",
-      "The physical servers, database, and campus network execute the platform."
-    ],
+    "question": "An IT organization offers high salaries and excellent office facilities, but employees fear massive layoffs. According to Maslow's Hierarchy of Needs, what best describes their motivational state? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. The students accessing the portal represent the \"Users\" component requesting or using the IT service.",
+        "option": "A. Their Physiological Needs are satisfied.",
         "is_correct": true
       },
       {
-        "option": "B. The IT support desk resolving access issues acts as the \"IT Process\" component that defines and manages the workflow.",
+        "option": "B. Their Safety Needs are fundamentally unmet.",
         "is_correct": true
       },
       {
-        "option": "C. The physical servers, database, and network devices represent the \"Infrastructure\" component that runs the service.",
-        "is_correct": true
-      },
-      {
-        "option": "D. The learning continuing uninterrupted and academic operations flowing smoothly represent the \"Business Value\" component.",
-        "is_correct": true
-      },
-      {
-        "option": "E. The IT support desk's activity of resetting student passwords represents the \"Infrastructure\" component since it is handled by technical personnel.",
+        "option": "C. They are highly motivated to achieve Self-Actualization because their base needs are covered.",
         "is_correct": false
+      },
+      {
+        "option": "D. They cannot effectively focus on Esteem Needs at this time.",
+        "is_correct": true
       }
     ],
-    "explanation": "Correct answers are A, B, C, D according to the answer key."
+    "explanation": "Correct answers are A, B and D. High salaries satisfy basic needs, but job insecurity threatens Safety Needs and prevents focus on higher-level needs."
   },
   {
     "id": 3,
     "lecture": "Lecture 1",
-    "question": "In the context of key actors and responsibilities in IT service delivery, which of the following statements correctly identifies the role of the Process Owner? [Select ONE]",
+    "question": "A project manager introduces flexible working hours and health insurance to reduce employee dissatisfaction. Complaints stop, but productivity and engagement remain stagnant. According to Herzberg's Two-Factor Theory, why? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. The Process Owner is the actor who carries out daily tasks, resolves individual tickets, and records compliance evidence.",
-        "is_correct": false
-      },
-      {
-        "option": "B. The Process Owner is executive management who funds the service, sets strategic priorities, and assesses risks.",
-        "is_correct": false
-      },
-      {
-        "option": "C. The Process Owner is the individual accountable for the overall performance of the process, including KPIs and SLAs.",
+        "option": "A. The manager only addressed Hygiene Factors.",
         "is_correct": true
       },
       {
-        "option": "D. The Process Owner is the external vendor or cloud provider who supplies technology and infrastructure support.",
+        "option": "B. Health insurance and flexible hours actively drive engagement but take years to show results.",
+        "is_correct": false
+      },
+      {
+        "option": "C. The manager failed to introduce Motivators.",
+        "is_correct": true
+      },
+      {
+        "option": "D. The employees have reached market equilibrium and are acting rationally.",
         "is_correct": false
       }
     ],
-    "explanation": "Correct answer is C according to the answer key."
+    "explanation": "Correct answers are A and C. Hygiene Factors reduce dissatisfaction, but Motivators are needed to increase engagement and satisfaction."
   },
   {
     "id": 4,
     "lecture": "Lecture 1",
-    "question": "Analyze the scenario under the dependency concept and identify the correct outcomes of an authentication service failure.",
-    "scenarios": [
-      "A web application for online bank transactions depends on a database server.",
-      "It depends on an authentication service.",
-      "It depends on storage devices.",
-      "It depends on a network link."
-    ],
+    "question": "A Product Manager verifies that a new AI feature can be built and aligns with company revenue targets, but the feature becomes a market failure. Which critical product management dimension was neglected? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. A failure in the authentication service is localized and will never affect the performance of the web application itself.",
+        "option": "A. Business Strategy",
         "is_correct": false
       },
       {
-        "option": "B. The web application may slow down, become completely unavailable, or suffer data corruption as a result of the dependency failure.",
+        "option": "B. Available Technology",
+        "is_correct": false
+      },
+      {
+        "option": "C. User Experience (Customer Need)",
         "is_correct": true
       },
       {
-        "option": "C. The failure demonstrates that a dependency exists because the web application cannot function properly without the authentication service.",
-        "is_correct": true
-      },
-      {
-        "option": "D. The failure of the single authentication component can propagate and affect multiple related IT services that depend on it.",
-        "is_correct": true
-      },
-      {
-        "option": "E. The database server and storage devices will automatically replicate and host the authentication service to bypass the crash.",
+        "option": "D. Strategic Alignment",
         "is_correct": false
       }
     ],
-    "explanation": "Correct answers are B, C, D according to the answer key."
+    "explanation": "Correct answer is C. The feature could be built and matched business goals, but the PM failed to check whether customers actually needed it."
   },
   {
     "id": 5,
     "lecture": "Lecture 1",
-    "question": "Which of the following represents a correct classification of IT Assets, Risks, and Controls according to the definitions in Lecture 1? [Select ONE]",
+    "question": "A retail bank has an excellent AI-powered mobile app, but branch staff are unhelpful and digital information does not sync with branch systems. Why is the bank failing at Customer Experience (CX)? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. Asset: Access control policy | Risk: Security firewall | Control: Trojan malware",
-        "is_correct": false
-      },
-      {
-        "option": "B. Asset: Daily database backup | Risk: Network overload | Control: Client PC",
-        "is_correct": false
-      },
-      {
-        "option": "C. Asset: Core database applications | Risk: System outage or malware | Control: Access control & system monitoring",
+        "option": "A. They lack a seamless and consistent experience across channels.",
         "is_correct": true
       },
       {
-        "option": "D. Asset: Monitoring alert | Risk: Database server | Control: Data loss",
+        "option": "B. They failed to combine digital experiences with emotional and functional satisfaction.",
+        "is_correct": true
+      },
+      {
+        "option": "C. They are not utilizing customer data and AI.",
+        "is_correct": false
+      },
+      {
+        "option": "D. CX only covers digital touchpoints, so the bank is actually succeeding.",
         "is_correct": false
       }
     ],
-    "explanation": "Correct answer is C according to the answer key."
+    "explanation": "Correct answers are A and B. CX must provide a smooth and satisfying experience across both digital and physical channels."
   },
   {
     "id": 6,
     "lecture": "Lecture 1",
-    "question": "How do these root causes map to the four-factor root-cause view of service outages?",
-    "scenarios": [
-      "During a student registration outage at a university, thousands of students overload the support desk.",
-      "Staff are unsure of the escalation path.",
-      "There is no capacity planning review or incident communication plan.",
-      "The database server hit a bottleneck."
-    ],
+    "question": "A cloud hosting provider has limited server racks but unlimited client requests. It gives the remaining servers to one enterprise client instead of five startups. Which economic principles are demonstrated? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. Staff being unsure of the escalation path and users overloading support represent the 'People' factor.",
+        "option": "A. Scarcity",
         "is_correct": true
       },
       {
-        "option": "B. The database server bottle-necking represents the 'Technology' factor.",
+        "option": "B. Infinite Wants",
         "is_correct": true
       },
       {
-        "option": "C. The lack of capacity planning reviews, escalation paths, and incident communication plans represents the 'Process' factor.",
+        "option": "C. Opportunity Cost",
         "is_correct": true
       },
       {
-        "option": "D. The failure of senior executives to approve capacity planning and disaster recovery (DR) investments represents the 'Governance' factor.",
-        "is_correct": true
-      },
-      {
-        "option": "E. The lack of a capacity planning review represents the 'Governance' factor because it involves senior executives directly reviewing log files.",
+        "option": "D. The Circular Flow Model",
         "is_correct": false
       }
     ],
-    "explanation": "Correct answers are A, B, C, D according to the answer key."
+    "explanation": "Correct answers are A, B and C. Servers are limited, demand is unlimited, and choosing one client means giving up the alternative."
   },
   {
     "id": 7,
     "lecture": "Lecture 1",
-    "question": "Identify the correct statements that distinguish between IT Process and IT Infrastructure components.",
-    "scenarios": [
-      "An IT team establishes a security perimeter using a physical firewall.",
-      "The IT team implements a formal change approval workflow.",
-      "The IT team schedules automated backup scripts.",
-      "The IT team hosts application servers in a cloud platform."
-    ],
+    "question": "In a software marketplace, thousands of buyers and sellers trade identical API licenses. No company can control prices, and buyers switch when prices become too high. Which Neoclassical Market assumptions are shown? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. The physical firewall and application servers are IT Infrastructure components because they are assets supporting the service.",
+        "option": "A. Rational Behavior",
         "is_correct": true
       },
       {
-        "option": "B. The change approval workflow and scheduled backups are IT Process components because they define how work is performed and managed.",
+        "option": "B. Perfect Competition",
         "is_correct": true
       },
       {
-        "option": "C. The physical firewall is an IT Process component because it regulates the network's data transmission processes.",
+        "option": "C. Market Equilibrium",
+        "is_correct": true
+      },
+      {
+        "option": "D. Government Intervention",
         "is_correct": false
-      },
-      {
-        "option": "D. The scheduled backup script is an IT Infrastructure component because it generates backup data files on a storage drive.",
-        "is_correct": false
-      },
-      {
-        "option": "E. The cloud platform is an IT Infrastructure component as it represents virtualized compute resources supporting the application.",
-        "is_correct": true
       }
     ],
-    "explanation": "Correct answers are A, B, E according to the answer key."
+    "explanation": "Correct answers are A, B and C. Buyers act rationally, many competitors create perfect competition, and prices adjust toward equilibrium."
   },
   {
     "id": 8,
     "lecture": "Lecture 1",
-    "question": "According to the slides, what is the core rationale for establishing structured IT processes rather than relying solely on robust IT technology? [Select ONE]",
+    "question": "According to the Neoclassical Circular Flow Diagram, a freelance software engineer provides coding services to a tech company and receives a salary. How is this transaction mapped? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. Robust technology is self-managing, so structured processes are only needed to satisfy external audit compliance.",
+        "option": "A. The engineer is a part of Firms.",
         "is_correct": false
       },
       {
-        "option": "B. Structured processes allow an organization to eliminate its physical data centers and run services with zero assets.",
-        "is_correct": false
-      },
-      {
-        "option": "C. Good infrastructure without good process still fails because structured processes avoid confusion during incidents, ensure requests follow correct paths, and make performance measurable.",
+        "option": "B. The transaction occurs in the Factor Markets.",
         "is_correct": true
       },
       {
-        "option": "D. Structured processes guarantee that 100% of security risks and hardware failures are permanently prevented.",
+        "option": "C. The engineer provides Labor Services.",
+        "is_correct": true
+      },
+      {
+        "option": "D. The transaction occurs in the Product Markets.",
         "is_correct": false
       }
     ],
-    "explanation": "Correct answer is C according to the answer key."
+    "explanation": "Correct answers are B and C. The engineer provides labor to a firm and receives wages through the Factor Market."
   },
   {
     "id": 9,
-    "lecture": "Lecture 2",
-    "question": "Analyze how these events map to \"The Anatomy of an IT Process\".",
-    "scenarios": [
-      "An automated monitoring alert detects that disk space is critically low.",
-      "It triggers a script that captures system logs.",
-      "An IT technician reviews the logs.",
-      "The technician deletes temporary files.",
-      "The technician updates the ticket.",
-      "The user receives a notification.",
-      "The user confirms that performance is restored.",
-      "The ticket is closed."
-    ],
+    "lecture": "Lecture 1",
+    "question": "An IT consultancy is losing top developers to competitors. The company introduces a framework for managing, developing, and retaining employees. Which organizational function is being used? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. The monitoring alert acts as a process Input that initiates the repeatable IT work.",
-        "is_correct": true
-      },
-      {
-        "option": "B. The technician reviewing the logs, deleting files, and updating the ticket represents the process Activities.",
-        "is_correct": true
-      },
-      {
-        "option": "C. The automated script, the ticketing system, and the technician are categorized as process Resources.",
-        "is_correct": true
-      },
-      {
-        "option": "D. The closed ticket and the system log files are categorized as process Controls because they restrict user actions.",
+        "option": "A. Financial Accounting",
         "is_correct": false
       },
       {
-        "option": "E. The user's performance confirmation and the final resolved ticket status represent the process Output.",
+        "option": "B. Human Resource Management (HRM)",
         "is_correct": true
+      },
+      {
+        "option": "C. Product Management",
+        "is_correct": false
+      },
+      {
+        "option": "D. The Circular Flow Model",
+        "is_correct": false
       }
     ],
-    "explanation": "Correct answers are A, B, C, E according to the answer key."
+    "explanation": "Correct answer is B. HRM focuses on managing, developing, and retaining employees."
   },
   {
     "id": 10,
-    "lecture": "Lecture 2",
-    "question": "When designing a process flow for provisioning new user accounts, which of the following steps and rules must be implemented to maintain strict process controls and adhere to the security principle of \"least privilege\"? [Select ALL that apply]",
+    "lecture": "Lecture 1",
+    "question": "A software company wants rapid digital transformation. HR hires cloud architects and introduces bonuses for early project delivery. How is HRM operating? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. The manager must formally approve the specific access scope required before IT assigns permissions.",
-        "is_correct": true
-      },
-      {
-        "option": "B. Permissions must be granted based strictly on the minimum access required for the user's specific role.",
-        "is_correct": true
-      },
-      {
-        "option": "C. All new employees should be granted administrative access during their probation period to speed up their onboarding.",
+        "option": "A. Acting strictly as an administrative function.",
         "is_correct": false
       },
       {
-        "option": "D. User access rights must be formally reviewed following probation or a change in their organizational role.",
+        "option": "B. Aligning employee efforts with organizational goals.",
         "is_correct": true
       },
       {
-        "option": "E. The IT officer should immediately provision full access upon receiving a direct verbal request from the new employee.",
-        "is_correct": false
+        "option": "C. Supporting digital transformation through Core HR practices.",
+        "is_correct": true
+      },
+      {
+        "option": "D. Executing Talent Acquisition and Retention.",
+        "is_correct": true
       }
     ],
-    "explanation": "Correct answers are A, B, D according to the answer key."
+    "explanation": "Correct answers are B, C and D. HR is strategically supporting business goals through recruitment, rewards, and talent management."
   },
   {
     "id": 11,
-    "lecture": "Lecture 2",
-    "question": "According to the RACI matrix rules taught in Lecture 2, which of the following statements represents a fundamental principle of accountability? [Select ONE]",
+    "lecture": "Lecture 1",
+    "question": "An investor wants to know whether a startup has enough cash to survive the next three months and the total value of its assets right now. Which financial statements are needed? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. To ensure complete collaborative ownership, every process activity must have multiple Accountable (A) roles.",
-        "is_correct": false
-      },
-      {
-        "option": "B. Only one role can be Accountable (A) for each activity, representing the person who owns the final outcome.",
+        "option": "A. Cash Flow Statement",
         "is_correct": true
       },
       {
-        "option": "C. The role that is Accountable (A) is also the one that must physically perform the activities and do the work.",
+        "option": "B. Income Statement",
         "is_correct": false
       },
       {
-        "option": "D. The role that is Consulted (C) has the ultimate authority to veto the decision of the Accountable (A) role.",
+        "option": "C. Balance Sheet",
+        "is_correct": true
+      },
+      {
+        "option": "D. Profit and Loss Statement",
         "is_correct": false
       }
     ],
-    "explanation": "Correct answer is B according to the answer key."
+    "explanation": "Correct answers are A and C. The Cash Flow Statement shows cash movement, while the Balance Sheet shows assets at a specific time."
   },
   {
     "id": 12,
-    "lecture": "Lecture 2",
-    "question": "An IT department is organizing its documentation to achieve a high-level maturity certification. According to the \"Documentation Hierarchy,\" order the five documentation levels from the highest level of governance (most abstract rules) to the lowest level (most concrete evidence). [Select ONE]",
+    "lecture": "Lecture 1",
+    "question": "An IT hardware manufacturer purchases $50,000 of server components using cash. How does this affect the Balance Sheet? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. Policy Procedure → Standard Work Instruction → Record",
+        "option": "A. Total Assets increase.",
         "is_correct": false
       },
       {
-        "option": "B. Standard Policy Procedure → Work Instruction",
+        "option": "B. Total Liabilities increase.",
         "is_correct": false
       },
       {
-        "option": "C. Policy Standard Procedure → Work Instruction → Record",
+        "option": "C. Total Equity decreases.",
+        "is_correct": false
+      },
+      {
+        "option": "D. Total Assets remain unchanged.",
         "is_correct": true
-      },
-      {
-        "option": "D. Policy Standard → Work Instruction → Procedure → Record",
-        "is_correct": false
       }
     ],
-    "explanation": "Correct answer is C according to the answer key."
+    "explanation": "Correct answer is D. Cash is exchanged for another asset, so total assets remain the same."
   },
   {
     "id": 13,
-    "lecture": "Lecture 2",
-    "question": "Under correct process design, how should this exception path be managed?",
-    "scenarios": [
-      "A junior service desk officer is assigned to handle a network switch outage.",
-      "They quickly realize that resolving the issue requires deep configuration changes that exceed their access authority, technical skill limits, and SLA resolution times."
-    ],
+    "lecture": "Lecture 1",
+    "question": "A network engineer identifies a security problem, creates a solution, releases an MVP to users, and starts a cybersecurity company. Which entrepreneurial characteristics are demonstrated? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. The officer must escalate the issue, moving it to a higher level (e.g., the network specialist team) because it exceeds their skill, authority, or time limits.",
+        "option": "A. Opportunity Recognition",
         "is_correct": true
       },
       {
-        "option": "B. Escalation should be avoided as it represents a personal performance failure of the service desk officer.",
+        "option": "B. Customer-Centric Thinking",
         "is_correct": false
       },
       {
-        "option": "C. The network specialist team must obtain formal manager or system-owner approval before making sensitive database or switch configuration changes.",
+        "option": "C. Continuous Learning and Adaptability",
         "is_correct": true
       },
       {
-        "option": "D. The officer should attempt a temporary, undocumented patch to bypass the approval gate and restore the network quickly.",
-        "is_correct": false
-      },
-      {
-        "option": "E. The officer should close the ticket and open a new one to reset the SLA timer while they research a fix.",
+        "option": "D. Perfect Competition",
         "is_correct": false
       }
     ],
-    "explanation": "Correct answers are A, C according to the answer key."
+    "explanation": "Correct answers are A and C. The engineer identified an opportunity and used an MVP to test and learn."
   },
   {
     "id": 14,
-    "lecture": "Lecture 2",
-    "question": "Which of the following statements correctly analyze these metrics?",
-    "scenarios": [
-      "A university IT service desk commits to a target that all critical LMS incidents must be responded to within 15 minutes and resolved within 2 hours.",
-      "Internally, the IT manager tracks the team's average response time, which is currently 28 minutes.",
-      "The IT manager also tracks the monthly ticket reopen rate, which is currently 8%."
-    ],
+    "lecture": "Lecture 1",
+    "question": "An analyst says a business has a balanced but relatively high use of debt to support growth. Which financial ratio category was used? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. The 15-minute response target and the 2-hour resolution target are Key Performance Indicators (KPIs).",
+        "option": "A. Profitability ratios",
         "is_correct": false
       },
       {
-        "option": "B. The 15-minute response target and the 2-hour resolution target represent a Service Level Agreement (SLA).",
+        "option": "B. Liquidity ratios",
+        "is_correct": false
+      },
+      {
+        "option": "C. Gearing ratios",
         "is_correct": true
       },
       {
-        "option": "C. The average response time of 28 minutes and the 8% reopen rate are internal Key Performance Indicators (KPIs).",
-        "is_correct": true
-      },
-      {
-        "option": "D. The current average response time KPI of 28 minutes indicates that the team is breaching their 15-minute critical incident response SLA.",
-        "is_correct": true
-      },
-      {
-        "option": "E. KPIs are used internally to measure process performance, which in turn helps the team verify if customer-facing SLAs are being met.",
-        "is_correct": true
+        "option": "D. Efficiency ratios",
+        "is_correct": false
       }
     ],
-    "explanation": "Correct answers are B, C, D, E according to the answer key."
+    "explanation": "Correct answer is C. Gearing ratios measure the use of debt and financial risk."
   },
   {
     "id": 15,
-    "lecture": "Lecture 2",
-    "question": "The manager applies the Deming Cycle (PDCA) to resolve this. Match the correct activities of the IT team to the corresponding PDCA phases.",
-    "scenarios": [
-      "An IT department is experiencing repeated Wi-Fi connectivity tickets."
-    ],
+    "lecture": "Lecture 1",
+    "question": "A software engineer wants to become an entrepreneur using technical skills to create scalable digital products. What is the correct sequence of the initial entrepreneurial phases? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. The team analyzes ticket data, identifies that Wi-Fi tickets are delayed, and designs a triage checklist (Plan phase).",
+        "option": "A. Feasibility Analysis -> Idea Generation -> Business Planning",
+        "is_correct": false
+      },
+      {
+        "option": "B. Idea Generation -> Opportunity Identification -> Feasibility Analysis -> Business Planning",
         "is_correct": true
       },
       {
-        "option": "B. The team pilots the triage checklist with a small group of support agents for two weeks (Do phase).",
-        "is_correct": true
+        "option": "C. Product Development & Validation -> Business Launch -> Idea Generation",
+        "is_correct": false
       },
       {
-        "option": "C. The team compares the pilot response times and reopen rates against historical benchmarks using KPIs (Check phase).",
-        "is_correct": true
-      },
-      {
-        "option": "D. The team standardizes the triage checklist and updates the official Wi-Fi support procedure for all staff (Act phase).",
-        "is_correct": true
-      },
-      {
-        "option": "E. The team scraps the checklist because it added 5 minutes to the ticketing workflow and returns to ad-hoc methods (Act phase).",
+        "option": "D. Growth & Scaling -> Feasibility Analysis",
         "is_correct": false
       }
     ],
-    "explanation": "Correct answers are A, B, C, D according to the answer key."
+    "explanation": "Correct answer is B. The process starts with an idea, identifies the opportunity, checks feasibility, and then creates a business plan."
   },
   {
     "id": 16,
-    "lecture": "Lecture 3",
-    "question": "In the context of IT process governance and compliance, what is the fundamental difference between \"Frameworks\" and \"Standards\"? [Select ONE]",
+    "lecture": "Lecture 1",
+    "question": "One company document tracks cash moving in and out, while another reports revenues and expenses over a period. Which statements are these? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. Frameworks specify mandatory legal regulations that cannot be modified, whereas standards are optional checklists designed by internal IT staff.",
+        "option": "A. Balance Sheet and Income Statement",
         "is_correct": false
       },
       {
-        "option": "B. Frameworks guide how to improve processes and practices, whereas standards define the minimum requirements that must be satisfied.",
+        "option": "B. Cash Flow Statement and Income Statement",
         "is_correct": true
       },
       {
-        "option": "C. Standards are subjective suggestions for organizational culture, whereas frameworks are precise, click-by-click work instructions for software.",
-        "is_correct": false
+        "option": "C. Profit & Loss Statement and Cash Flow Statement",
+        "is_correct": true
       },
       {
-        "option": "D. Frameworks focus exclusively on physical assets like servers, whereas standards focus exclusively on IT financial budgets.",
+        "option": "D. Balance Sheet and Cash Flow Statement",
         "is_correct": false
       }
     ],
-    "explanation": "Correct answer is B according to the answer key."
+    "explanation": "Correct answers are B and C. Income Statement and Profit & Loss Statement mean the same thing, while the Cash Flow Statement tracks cash movement."
   },
   {
     "id": 17,
-    "lecture": "Lecture 3",
-    "question": "The IT department applies the ITIL Service Value System (SVS) to address this demand. Identify the correct actions that represent the application of the SVS.",
-    "scenarios": [
-      "At the start of a semester, thousands of students complain that campus Wi-Fi is extremely slow.",
-      "Lecturers experience drops."
-    ],
+    "lecture": "Lecture 1",
+    "question": "Sri Lanka's digital economy provides opportunities for ICT entrepreneurs. Which of the following are major opportunity areas? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. They apply the Guiding Principle 'Start with the existing Wi-Fi infrastructure' to analyze current configuration before replacing physical switches.",
+        "option": "A. FinTech",
         "is_correct": true
       },
       {
-        "option": "B. They rely on Governance to have university management approve a Wi-Fi upgrade budget and define performance targets.",
+        "option": "B. AgriTech",
         "is_correct": true
       },
       {
-        "option": "C. They use the Incident Management practice to restore Wi-Fi connectivity as quickly as possible during class hours.",
+        "option": "C. Tourism Tech",
         "is_correct": true
       },
       {
-        "option": "D. They bypass the Change Enablement practice to deploy switch upgrades immediately in the production environment without testing to save time.",
+        "option": "D. Heavy Manufacturing Tech",
         "is_correct": false
-      },
-      {
-        "option": "E. They achieve 'Value' by delivering a reliable Wi-Fi service that improves student satisfaction and the online teaching experience.",
-        "is_correct": true
       }
     ],
-    "explanation": "Correct answers are A, B, C, E according to the answer key."
+    "explanation": "Correct answers are A, B and C. FinTech, AgriTech, and Tourism Tech are listed ICT entrepreneurship opportunities."
   },
   {
     "id": 18,
-    "lecture": "Lecture 3",
-    "question": "Using the framework selection table from Lecture 3, match each problem to its most suitable best-practice concept.",
-    "scenarios": [
-      "A university IT division is struggling with five organizational issues."
-    ],
+    "lecture": "Lecture 1",
+    "question": "A manager offers recognition and challenging work but ignores unsafe working conditions and very low salaries. According to Herzberg's Theory, what will happen? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. Slow service desk response is best addressed by ITIL incident, request, and service level management.",
-        "is_correct": true
-      },
-      {
-        "option": "B. Unclear IT accountability is best addressed by COBIT governance objectives, RACI, and controls.",
-        "is_correct": true
-      },
-      {
-        "option": "C. A need for formal audit evidence or certification is best addressed by ISO/IEC 20000 Service Management System (SMS).",
-        "is_correct": true
-      },
-      {
-        "option": "D. Repeated incidents are best addressed by ITIL problem management and continual improvement to find root causes.",
-        "is_correct": true
-      },
-      {
-        "option": "E. Uncontrolled infrastructure changes are best addressed by deleting change approval steps so technicians can work faster.",
+        "option": "A. The team will become highly satisfied and productive.",
         "is_correct": false
+      },
+      {
+        "option": "B. The team will remain deeply dissatisfied.",
+        "is_correct": true
+      },
+      {
+        "option": "C. The motivators will successfully override the lack of hygiene factors.",
+        "is_correct": false
+      },
+      {
+        "option": "D. The absence of hygiene factors guarantees dissatisfaction regardless of motivators.",
+        "is_correct": true
       }
     ],
-    "explanation": "Correct answers are A, B, C, D according to the answer key."
+    "explanation": "Correct answers are B and D. Without basic Hygiene Factors such as fair salary and safety, employees remain dissatisfied."
   },
   {
     "id": 19,
-    "lecture": "Lecture 3",
-    "question": "Which of the following best describes the purpose and scope of the COBIT framework as published by ISACA? [Select ONE]",
+    "lecture": "Lecture 1",
+    "question": "A tech startup builds an entire platform based on an unverified assumption about users, runs out of funding, and cannot pivot. What should the entrepreneurs have done? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. It is an operational manual that provides detailed instructions for scripting user accounts and performing hardware configurations.",
+        "option": "A. Relied purely on opportunity recognition and launched the final product immediately.",
         "is_correct": false
       },
       {
-        "option": "B. It is a business framework used for the governance and management of enterprise IT, focusing on executive oversight, strategic alignment, risk, and control accountability.",
+        "option": "B. Developed Minimum Viable Products (MVPs).",
         "is_correct": true
       },
       {
-        "option": "C. It is a Type A management standard that specifies the minimum operational audit requirements for physical server rooms.",
-        "is_correct": false
+        "option": "C. Gathered customer feedback to test assumptions.",
+        "is_correct": true
       },
       {
-        "option": "D. It is a technical framework designed exclusively to configure software-defined containers and virtual network boundaries.",
-        "is_correct": false
+        "option": "D. Adapted their solutions based on market needs.",
+        "is_correct": true
       }
     ],
-    "explanation": "Correct answer is B according to the answer key."
+    "explanation": "Correct answers are B, C and D. Entrepreneurs should test ideas early, collect feedback, and adapt to market needs."
   },
   {
     "id": 20,
-    "lecture": "Lecture 3",
-    "question": "Which of the following statements correctly distinguish their activities and focus?",
-    "scenarios": [
-      "An IT department is reorganizing its operating model to separate \"Governance\" from \"Management\"."
-    ],
+    "lecture": "Lecture 1",
+    "question": "Which definitions accurately describe an economic Market? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. Evaluating stakeholder needs, directing priorities, and monitoring compliance represent the Governance focus, handled at the Board and executive leadership level.",
-        "is_correct": true
-      },
-      {
-        "option": "B. Planning, building, running, and monitoring operational performance represent the Management focus, handled by IT managers and operations teams.",
-        "is_correct": true
-      },
-      {
-        "option": "C. Governance is responsible for executing low-level scripts, whereas Management is responsible for setting high-level regulatory policies.",
+        "option": "A. A place strictly reserved for digital transactions like eBay.",
         "is_correct": false
       },
       {
-        "option": "D. A vital link exists between them: Management performance data is fed back to Governance to monitor value, risk, and compliance targets.",
+        "option": "B. A location (physical or virtual) where people go to buy and sell things.",
         "is_correct": true
       },
       {
-        "option": "E. Governance and Management are identical in scope, and separating them is discouraged in modern IT frameworks.",
+        "option": "C. A system that exclusively brings buyers together without sellers.",
         "is_correct": false
+      },
+      {
+        "option": "D. A mechanism that brings buyers and sellers together.",
+        "is_correct": true
       }
     ],
-    "explanation": "Correct answers are A, B, D according to the answer key."
+    "explanation": "Correct answers are B and D. A market can be physical or virtual and brings buyers and sellers together."
   },
   {
     "id": 21,
-    "lecture": "Lecture 3",
-    "question": "What is the primary role of the ISO/IEC 20000 standard in IT process management, and when should an organization seek to use it? [Select ONE]",
+    "lecture": "Lecture 1",
+    "question": "Why is Human Resource Management (HRM) a critical source of competitive advantage in the IT industry? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. It is a voluntary coding framework used by software developers to build web applications.",
+        "option": "A. Because people are treated as expendable administrative overhead.",
         "is_correct": false
       },
       {
-        "option": "B. It is a formal Type A standard specifying requirements for an organization to establish, implement, maintain, and improve a Service Management System (SMS), used when formal evidence of control and auditability is needed.",
+        "option": "B. Because knowledge and skills are key assets.",
         "is_correct": true
       },
       {
-        "option": "C. It is a vendor-led technical standard that prescribes exact firewall and switch configuration scripts.",
-        "is_correct": false
+        "option": "C. Because organizations gain advantage through talent quality and expertise.",
+        "is_correct": true
       },
       {
-        "option": "D. It is an informal guide that describes the physical dimensions of standard data center server racks.",
+        "option": "D. Because HRM eliminates the need for product management.",
         "is_correct": false
       }
     ],
-    "explanation": "Correct answer is B according to the answer key."
+    "explanation": "Correct answers are B and C. IT companies depend heavily on skilled people, knowledge, and expertise."
   },
   {
     "id": 22,
-    "lecture": "Lecture 3",
-    "question": "According to the Process Maturity model, what is the department's current maturity level, and what is the most realistic next step for improvement?",
-    "scenarios": [
-      "An IT department has fully documented roles and procedures for all its core service support workflows.",
-      "However, the team does not track any operational metrics, KPIs, or SLAS."
-    ],
+    "lecture": "Lecture 1",
+    "question": "Which elements are considered the Core HR components for effective HRM and employee retention? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. Current Level: 1 (Ad-hoc); Next Step: Allow individual team members to handle incidents using personal judgment.",
-        "is_correct": false
-      },
-      {
-        "option": "B. Current Level: 2 (Repeatable); Next Step: Draft high-level, abstract corporate policies.",
-        "is_correct": false
-      },
-      {
-        "option": "C. Current Level: 3 (Defined); Next Step: Begin measuring process performance by tracking KPIs and SLAs (Level 4: Measured).",
+        "option": "A. Recruitment",
         "is_correct": true
       },
       {
-        "option": "D. Current Level: 4 (Measured); Next Step: Automate all procedures using machine learning (Level 5: Optimized).",
+        "option": "B. Performance",
+        "is_correct": true
+      },
+      {
+        "option": "C. Rewards",
+        "is_correct": true
+      },
+      {
+        "option": "D. Supply & Demand",
         "is_correct": false
       }
     ],
-    "explanation": "Correct answer is C according to the answer key."
+    "explanation": "Correct answers are A, B and C. Core HR consists of Recruitment, Performance, and Rewards."
   },
   {
     "id": 23,
-    "lecture": "Lecture 3",
-    "question": "Which of the following correct outcomes and divisions of responsibility represent a successful combined framework integration?",
-    "scenarios": [
-      "A university IT division wants to implement a robust, multi-framework approach.",
-      "The approach combines ITIL, COBIT, and ISO/IEC 20000."
-    ],
+    "lecture": "Lecture 1",
+    "question": "A technology company uses customer data, analytics, and AI to predict customer needs before they arise. What are they enhancing? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. COBIT is utilized at the executive board level to ensure risk oversight, strategic alignment, and clear decision accountability.",
+        "option": "A. Customer Experience (CX)",
         "is_correct": true
       },
       {
-        "option": "B. ITIL is utilized by operational teams to establish standardized practices for incident handling, request fulfillment, and change management.",
-        "is_correct": true
-      },
-      {
-        "option": "C. ISO/IEC 20000 is used to establish a formal Service Management System (SMS) that provides auditable evidence and prepares the organization for certification.",
-        "is_correct": true
-      },
-      {
-        "option": "D. COBIT is used to write detailed, click-by-click instructions for network technicians, while ITIL is used to approve the university's overall IT budget.",
+        "option": "B. Financial Accounting",
         "is_correct": false
       },
       {
-        "option": "E. The combined use provides a governed, controlled, measurable, and continually improved IT service environment.",
-        "is_correct": true
+        "option": "C. The Factor Market",
+        "is_correct": false
+      },
+      {
+        "option": "D. Employee Well-being",
+        "is_correct": false
       }
     ],
-    "explanation": "Correct answers are A, B, C, E according to the answer key."
+    "explanation": "Correct answer is A. Data and AI can personalize interactions and improve Customer Experience."
   },
   {
     "id": 24,
-    "lecture": "Lecture 4",
-    "question": "According to the lecture on IT Process Automation, how are the three automation spectrum levels-Manual, Semi-automated, and Fully Automated-properly defined? [Select ONE]",
+    "lecture": "Lecture 1",
+    "question": "When defining the core economic problem, what creates the gap between what society has and what it wants? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. Manual: Humans use physical tools; Semi-automated: Machines do the physical labor; Fully Automated: A central computer operates with no human presence on campus.",
-        "is_correct": false
-      },
-      {
-        "option": "B. Manual: A person performs most steps using judgement and direct action; Semi-automated: Some steps are automated, but humans approve or handle exceptions; Fully Automated: The system completes the process from trigger to closure under predefined rules.",
+        "option": "A. The fact that land, labor, and capital are finite resources.",
         "is_correct": true
       },
       {
-        "option": "C. Manual: A technician writes scripting code; Semi-automated: Technicians use drag-and-drop tools; Fully Automated: Artificial intelligence writes all technical policies.",
+        "option": "B. The fact that human desires have no natural ceiling.",
+        "is_correct": true
+      },
+      {
+        "option": "C. The infinite availability of capital.",
         "is_correct": false
       },
       {
-        "option": "D. Manual is the standard for high-security environments, whereas fully automated processes are strictly for non-secure lab environments.",
+        "option": "D. The continuous learning mindset.",
         "is_correct": false
       }
     ],
-    "explanation": "Correct answer is B according to the answer key."
+    "explanation": "Correct answers are A and B. Resources are limited, but human wants are unlimited."
   },
   {
     "id": 25,
-    "lecture": "Lecture 4",
-    "question": "Based on the \"automation suitability test\" and criteria from Lecture 4, which of the following characteristics indicate high suitability?",
-    "scenarios": [
-      "An IT manager wants to evaluate which IT tasks are prime candidates for automation."
-    ],
+    "lecture": "Lecture 1",
+    "question": "What is the primary distinction between Vision and Leadership and Resilience and Perseverance in an entrepreneurial mindset? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. The task has high volume (happens very frequently).",
+        "option": "A. Vision involves having a clear picture for the future and inspiring others.",
         "is_correct": true
       },
       {
-        "option": "B. The steps of the process are clear, stable, and highly repeatable.",
+        "option": "B. Resilience involves recovering from setbacks, failures, and challenges.",
         "is_correct": true
       },
       {
-        "option": "C. The decisions can be expressed as logical conditions (rule-based).",
-        "is_correct": true
-      },
-      {
-        "option": "D. The task involves extremely high risk where errors cannot be corrected or detected.",
+        "option": "C. Leadership focuses on adapting to market assumptions, while Resilience focuses on customer feedback.",
         "is_correct": false
       },
       {
-        "option": "E. The success and failure of the task are measurable and can be verified.",
+        "option": "D. Resilience enables individuals to learn from mistakes and continue moving forward.",
         "is_correct": true
       }
     ],
-    "explanation": "Correct answers are A, B, C, E according to the answer key."
+    "explanation": "Correct answers are A, B and D. Vision focuses on the future and inspiring others, while resilience focuses on recovering and continuing after setbacks."
   },
   {
     "id": 26,
-    "lecture": "Lecture 4",
-    "question": "Based on the safety, risk, and control principles in Lecture 4, which scenarios apply?",
-    "scenarios": [
-      "A student forgets their LMS password, completes MFA, and correctly answers security questions.",
-      "A lecturer requests administrative access on the department server to install software.",
-      "A user submits an account request but leaves out their department and role.",
-      "A department manager requests the deletion of customer records from the production database."
-    ],
+    "lecture": "Lecture 1",
+    "question": "If an IT company wants to evaluate its financial position at a specific moment rather than its performance over a period, which statement should investors request? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. Scenario 1 is suitable for Full Automation because it is high volume, rule-based, and identity is verified.",
-        "is_correct": true
-      },
-      {
-        "option": "B. Scenario 2 should be Semi-Automated with a mandatory human approval gate before granting administrative rights.",
-        "is_correct": true
-      },
-      {
-        "option": "C. Scenario 3 must follow an exception path and be escalated to a human because vital input details are missing.",
-        "is_correct": true
-      },
-      {
-        "option": "D. Scenario 4 should be Fully Automated to ensure rapid execution of organizational database requests.",
+        "option": "A. Income Statement",
         "is_correct": false
       },
       {
-        "option": "E. Scenario 4 should not be automated (or must require strict human intervention) because deleting database records is a high-risk, sensitive action.",
+        "option": "B. Balance Sheet",
         "is_correct": true
+      },
+      {
+        "option": "C. Cash Flow Statement",
+        "is_correct": false
+      },
+      {
+        "option": "D. Profit and Loss Statement",
+        "is_correct": false
       }
     ],
-    "explanation": "Correct answers are A, B, C, E according to the answer key."
+    "explanation": "Correct answer is B. A Balance Sheet shows the company's financial position at a specific point in time."
   },
   {
     "id": 27,
-    "lecture": "Lecture 4",
-    "question": "What is the primary role of \"Approval Gates\" in an automated IT process, and what information must they capture? [Select ONE]",
+    "lecture": "Lecture 1",
+    "question": "Which statements correctly describe Motivation compared with Leadership in HR's impact on business success? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. They are designed to bypass the security policy of least privilege to speed up urgent network configurations.",
+        "option": "A. Motivation provides direction and inspiration.",
         "is_correct": false
       },
       {
-        "option": "B. They are checkpoints before sensitive or irreversible actions that pause the workflow and must record who approved, when, and for what scope.",
+        "option": "B. Motivation ensures employees remain engaged and committed.",
         "is_correct": true
       },
       {
-        "option": "C. They are scripts that automatically delete log files when a ticket is resolved to save disk space.",
+        "option": "C. Leadership ensures higher productivity and better team performance.",
         "is_correct": false
       },
       {
-        "option": "D. They are automated loops that resubmit rejected requests continuously until they are approved.",
-        "is_correct": false
+        "option": "D. Leadership provides direction and inspiration.",
+        "is_correct": true
       }
     ],
-    "explanation": "Correct answer is B according to the answer key."
+    "explanation": "Correct answers are B and D. Motivation keeps employees engaged, while leadership provides direction and inspiration."
   },
   {
     "id": 28,
-    "lecture": "Lecture 4",
-    "question": "Which of the following risks and controls from Lecture 4 directly apply to this failure?",
-    "scenarios": [
-      "An IT team deploys an automated patch installation script across 500 virtual servers.",
-      "Due to an untested configuration, the script causes an operating system crash on 150 production servers.",
-      "The script fails silently without alerting."
-    ],
+    "lecture": "Lecture 1",
+    "question": "A tech startup spends three years developing a product without consulting end-users. Which entrepreneurial characteristic did they lack? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. The crash demonstrates the 'Inadequate testing' risk, where an untested script can damage many systems quickly.",
+        "option": "A. Customer-Centric Thinking",
         "is_correct": true
       },
       {
-        "option": "B. The silent failure of the script demonstrates the 'Hidden failure' risk, where automation fails without monitoring and alerts.",
-        "is_correct": true
+        "option": "B. Infinite Wants",
+        "is_correct": false
       },
       {
-        "option": "C. To mitigate this, a Rollback control should have been designed to restore the previous stable server state upon failure.",
-        "is_correct": true
+        "option": "C. Financial Accounting",
+        "is_correct": false
       },
       {
-        "option": "D. To prevent such widespread impact, a Testing control should have been used to pilot the patch in a test environment first.",
-        "is_correct": true
-      },
-      {
-        "option": "E. To maximize efficiency, the script should have been granted permanent administrative credentials on all servers under the least privilege principle.",
+        "option": "D. Perfect Competition",
         "is_correct": false
       }
     ],
-    "explanation": "Correct answers are A, B, C, D according to the answer key."
+    "explanation": "Correct answer is A. Entrepreneurs must understand customer needs and collect user feedback."
   },
   {
     "id": 29,
-    "lecture": "Lecture 4",
-    "question": "According to the technical comparison in Lecture 4, how do Virtual Machines (VMs) and Containers differ, and what are their respective roles in process automation? [Select ONE]",
+    "lecture": "Lecture 1",
+    "question": "Google started as an innovative search engine and expanded into AI and digital services. What actions drove this entrepreneurial success? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. VMs provide process-level isolation and start faster; Containers provide full OS-level isolation and start slower.",
-        "is_correct": false
-      },
-      {
-        "option": "B. VMs provide full OS-level isolation and usually start slower, supporting template-based server provisioning; Containers provide process-level isolation and usually start faster, supporting image-based application delivery.",
+        "option": "A. Identifying real customer problems.",
         "is_correct": true
       },
       {
-        "option": "C. VMs are restricted to manual configuration and cannot be automated, while Containers are the only technology that supports scripts.",
+        "option": "B. Ignoring market needs to push proprietary tech.",
         "is_correct": false
       },
       {
-        "option": "D. VMs run on shared physical hardware, whereas Containers must run on dedicated physical servers with no sharing permitted.",
-        "is_correct": false
+        "option": "C. Leveraging technology to create innovative solutions.",
+        "is_correct": true
+      },
+      {
+        "option": "D. Building scalable business models with long-term growth potential.",
+        "is_correct": true
       }
     ],
-    "explanation": "Correct answer is B according to the answer key."
+    "explanation": "Correct answers are A, C and D. Success came from solving real problems, using technology innovatively, and building scalable business models."
   },
   {
     "id": 30,
-    "lecture": "Lecture 4",
-    "question": "Identify the concepts demonstrated in this scenario.",
-    "scenarios": [
-      "A non-critical application server experiences repeated memory threshold spikes, triggering multiple separate alerts.",
-      "The monitoring platform combines these alerts.",
-      "The monitoring platform automatically runs a script to restart the non-critical service.",
-      "The monitoring platform verifies that the system health check returns \"OK\"."
-    ],
+    "lecture": "Lecture 1",
+    "question": "In the Neoclassical Market framework, what happens when there is a shortage of a highly demanded software product? [Select ALL correct answers]",
     "answers": [
       {
-        "option": "A. Combining multiple related alerts into a single incident represents Event Correlation.",
-        "is_correct": true
-      },
-      {
-        "option": "B. Automatically restarting the service and verifying that the health check is OK represents Automated Remediation.",
-        "is_correct": true
-      },
-      {
-        "option": "C. The IT team implements an important control by verifying the server condition first and limiting the scope before running the restart script.",
-        "is_correct": true
-      },
-      {
-        "option": "D. The system should continue generating individual alerts for every spike to ensure the service desk experiences maximum alert volume.",
+        "option": "A. The government intervenes to set a price ceiling.",
         "is_correct": false
       },
       {
-        "option": "E. The system should run remediation blindly on any database deletion alerts to prevent human intervention delays.",
-        "is_correct": false
+        "option": "B. The market automatically adjusts prices.",
+        "is_correct": true
+      },
+      {
+        "option": "C. Prices rise until supply matches demand.",
+        "is_correct": true
+      },
+      {
+        "option": "D. The most efficient allocation of scarce resources is achieved.",
+        "is_correct": true
       }
     ],
-    "explanation": "Correct answers are A, B, C according to the answer key."
+    "explanation": "Correct answers are B, C and D. Prices rise automatically until supply and demand reach equilibrium, helping allocate scarce resources efficiently."
   }
 ]
