@@ -1,0 +1,2305 @@
+{
+  "description": "Introduction to Marketing",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What are the primary reasons why computing students should learn marketing? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Technology does not sell itself",
+          "is_correct": true
+        },
+        {
+          "option": "B. Most software products fail due to poor market fit",
+          "is_correct": true
+        },
+        {
+          "option": "C. To increase production costs",
+          "is_correct": false
+        },
+        {
+          "option": "D. Tech Entrepreneurship requires marketing knowledge",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Computing students learn marketing because technology alone doesn't guarantee success—many student-developed apps fail due to poor market fit and ignored marketing. Additionally, tech entrepreneurship demands marketing expertise."
+    },
+    {
+      "id": 2,
+      "question": "According to the lecture, which statement BEST defines marketing in modern times?",
+      "answers": [
+        {
+          "option": "A. A process solely focused on selling products",
+          "is_correct": false
+        },
+        {
+          "option": "B. A human-centric and technology-enabled process of creating, communicating, delivering and exchanging value to customers while building long-term relationships",
+          "is_correct": true
+        },
+        {
+          "option": "C. A method to reduce customer interactions",
+          "is_correct": false
+        },
+        {
+          "option": "D. An activity that eliminates competition",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Modern marketing is defined as a human-centric and technology-enabled process that focuses on value creation and long-term relationships, not just transactional selling."
+    },
+    {
+      "id": 3,
+      "question": "What are the key differences between marketing and selling? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Marketing is customer-focused while selling is product-focused",
+          "is_correct": true
+        },
+        {
+          "option": "B. Marketing is long-term while selling is short-term",
+          "is_correct": true
+        },
+        {
+          "option": "C. Marketing builds relationships while selling focuses on transactions",
+          "is_correct": true
+        },
+        {
+          "option": "D. Marketing and selling are identical processes",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Marketing and selling differ fundamentally: marketing takes a strategic, long-term approach focused on customer needs and relationship-building, while selling is transactional and short-term focused on persuading specific customers to buy."
+    },
+    {
+      "id": 4,
+      "question": "Which marketing era prioritized efficiency and production capabilities?",
+      "answers": [
+        {
+          "option": "A. Before 1960s (Product-Centric)",
+          "is_correct": true
+        },
+        {
+          "option": "B. 1960s-1980s (Customer-Centric)",
+          "is_correct": false
+        },
+        {
+          "option": "C. 1990s-2000s (Values-Driven)",
+          "is_correct": false
+        },
+        {
+          "option": "D. 2020s-Present (Marketing 6.0)",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Before the 1960s, marketing was Product-Centric with a focus on Efficiency and production. This era emphasized manufacturing capabilities over customer needs."
+    },
+    {
+      "id": 5,
+      "question": "What is the key shift in the current Marketing 6.0 Era (2020s-Present)?",
+      "answers": [
+        {
+          "option": "A. Experience",
+          "is_correct": true
+        },
+        {
+          "option": "B. Engagement",
+          "is_correct": false
+        },
+        {
+          "option": "C. Personalization",
+          "is_correct": false
+        },
+        {
+          "option": "D. Satisfaction",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Marketing 6.0 (2020s-Present) represents a Human + Tech combination with a key shift toward Experience, creating immersive and meaningful customer interactions."
+    },
+    {
+      "id": 6,
+      "question": "A startup is developing a new productivity app. They conduct surveys to understand user needs, analyze competitor offerings, and identify target user demographics. Which concept are they practicing?",
+      "answers": [
+        {
+          "option": "A. Market Research",
+          "is_correct": true
+        },
+        {
+          "option": "B. Product Development",
+          "is_correct": false
+        },
+        {
+          "option": "C. Digital Marketing",
+          "is_correct": false
+        },
+        {
+          "option": "D. Brand Management",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The startup is conducting Market Research—the process of collecting, analyzing, and interpreting data about customers, markets, and competitors to support better marketing decisions."
+    },
+    {
+      "id": 7,
+      "question": "What are the four elements of the Marketing Mix (4Ps)? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Product",
+          "is_correct": true
+        },
+        {
+          "option": "B. Price",
+          "is_correct": true
+        },
+        {
+          "option": "C. Place",
+          "is_correct": true
+        },
+        {
+          "option": "D. Promotion",
+          "is_correct": true
+        }
+      ],
+      "explanation": "The Marketing Mix consists of four Ps: Product (what you're selling), Price (pricing strategy), Place (distribution channels), and Promotion (how you communicate and reach customers)."
+    },
+    {
+      "id": 8,
+      "question": "McDonald's offers value pricing for affordability, combo meals for cost savings, frequent promotions, discounts, and coupons. Which element of the Marketing Mix is being emphasized here?",
+      "answers": [
+        {
+          "option": "A. Product",
+          "is_correct": false
+        },
+        {
+          "option": "B. Price",
+          "is_correct": true
+        },
+        {
+          "option": "C. Place",
+          "is_correct": false
+        },
+        {
+          "option": "D. Promotion",
+          "is_correct": false
+        }
+      ],
+      "explanation": "McDonald's value pricing strategy, combo deals, and frequent promotions demonstrate the Price element of the Marketing Mix through affordability strategies."
+    },
+    {
+      "id": 9,
+      "question": "What does the 'S' in the STP Model represent?",
+      "answers": [
+        {
+          "option": "A. Strategy",
+          "is_correct": false
+        },
+        {
+          "option": "B. Segmentation",
+          "is_correct": true
+        },
+        {
+          "option": "C. Specialization",
+          "is_correct": false
+        },
+        {
+          "option": "D. Speciality",
+          "is_correct": false
+        }
+      ],
+      "explanation": "In the STP Model, 'S' stands for Segmentation—the process of dividing a broad market into smaller groups based on demographics, behavior, and preferences."
+    },
+    {
+      "id": 10,
+      "question": "A beverage company divides the market into teenagers, young professionals, middle-aged adults, and seniors. Which stage of the STP Model is this?",
+      "answers": [
+        {
+          "option": "A. Segmentation",
+          "is_correct": true
+        },
+        {
+          "option": "B. Targeting",
+          "is_correct": false
+        },
+        {
+          "option": "C. Positioning",
+          "is_correct": false
+        },
+        {
+          "option": "D. Specialization",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Dividing the market into distinct age groups represents Segmentation, the first stage of the STP Model where the broad market is divided into smaller, manageable groups."
+    },
+    {
+      "id": 11,
+      "question": "After dividing the market, the beverage company decides to focus specifically on teenagers and young professionals because of higher profit potential. Which stage of STP is this?",
+      "answers": [
+        {
+          "option": "A. Segmentation",
+          "is_correct": false
+        },
+        {
+          "option": "B. Targeting",
+          "is_correct": true
+        },
+        {
+          "option": "C. Positioning",
+          "is_correct": false
+        },
+        {
+          "option": "D. Marketing Mix",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Targeting is the second stage of STP, where a company selects the most attractive customer segments based on profitability, needs, and growth potential."
+    },
+    {
+      "id": 12,
+      "question": "The beverage company creates an image of their drink as 'energizing and trendy' to appeal to teenagers and young professionals. Which stage of STP is this?",
+      "answers": [
+        {
+          "option": "A. Segmentation",
+          "is_correct": false
+        },
+        {
+          "option": "B. Targeting",
+          "is_correct": false
+        },
+        {
+          "option": "C. Positioning",
+          "is_correct": true
+        },
+        {
+          "option": "D. Promotion",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Positioning is the third stage of STP, where a company creates a unique image and value proposition in the customer's mind by focusing on differentiation and value."
+    },
+    {
+      "id": 13,
+      "question": "What is a Customer Value Proposition (CVP)?",
+      "answers": [
+        {
+          "option": "A. A discount offered to new customers",
+          "is_correct": false
+        },
+        {
+          "option": "B. The unique value a company offers to customers, explaining why they should choose its product over competitors",
+          "is_correct": true
+        },
+        {
+          "option": "C. A promotional campaign strategy",
+          "is_correct": false
+        },
+        {
+          "option": "D. The price of a product",
+          "is_correct": false
+        }
+      ],
+      "explanation": "CVP is the unique value a company offers to customers, clearly stating why customers should choose its product or service over competitors."
+    },
+    {
+      "id": 14,
+      "question": "What are the primary purposes of market research? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. To understand customer needs and preferences",
+          "is_correct": true
+        },
+        {
+          "option": "B. To analyze competitor strategies",
+          "is_correct": true
+        },
+        {
+          "option": "C. To support better marketing decisions",
+          "is_correct": true
+        },
+        {
+          "option": "D. To eliminate competition entirely",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Market research collects and analyzes data to understand customer needs, study competitors, and guide informed marketing decisions—not to eliminate competition."
+    },
+    {
+      "id": 15,
+      "question": "Which types of data does market research typically collect? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Primary data (surveys and interviews)",
+          "is_correct": true
+        },
+        {
+          "option": "B. Secondary data (reports and databases)",
+          "is_correct": true
+        },
+        {
+          "option": "C. Fabricated data",
+          "is_correct": false
+        },
+        {
+          "option": "D. Customer feedback data",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Market research uses both primary data (directly collected through surveys and interviews) and secondary data (existing reports and databases) to understand markets."
+    },
+    {
+      "id": 16,
+      "question": "How does Artificial Intelligence (AI) enhance market research?",
+      "answers": [
+        {
+          "option": "A. AI replaces all human market researchers",
+          "is_correct": false
+        },
+        {
+          "option": "B. AI analyzes large datasets and predicts customer behavior patterns",
+          "is_correct": true
+        },
+        {
+          "option": "C. AI increases research costs",
+          "is_correct": false
+        },
+        {
+          "option": "D. AI eliminates the need for data collection",
+          "is_correct": false
+        }
+      ],
+      "explanation": "AI enhances market research by analyzing large datasets quickly, identifying patterns, enabling predictive analytics and forecasting, and supporting personalized marketing strategies."
+    },
+    {
+      "id": 17,
+      "question": "A company uses web analytics, social media insights, and online surveys to track customer behavior in real-time. Which market research tool category is this?",
+      "answers": [
+        {
+          "option": "A. Traditional research methods",
+          "is_correct": false
+        },
+        {
+          "option": "B. Digital research tools",
+          "is_correct": true
+        },
+        {
+          "option": "C. Offline surveys",
+          "is_correct": false
+        },
+        {
+          "option": "D. Academic research",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Digital research tools include online technologies like web analytics, social media insights, and online surveys that enable real-time tracking of customer behavior."
+    },
+    {
+      "id": 18,
+      "question": "What is product management in the context of modern business?",
+      "answers": [
+        {
+          "option": "A. Only concerned with manufacturing products",
+          "is_correct": false
+        },
+        {
+          "option": "B. The process of planning, developing, and managing products to deliver value and meet evolving customer needs",
+          "is_correct": true
+        },
+        {
+          "option": "C. Focused solely on sales activities",
+          "is_correct": false
+        },
+        {
+          "option": "D. A task exclusively for engineers",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Product management is a comprehensive process that guides products from initial idea through release and beyond, using customer insights and feedback to continuously improve offerings."
+    },
+    {
+      "id": 19,
+      "question": "In product management, what are the three fundamental questions that guide development? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Does the customer need this? (User Experience)",
+          "is_correct": true
+        },
+        {
+          "option": "B. Can we build this? (Technology)",
+          "is_correct": true
+        },
+        {
+          "option": "C. Does this make sense for the business? (Business Strategy)",
+          "is_correct": true
+        },
+        {
+          "option": "D. Can we afford the best office?",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Product management is guided by three critical questions: user experience needs, technological feasibility, and business viability—ensuring products succeed commercially and practically."
+    },
+    {
+      "id": 20,
+      "question": "What does the Product Life Cycle (PLC) describe?",
+      "answers": [
+        {
+          "option": "A. The cost to produce a product",
+          "is_correct": false
+        },
+        {
+          "option": "B. The stages a product goes through from introduction to decline in the market",
+          "is_correct": true
+        },
+        {
+          "option": "C. The company's organizational structure",
+          "is_correct": false
+        },
+        {
+          "option": "D. The pricing strategy for products",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The Product Life Cycle describes the journey a product takes through Introduction, Growth, Maturity, and Decline stages, with changing market dynamics at each stage."
+    },
+    {
+      "id": 21,
+      "question": "Which stage of the Product Life Cycle is characterized by increased sales and the product gaining popularity?",
+      "answers": [
+        {
+          "option": "A. Introduction",
+          "is_correct": false
+        },
+        {
+          "option": "B. Growth",
+          "is_correct": true
+        },
+        {
+          "option": "C. Maturity",
+          "is_correct": false
+        },
+        {
+          "option": "D. Decline",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The Growth stage of PLC is when sales increase rapidly and the product gains popularity in the market as awareness spreads and adoption accelerates."
+    },
+    {
+      "id": 22,
+      "question": "During which PLC stage does the market become saturated and competition is high?",
+      "answers": [
+        {
+          "option": "A. Introduction",
+          "is_correct": false
+        },
+        {
+          "option": "B. Growth",
+          "is_correct": false
+        },
+        {
+          "option": "C. Maturity",
+          "is_correct": true
+        },
+        {
+          "option": "D. Decline",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The Maturity stage occurs when the market becomes saturated with competitors offering similar products, leading to intense competition and stable or declining sales growth."
+    },
+    {
+      "id": 23,
+      "question": "What characterizes the Decline stage of the Product Life Cycle?",
+      "answers": [
+        {
+          "option": "A. Rapid sales increase",
+          "is_correct": false
+        },
+        {
+          "option": "B. Sales decrease as demand reduces or new alternatives emerge",
+          "is_correct": true
+        },
+        {
+          "option": "C. Market introduction phase begins",
+          "is_correct": false
+        },
+        {
+          "option": "D. Competitors withdraw from market",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The Decline stage is marked by decreasing sales as customer demand reduces, new competing alternatives emerge, or products become obsolete."
+    },
+    {
+      "id": 24,
+      "question": "What types of products are typical in the IT industry? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Software-as-a-Service (SaaS)",
+          "is_correct": true
+        },
+        {
+          "option": "B. Mobile applications",
+          "is_correct": true
+        },
+        {
+          "option": "C. Digital platforms",
+          "is_correct": true
+        },
+        {
+          "option": "D. Physical hardware only",
+          "is_correct": false
+        }
+      ],
+      "explanation": "IT industry products are primarily digital solutions including SaaS, mobile apps, and digital platforms designed to deliver continuous value and user experience."
+    },
+    {
+      "id": 25,
+      "question": "How are IT products typically updated and improved?",
+      "answers": [
+        {
+          "option": "A. Once every five years with major overhauls",
+          "is_correct": false
+        },
+        {
+          "option": "B. Regularly using customer feedback, usage data, and analytics to remain relevant and competitive",
+          "is_correct": true
+        },
+        {
+          "option": "C. Never, once released they remain unchanged",
+          "is_correct": false
+        },
+        {
+          "option": "D. Only when competitors force changes",
+          "is_correct": false
+        }
+      ],
+      "explanation": "IT products are continuously updated and improved using customer feedback, usage analytics, and data-driven insights to maintain competitiveness and relevance."
+    },
+    {
+      "id": 26,
+      "question": "What is digital marketing?",
+      "answers": [
+        {
+          "option": "A. Only advertising on social media",
+          "is_correct": false
+        },
+        {
+          "option": "B. The use of digital technologies and online platforms to promote products, engage customers, and deliver personalized experiences",
+          "is_correct": true
+        },
+        {
+          "option": "C. Traditional print advertising",
+          "is_correct": false
+        },
+        {
+          "option": "D. Email marketing only",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Digital marketing encompasses all marketing efforts using electronic devices and the internet, enabling two-way communication, real-time interaction, and personalized customer experiences."
+    },
+    {
+      "id": 27,
+      "question": "What are the key characteristics of digital marketing? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Enables two-way communication with customers",
+          "is_correct": true
+        },
+        {
+          "option": "B. Allows real-time interaction",
+          "is_correct": true
+        },
+        {
+          "option": "C. Leverages data and analytics for targeting",
+          "is_correct": true
+        },
+        {
+          "option": "D. Focuses only on creating engaging experiences",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Digital marketing enables two-way communication, real-time interaction, leverages data for personalization, and focuses on creating engaging and seamless digital experiences."
+    },
+    {
+      "id": 28,
+      "question": "Which are examples of digital marketing channels? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Websites",
+          "is_correct": true
+        },
+        {
+          "option": "B. Search engines",
+          "is_correct": true
+        },
+        {
+          "option": "C. Social media platforms",
+          "is_correct": true
+        },
+        {
+          "option": "D. Email marketing",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Digital marketing channels include websites, search engines (SEO/SEM), social media platforms, email marketing, and paid advertisements that enable online customer outreach."
+    },
+    {
+      "id": 29,
+      "question": "A company tracks how many users click on its online ads (Click-through Rate), how many complete a purchase (Conversion Rate), and the cost to acquire each customer (CAC). What is being measured?",
+      "answers": [
+        {
+          "option": "A. Brand awareness only",
+          "is_correct": false
+        },
+        {
+          "option": "B. Digital marketing metrics",
+          "is_correct": true
+        },
+        {
+          "option": "C. Product quality",
+          "is_correct": false
+        },
+        {
+          "option": "D. Employee productivity",
+          "is_correct": false
+        }
+      ],
+      "explanation": "These measurements are Digital Marketing Metrics—quantifiable data points used to track, measure, and evaluate the performance of online campaigns and optimize marketing ROI."
+    },
+    {
+      "id": 30,
+      "question": "What is the primary purpose of digital marketing metrics?",
+      "answers": [
+        {
+          "option": "A. To make marketing more complex",
+          "is_correct": false
+        },
+        {
+          "option": "B. To track performance, optimize strategies, allocate budgets, and improve ROI",
+          "is_correct": true
+        },
+        {
+          "option": "C. To eliminate customer interactions",
+          "is_correct": false
+        },
+        {
+          "option": "D. To reduce marketing expenses only",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Digital metrics provide objective evidence of audience interactions with brands, helping businesses optimize strategies, allocate budgets effectively, and improve Return on Investment (ROI)."
+    },
+    {
+      "id": 31,
+      "question": "What is brand management?",
+      "answers": [
+        {
+          "option": "A. Creating a company logo",
+          "is_correct": false
+        },
+        {
+          "option": "B. The process of creating, maintaining, and enhancing a brand's identity, image, and value in the minds of customers",
+          "is_correct": true
+        },
+        {
+          "option": "C. Selling products exclusively",
+          "is_correct": false
+        },
+        {
+          "option": "D. Legal trademark registration only",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Brand management is a comprehensive process that creates and maintains a brand's identity and value through consistent communication and meaningful customer experiences."
+    },
+    {
+      "id": 32,
+      "question": "Which elements must be consistently communicated across all channels in brand management? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Brand name",
+          "is_correct": true
+        },
+        {
+          "option": "B. Logo and visual identity",
+          "is_correct": true
+        },
+        {
+          "option": "C. Brand message and values",
+          "is_correct": true
+        },
+        {
+          "option": "D. Competitor product features",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Consistent brand management ensures that brand name, logo, message, and values are uniformly communicated across digital and physical channels to create a recognizable identity."
+    },
+    {
+      "id": 33,
+      "question": "What is brand equity?",
+      "answers": [
+        {
+          "option": "A. The company's financial assets",
+          "is_correct": false
+        },
+        {
+          "option": "B. The value a brand adds to a product based on customer perceptions, trust, and experiences",
+          "is_correct": true
+        },
+        {
+          "option": "C. The cost of advertising",
+          "is_correct": false
+        },
+        {
+          "option": "D. The number of products sold",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Brand equity is the premium value customers assign to a brand based on their perceptions, trust levels, and positive experiences—affecting pricing power and loyalty."
+    },
+    {
+      "id": 34,
+      "question": "How is brand equity built and strengthened? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Through customer awareness and recognition",
+          "is_correct": true
+        },
+        {
+          "option": "B. By building trust and loyalty",
+          "is_correct": true
+        },
+        {
+          "option": "C. Through positive customer experiences",
+          "is_correct": true
+        },
+        {
+          "option": "D. Through consistent branding across all channels",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Brand equity is built through customer awareness, trust development, positive experiences, and consistent branding across all touchpoints—creating differentiation from competitors."
+    },
+    {
+      "id": 35,
+      "question": "What is experience-driven branding?",
+      "answers": [
+        {
+          "option": "A. Creating only digital content",
+          "is_correct": false
+        },
+        {
+          "option": "B. Focusing on creating meaningful and memorable customer experiences to build strong brand relationships",
+          "is_correct": true
+        },
+        {
+          "option": "C. Reducing customer interactions",
+          "is_correct": false
+        },
+        {
+          "option": "D. Using traditional advertising exclusively",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Experience-driven branding emphasizes creating meaningful and memorable customer experiences at every touchpoint to build emotional engagement and long-term loyalty."
+    },
+    {
+      "id": 36,
+      "question": "What is Marketing 6.0?",
+      "answers": [
+        {
+          "option": "A. An outdated marketing approach",
+          "is_correct": false
+        },
+        {
+          "option": "B. The next stage of marketing evolution focusing on immersive 'phygital' (physical-plus-digital) experiences",
+          "is_correct": true
+        },
+        {
+          "option": "C. Digital marketing only",
+          "is_correct": false
+        },
+        {
+          "option": "D. A pricing strategy",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Marketing 6.0 represents the current and future marketing evolution combining human understanding with advanced technology to create immersive, phygital (physical + digital) customer experiences."
+    },
+    {
+      "id": 37,
+      "question": "How does IT enable companies in Marketing 6.0? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. By combining human understanding with advanced digital tools",
+          "is_correct": true
+        },
+        {
+          "option": "B. Creating personalized customer experiences",
+          "is_correct": true
+        },
+        {
+          "option": "C. Delivering immersive and meaningful interactions",
+          "is_correct": true
+        },
+        {
+          "option": "D. Eliminating human interaction entirely",
+          "is_correct": false
+        }
+      ],
+      "explanation": "IT in Marketing 6.0 combines human insight with advanced technology to create personalized, immersive, and meaningful experiences—not replacing but enhancing human connection."
+    },
+    {
+      "id": 38,
+      "question": "Which IT capabilities enable Marketing 6.0? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Data Collection and Analysis",
+          "is_correct": true
+        },
+        {
+          "option": "B. Automation and Chatbots",
+          "is_correct": true
+        },
+        {
+          "option": "C. Personalization at scale",
+          "is_correct": true
+        },
+        {
+          "option": "D. Manual customer management only",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Marketing 6.0 relies on IT capabilities including data analytics, automation, personalization, integration across channels, CRM, immersive technologies (AR/VR), and real-time decision-making."
+    },
+    {
+      "id": 39,
+      "question": "What role does data collection play in Marketing 6.0?",
+      "answers": [
+        {
+          "option": "A. To collect data for no purpose",
+          "is_correct": false
+        },
+        {
+          "option": "B. To gather customer information from multiple sources and enable advanced analytics for better decision-making",
+          "is_correct": true
+        },
+        {
+          "option": "C. To spy on competitors",
+          "is_correct": false
+        },
+        {
+          "option": "D. To increase operational costs",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Data collection from websites, apps, and social media enables advanced analytics that help businesses understand customer behavior and make informed marketing decisions."
+    },
+    {
+      "id": 40,
+      "question": "How does automation benefit Marketing 6.0 companies?",
+      "answers": [
+        {
+          "option": "A. By eliminating all customer service",
+          "is_correct": false
+        },
+        {
+          "option": "B. By predicting customer needs, recommending products, and providing instant customer support through chatbots",
+          "is_correct": true
+        },
+        {
+          "option": "C. By reducing product quality",
+          "is_correct": false
+        },
+        {
+          "option": "D. By increasing marketing expenses",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Automation in Marketing 6.0 predicts customer needs, enables product recommendations, and provides 24/7 instant support through AI-powered chatbots—enhancing customer experience."
+    },
+    {
+      "id": 41,
+      "question": "What is personalization in the context of Marketing 6.0?",
+      "answers": [
+        {
+          "option": "A. Using the same message for all customers",
+          "is_correct": false
+        },
+        {
+          "option": "B. Delivering tailored content, offers, and recommendations to individual customers",
+          "is_correct": true
+        },
+        {
+          "option": "C. Ignoring customer preferences",
+          "is_correct": false
+        },
+        {
+          "option": "D. Creating generic customer segments only",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Personalization in Marketing 6.0 means delivering customized content, offers, and recommendations to individual customers—creating unique, tailored experiences."
+    },
+    {
+      "id": 42,
+      "question": "How does integration of multiple platforms enhance Marketing 6.0?",
+      "answers": [
+        {
+          "option": "A. By using only one channel",
+          "is_correct": false
+        },
+        {
+          "option": "B. By connecting websites, mobile apps, and physical stores so customers experience consistent interactions across all channels",
+          "is_correct": true
+        },
+        {
+          "option": "C. By isolating customer data",
+          "is_correct": false
+        },
+        {
+          "option": "D. By complicating customer journeys",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Integration in Marketing 6.0 connects digital and physical touchpoints, ensuring seamless customer experiences across websites, apps, social media, and physical stores."
+    },
+    {
+      "id": 43,
+      "question": "What is Customer Relationship Management (CRM)?",
+      "answers": [
+        {
+          "option": "A. Only managing customer complaints",
+          "is_correct": false
+        },
+        {
+          "option": "B. The process of managing and strengthening interactions with customers to build long-term relationships and loyalty",
+          "is_correct": true
+        },
+        {
+          "option": "C. A software for billing only",
+          "is_correct": false
+        },
+        {
+          "option": "D. Reducing customer contact",
+          "is_correct": false
+        }
+      ],
+      "explanation": "CRM is a comprehensive process and technology system that manages customer data, interactions, and relationships to build loyalty, increase customer lifetime value, and improve retention."
+    },
+    {
+      "id": 44,
+      "question": "What are the primary objectives of CRM? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Customer Retention",
+          "is_correct": true
+        },
+        {
+          "option": "B. Customer Loyalty",
+          "is_correct": true
+        },
+        {
+          "option": "C. Customer Lifetime Value (CLV)",
+          "is_correct": true
+        },
+        {
+          "option": "D. Personalized Customer Experience",
+          "is_correct": true
+        }
+      ],
+      "explanation": "CRM objectives include keeping existing customers satisfied, building emotional loyalty, maximizing the total value customers provide over time, and delivering personalized experiences."
+    },
+    {
+      "id": 45,
+      "question": "What does Customer Lifetime Value (CLV) represent?",
+      "answers": [
+        {
+          "option": "A. The price of a single transaction",
+          "is_correct": false
+        },
+        {
+          "option": "B. The total value a customer brings to a company through repeated purchases and engagement over time",
+          "is_correct": true
+        },
+        {
+          "option": "C. The cost of acquiring a customer",
+          "is_correct": false
+        },
+        {
+          "option": "D. The customer's life expectancy",
+          "is_correct": false
+        }
+      ],
+      "explanation": "CLV is a key CRM metric representing the total profit or value generated by a customer throughout their entire relationship with the company—not just single transactions."
+    },
+    {
+      "id": 46,
+      "question": "What are the main functions of CRM tools? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Store and organize customer information and interaction history",
+          "is_correct": true
+        },
+        {
+          "option": "B. Enable personalized communication and targeted marketing",
+          "is_correct": true
+        },
+        {
+          "option": "C. Support automation of marketing, sales, and customer service",
+          "is_correct": true
+        },
+        {
+          "option": "D. Provide data analytics and insights for decision-making",
+          "is_correct": true
+        }
+      ],
+      "explanation": "CRM tools centralize customer data, enable personalization, automate workflows, and provide analytics—supporting comprehensive relationship management across all customer touchpoints."
+    },
+    {
+      "id": 47,
+      "question": "What is Salesforce in the context of CRM?",
+      "answers": [
+        {
+          "option": "A. A competitor analysis tool",
+          "is_correct": false
+        },
+        {
+          "option": "B. A leading cloud-based CRM platform used by large organizations for managing customer data, sales processes, and marketing campaigns",
+          "is_correct": true
+        },
+        {
+          "option": "C. A social media platform",
+          "is_correct": false
+        },
+        {
+          "option": "D. A project management tool",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Salesforce is an enterprise-level cloud-based CRM platform providing advanced analytics, AI capabilities (Einstein), and automation for large-scale, data-driven customer relationship management."
+    },
+    {
+      "id": 48,
+      "question": "What CRM capabilities does Salesforce provide? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Advanced analytics",
+          "is_correct": true
+        },
+        {
+          "option": "B. AI (Einstein)",
+          "is_correct": true
+        },
+        {
+          "option": "C. Automation features",
+          "is_correct": true
+        },
+        {
+          "option": "D. Manual data entry only",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Salesforce offers advanced analytics, AI-powered insights (Einstein), comprehensive automation, and integration capabilities—enabling large organizations to manage complex customer relationships."
+    },
+    {
+      "id": 49,
+      "question": "What is HubSpot CRM?",
+      "answers": [
+        {
+          "option": "A. A CRM only for large enterprises",
+          "is_correct": false
+        },
+        {
+          "option": "B. A user-friendly CRM platform popular among small and medium businesses offering integrated marketing, sales, and customer service tools",
+          "is_correct": true
+        },
+        {
+          "option": "C. A social media management tool",
+          "is_correct": false
+        },
+        {
+          "option": "D. An email service provider only",
+          "is_correct": false
+        }
+      ],
+      "explanation": "HubSpot is known for being user-friendly and accessible to SMEs, offering email marketing, lead tracking, automation, and inbound marketing capabilities in one integrated platform."
+    },
+    {
+      "id": 50,
+      "question": "What are HubSpot's key features? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Email marketing tools",
+          "is_correct": true
+        },
+        {
+          "option": "B. Lead tracking",
+          "is_correct": true
+        },
+        {
+          "option": "C. Automation capabilities",
+          "is_correct": true
+        },
+        {
+          "option": "D. Inbound marketing focus",
+          "is_correct": true
+        }
+      ],
+      "explanation": "HubSpot provides email marketing, lead tracking, workflow automation, and strong inbound marketing capabilities—making it ideal for businesses seeking ease of use and integrated functions."
+    },
+    {
+      "id": 51,
+      "question": "What is Zoho CRM?",
+      "answers": [
+        {
+          "option": "A. An expensive enterprise solution only",
+          "is_correct": false
+        },
+        {
+          "option": "B. A cost-effective CRM solution suitable for startups and SMEs offering automation, analytics, and integration with other Zoho apps",
+          "is_correct": true
+        },
+        {
+          "option": "C. A website builder",
+          "is_correct": false
+        },
+        {
+          "option": "D. A database system only",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Zoho CRM is an affordable, customizable solution ideal for startups and SMEs, providing sales pipeline management, automation, analytics, and ecosystem integration."
+    },
+    {
+      "id": 52,
+      "question": "What makes Zoho CRM distinctive? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Cost-effectiveness",
+          "is_correct": true
+        },
+        {
+          "option": "B. Customizability",
+          "is_correct": true
+        },
+        {
+          "option": "C. Integration with other Zoho apps",
+          "is_correct": true
+        },
+        {
+          "option": "D. Accessible pricing for startups and SMEs",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Zoho CRM stands out for affordability, high customization options, seamless integration within the Zoho ecosystem, and accessibility for resource-constrained startups and SMEs."
+    },
+    {
+      "id": 53,
+      "question": "Compare Salesforce and HubSpot: Which is best for large enterprises with complex CRM needs?",
+      "answers": [
+        {
+          "option": "A. HubSpot",
+          "is_correct": false
+        },
+        {
+          "option": "B. Salesforce",
+          "is_correct": true
+        },
+        {
+          "option": "C. Both are equally suited",
+          "is_correct": false
+        },
+        {
+          "option": "D. Neither can handle complexity",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Salesforce is better for large enterprises needing advanced analytics, AI (Einstein), and sophisticated automation for managing complex, large-scale customer relationships."
+    },
+    {
+      "id": 54,
+      "question": "Compare HubSpot and Zoho: Which is more appropriate for a growing SME startup?",
+      "answers": [
+        {
+          "option": "A. HubSpot for ease of use and integrated approach",
+          "is_correct": true
+        },
+        {
+          "option": "B. Zoho for maximum customization and cost-efficiency",
+          "is_correct": true
+        },
+        {
+          "option": "C. Salesforce for all startups",
+          "is_correct": false
+        },
+        {
+          "option": "D. None are suitable for SMEs",
+          "is_correct": false
+        }
+      ],
+      "explanation": "For SMEs, both HubSpot (user-friendly, integrated) and Zoho (affordable, customizable) are excellent, depending on whether priority is ease-of-use or cost-savings and customization."
+    },
+    {
+      "id": 55,
+      "question": "How does immersive technology (AR, VR) support Marketing 6.0?",
+      "answers": [
+        {
+          "option": "A. By creating boring product presentations",
+          "is_correct": false
+        },
+        {
+          "option": "B. By enabling customers to experience products virtually before purchasing, creating immersive brand experiences",
+          "is_correct": true
+        },
+        {
+          "option": "C. By reducing customer engagement",
+          "is_correct": false
+        },
+        {
+          "option": "D. By eliminating physical stores",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Immersive technologies in Marketing 6.0 allow customers to experience products virtually through AR/VR and metaverse experiences—enhancing engagement and reducing purchase hesitation."
+    },
+    {
+      "id": 56,
+      "question": "What is real-time decision-making in Marketing 6.0?",
+      "answers": [
+        {
+          "option": "A. Making decisions once per year",
+          "is_correct": false
+        },
+        {
+          "option": "B. Providing real-time insights that allow businesses to quickly adjust and respond to customer behavior dynamically",
+          "is_correct": true
+        },
+        {
+          "option": "C. Ignoring customer feedback",
+          "is_correct": false
+        },
+        {
+          "option": "D. Waiting for monthly reports",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Real-time decision-making in Marketing 6.0 uses continuous data streams to provide immediate insights, enabling marketing to become dynamic and responsive to changing customer behaviors."
+    },
+    {
+      "id": 57,
+      "question": "How does enhanced customer experience (CX) impact business outcomes?",
+      "answers": [
+        {
+          "option": "A. By reducing customer satisfaction",
+          "is_correct": false
+        },
+        {
+          "option": "B. By improving speed, convenience, accessibility, 24/7 services, and instant communication—leading to higher satisfaction and loyalty",
+          "is_correct": true
+        },
+        {
+          "option": "C. By increasing costs without benefits",
+          "is_correct": false
+        },
+        {
+          "option": "D. By eliminating customer interactions",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Enhanced CX through Marketing 6.0 improves accessibility, convenience, and 24/7 support—directly increasing customer satisfaction, retention, and long-term loyalty."
+    },
+    {
+      "id": 58,
+      "question": "A software company creates a cloud-based collaboration tool with an intuitive interface, automatic updates, and AI-powered suggestions. Which product management elements are demonstrated? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. User experience focus",
+          "is_correct": true
+        },
+        {
+          "option": "B. Technology integration",
+          "is_correct": true
+        },
+        {
+          "option": "C. Business viability",
+          "is_correct": true
+        },
+        {
+          "option": "D. Continuous improvement",
+          "is_correct": true
+        }
+      ],
+      "explanation": "This product demonstrates user experience prioritization, advanced technology implementation, business value creation, and continuous improvement—all key product management aspects."
+    },
+    {
+      "id": 59,
+      "question": "An e-commerce platform notices that customers abandon carts when shipping costs are revealed. Using CRM analysis, they could:",
+      "answers": [
+        {
+          "option": "A. Increase shipping costs further",
+          "is_correct": false
+        },
+        {
+          "option": "B. Implement free shipping for loyalty program members or offer predictive pricing information upfront to improve conversion",
+          "is_correct": true
+        },
+        {
+          "option": "C. Ignore the customer behavior data",
+          "is_correct": false
+        },
+        {
+          "option": "D. Focus only on acquiring new customers",
+          "is_correct": false
+        }
+      ],
+      "explanation": "CRM data analysis enables personalized interventions—offering free shipping to loyal customers or transparent pricing—improving conversion and customer lifetime value."
+    },
+    {
+      "id": 60,
+      "question": "Why is market research critical before product launch?",
+      "answers": [
+        {
+          "option": "A. To guarantee product success",
+          "is_correct": false
+        },
+        {
+          "option": "B. To understand customer needs, identify market opportunities, assess competition, and reduce launch risks",
+          "is_correct": true
+        },
+        {
+          "option": "C. To eliminate all competitors",
+          "is_correct": false
+        },
+        {
+          "option": "D. To avoid any business effort",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Market research before launch helps understand customer needs and preferences, assess competitive landscape, validate market demand, and inform strategic positioning decisions."
+    },
+    {
+      "id": 61,
+      "question": "A fitness app company uses AI to analyze workout patterns, predict user preferences, and recommend personalized training routines. Which Marketing 6.0 enabler is this demonstrating?",
+      "answers": [
+        {
+          "option": "A. Data Collection and Analysis only",
+          "is_correct": false
+        },
+        {
+          "option": "B. Personalization enabled by AI and data",
+          "is_correct": true
+        },
+        {
+          "option": "C. Traditional marketing",
+          "is_correct": false
+        },
+        {
+          "option": "D. Product development only",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Using AI to analyze data and deliver personalized recommendations exemplifies Marketing 6.0's data-driven personalization—tailoring experiences to individual user behavior and preferences."
+    },
+    {
+      "id": 62,
+      "question": "Which statement BEST describes the relationship between digital marketing and CRM?",
+      "answers": [
+        {
+          "option": "A. They are completely separate functions",
+          "is_correct": false
+        },
+        {
+          "option": "B. Digital marketing reaches and engages customers, while CRM manages and deepens relationships with those customers",
+          "is_correct": true
+        },
+        {
+          "option": "C. CRM replaces digital marketing entirely",
+          "is_correct": false
+        },
+        {
+          "option": "D. Digital marketing eliminates the need for CRM",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Digital marketing attracts and engages customers through online channels, while CRM captures, manages, and nurtures those relationships—they work synergistically in modern marketing."
+    },
+    {
+      "id": 63,
+      "question": "How does segmentation in the STP Model differ from targeting?",
+      "answers": [
+        {
+          "option": "A. They are identical concepts",
+          "is_correct": false
+        },
+        {
+          "option": "B. Segmentation divides the market into groups; targeting selects the most valuable segments to focus on",
+          "is_correct": true
+        },
+        {
+          "option": "C. Segmentation is for large companies only",
+          "is_correct": false
+        },
+        {
+          "option": "D. Targeting comes before segmentation",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Segmentation is the analytical process of dividing a market into distinct groups based on characteristics. Targeting is the strategic decision to focus on specific, profitable segments."
+    },
+    {
+      "id": 64,
+      "question": "A luxury car manufacturer positions its vehicles as 'status symbols for successful entrepreneurs.' Which STP component is this?",
+      "answers": [
+        {
+          "option": "A. Segmentation",
+          "is_correct": false
+        },
+        {
+          "option": "B. Targeting",
+          "is_correct": false
+        },
+        {
+          "option": "C. Positioning",
+          "is_correct": true
+        },
+        {
+          "option": "D. Pricing",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Creating a unique image positioning luxury cars as status symbols for entrepreneurs demonstrates Positioning—crafting a distinctive brand perception in the customer's mind."
+    },
+    {
+      "id": 65,
+      "question": "Evaluate this scenario: A startup with limited budget needs to choose between Salesforce, HubSpot, or Zoho CRM. What would be the most logical recommendation?",
+      "answers": [
+        {
+          "option": "A. Salesforce because it's the market leader",
+          "is_correct": false
+        },
+        {
+          "option": "B. Zoho CRM for cost-effectiveness and customization, or HubSpot for ease-of-use and integrated approach",
+          "is_correct": true
+        },
+        {
+          "option": "C. They should build their own CRM system",
+          "is_correct": false
+        },
+        {
+          "option": "D. Skip CRM entirely until they grow larger",
+          "is_correct": false
+        }
+      ],
+      "explanation": "For budget-conscious startups, Zoho (affordable and customizable) or HubSpot (user-friendly, integrated) are better choices than Salesforce, which is optimized for enterprises."
+    },
+    {
+      "id": 66,
+      "question": "What is the primary disadvantage of ignoring market research before product development?",
+      "answers": [
+        {
+          "option": "A. It increases market research costs",
+          "is_correct": false
+        },
+        {
+          "option": "B. It risks developing products that don't meet customer needs, resulting in poor market fit and product failure",
+          "is_correct": true
+        },
+        {
+          "option": "C. It makes marketing easier",
+          "is_correct": false
+        },
+        {
+          "option": "D. It accelerates product success",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The lecture emphasizes that ignoring market research leads to poor market fit, as evidenced by many student-developed apps that fail because marketing and customer needs are overlooked."
+    },
+    {
+      "id": 67,
+      "question": "How would you apply the Marketing Mix to launch a new mobile game aimed at teenagers?",
+      "answers": [
+        {
+          "option": "A. Create an addictive game (Product), price it at $50 (Price), distribute via app stores (Place), and use TV ads (Promotion)",
+          "is_correct": false
+        },
+        {
+          "option": "B. Create engaging gameplay (Product), use in-app purchases/freemium pricing (Price), distribute via app stores and social media (Place), and market on TikTok and Instagram (Promotion)",
+          "is_correct": true
+        },
+        {
+          "option": "C. Focus only on the Product",
+          "is_correct": false
+        },
+        {
+          "option": "D. Use traditional marketing exclusively",
+          "is_correct": false
+        }
+      ],
+      "explanation": "For teen mobile games, the Marketing Mix should include engaging gameplay, appropriate pricing models (freemium), digital distribution, and teen-focused social media marketing."
+    },
+    {
+      "id": 68,
+      "question": "Design a CRM strategy for an online retail business. Which CRM objectives should be prioritized? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Retaining existing profitable customers",
+          "is_correct": true
+        },
+        {
+          "option": "B. Building repeat purchase loyalty",
+          "is_correct": true
+        },
+        {
+          "option": "C. Increasing customer lifetime value through personalized recommendations",
+          "is_correct": true
+        },
+        {
+          "option": "D. Creating memorable personalized shopping experiences",
+          "is_correct": true
+        }
+      ],
+      "explanation": "An online retail CRM should prioritize retention, loyalty building, CLV optimization through personalization, and memorable experiences—all proven to increase profitability and competitiveness."
+    },
+    {
+      "id": 69,
+      "question": "Which statement about Customer Lifetime Value (CLV) is TRUE?",
+      "answers": [
+        {
+          "option": "A. CLV is only relevant for large corporations",
+          "is_correct": false
+        },
+        {
+          "option": "B. CLV increases through retention, loyalty, and repeated purchases—making existing customer investment more valuable than just acquisition",
+          "is_correct": true
+        },
+        {
+          "option": "C. CLV eliminates the need for customer acquisition",
+          "is_correct": false
+        },
+        {
+          "option": "D. CLV is static and doesn't change over time",
+          "is_correct": false
+        }
+      ],
+      "explanation": "CLV demonstrates that retaining and deepening relationships with existing customers generates more value than constantly acquiring new customers—a core CRM principle."
+    },
+    {
+      "id": 70,
+      "question": "How can a B2B SaaS company use Marketing 6.0 principles to improve customer experience?",
+      "answers": [
+        {
+          "option": "A. Send emails only",
+          "is_correct": false
+        },
+        {
+          "option": "B. Combine digital touchpoints (website, app, email) with AI-powered personalization, predictive support, and seamless omnichannel experiences",
+          "is_correct": true
+        },
+        {
+          "option": "C. Use only traditional sales methods",
+          "is_correct": false
+        },
+        {
+          "option": "D. Ignore customer data",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Marketing 6.0 for B2B SaaS involves integrating digital channels with AI personalization, predictive customer support, and seamless experiences across all touchpoints."
+    },
+    {
+      "id": 71,
+      "question": "What is the relationship between brand equity and customer loyalty?",
+      "answers": [
+        {
+          "option": "A. They are unrelated concepts",
+          "is_correct": false
+        },
+        {
+          "option": "B. Strong brand equity built through positive experiences creates emotional connections that drive customer loyalty",
+          "is_correct": true
+        },
+        {
+          "option": "C. Brand equity eliminates the need for loyalty programs",
+          "is_correct": false
+        },
+        {
+          "option": "D. Loyalty programs are more important than brand equity",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Brand equity and customer loyalty are interdependent: strong brand equity creates emotional loyalty, while loyal customers reinforce brand value through repeat purchases and advocacy."
+    },
+    {
+      "id": 72,
+      "question": "Compare traditional marketing (pre-digital) with Marketing 6.0. What is the most significant evolution?",
+      "answers": [
+        {
+          "option": "A. Shift from product-centric to customer-centric only",
+          "is_correct": false
+        },
+        {
+          "option": "B. Integration of human understanding with advanced technology to create immersive, personalized, real-time customer experiences",
+          "is_correct": true
+        },
+        {
+          "option": "C. Elimination of traditional channels",
+          "is_correct": false
+        },
+        {
+          "option": "D. No significant change has occurred",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Marketing 6.0's most significant evolution is combining human-centered insights with cutting-edge technology (AI, AR/VR, data analytics) to create immersive, phygital experiences."
+    },
+    {
+      "id": 73,
+      "question": "How would digital metrics help a company optimize its online advertising spend?",
+      "answers": [
+        {
+          "option": "A. They don't provide useful information",
+          "is_correct": false
+        },
+        {
+          "option": "B. By tracking CTR, conversion rates, and CAC to identify which channels deliver ROI and reallocate budgets to high-performing campaigns",
+          "is_correct": true
+        },
+        {
+          "option": "C. By increasing all marketing expenses",
+          "is_correct": false
+        },
+        {
+          "option": "D. By eliminating advertising entirely",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Digital metrics provide quantifiable data on campaign performance, enabling companies to optimize budget allocation by identifying high-ROI channels and eliminating underperforming ones."
+    },
+    {
+      "id": 74,
+      "question": "Critically evaluate: 'A company can succeed with great products alone without effective marketing.' Is this true?",
+      "answers": [
+        {
+          "option": "A. True, the lecture shows technology products sell themselves",
+          "is_correct": false
+        },
+        {
+          "option": "B. False, the lecture emphasizes that many great products fail due to poor market fit and ignored marketing—technology alone doesn't sell itself",
+          "is_correct": true
+        },
+        {
+          "option": "C. True for tech products only",
+          "is_correct": false
+        },
+        {
+          "option": "D. Marketing is optional",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The lecture explicitly states that 'technology does not sell itself' and many student-developed apps fail because marketing and market fit are overlooked—products need effective marketing."
+    },
+    {
+      "id": 75,
+      "question": "Which CRM platform would be MOST appropriate for a rapidly growing startup expecting to expand from 50 to 200 employees in 18 months?",
+      "answers": [
+        {
+          "option": "A. HubSpot for scalability and integrated approach",
+          "is_correct": true
+        },
+        {
+          "option": "B. Zoho CRM for cost-effective customization",
+          "is_correct": true
+        },
+        {
+          "option": "C. Salesforce for immediate enterprise capabilities",
+          "is_correct": false
+        },
+        {
+          "option": "D. Build a custom CRM from scratch",
+          "is_correct": false
+        }
+      ],
+      "explanation": "For a rapidly scaling startup, HubSpot (scalable yet user-friendly) or Zoho (customizable and affordable) are better choices than enterprise-focused Salesforce which requires more complexity."
+    },
+    {
+      "id": 76,
+      "question": "How does the Product Life Cycle inform marketing strategy decisions?",
+      "answers": [
+        {
+          "option": "A. PLC has no strategic value",
+          "is_correct": false
+        },
+        {
+          "option": "B. Marketing strategies should differ by PLC stage: high promotion for Introduction, competitive positioning in Growth, value emphasis in Maturity, and cost-reduction in Decline",
+          "is_correct": true
+        },
+        {
+          "option": "C. Same strategy works for all PLC stages",
+          "is_correct": false
+        },
+        {
+          "option": "D. Marketing strategy should be determined by CEO preference only",
+          "is_correct": false
+        }
+      ],
+      "explanation": "PLC informs marketing strategy: Introduction requires high awareness-building, Growth emphasizes market share, Maturity focuses on differentiation, and Decline manages profitability."
+    },
+    {
+      "id": 77,
+      "question": "Design a Marketing 6.0 campaign for a sustainable fashion brand targeting environmentally conscious millennials. Which elements should be included?",
+      "answers": [
+        {
+          "option": "A. Only social media advertising",
+          "is_correct": false
+        },
+        {
+          "option": "B. Omnichannel experience (app, website, physical stores), AI personalization, AR virtual try-ons, CRM for loyalty, and authentic storytelling about sustainability",
+          "is_correct": true
+        },
+        {
+          "option": "C. Focus on pricing only",
+          "is_correct": false
+        },
+        {
+          "option": "D. Traditional print advertising exclusively",
+          "is_correct": false
+        }
+      ],
+      "explanation": "A Marketing 6.0 campaign integrates digital and physical touchpoints, personalization, immersive technology, CRM-driven loyalty, and authentic brand storytelling aligned with customer values."
+    },
+    {
+      "id": 78,
+      "question": "Evaluate the statement: 'Market research is a one-time activity before product launch.'",
+      "answers": [
+        {
+          "option": "A. True, research is complete after launch",
+          "is_correct": false
+        },
+        {
+          "option": "B. False, ongoing market research throughout the product lifecycle is essential to adapt to changing customer needs and competitive dynamics",
+          "is_correct": true
+        },
+        {
+          "option": "C. Only large companies need continuous research",
+          "is_correct": false
+        },
+        {
+          "option": "D. Research stops after the Growth stage",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The lecture emphasizes that market research is continuous—informing product development, positioning adjustments, and strategy refinements throughout the entire product lifecycle."
+    },
+    {
+      "id": 79,
+      "question": "How can a company use AI-powered CRM to transition from product-focused to customer-focused operations?",
+      "answers": [
+        {
+          "option": "A. By implementing automation only",
+          "is_correct": false
+        },
+        {
+          "option": "B. By using AI to analyze customer data, predict needs, personalize interactions, and proactively address issues—shifting focus from product features to customer outcomes",
+          "is_correct": true
+        },
+        {
+          "option": "C. By eliminating product development",
+          "is_correct": false
+        },
+        {
+          "option": "D. By reducing customer communication",
+          "is_correct": false
+        }
+      ],
+      "explanation": "AI-powered CRM enables customer-centricity by providing deep insights into individual customer needs, enabling proactive, personalized interactions that prioritize customer outcomes over product features."
+    },
+    {
+      "id": 80,
+      "question": "What is the strategic importance of the Customer Value Proposition in the STP Model?",
+      "answers": [
+        {
+          "option": "A. CVP is unrelated to STP",
+          "is_correct": false
+        },
+        {
+          "option": "B. CVP articulates the specific value delivered to the targeted segment, differentiating the brand from competitors and justifying the positioning",
+          "is_correct": true
+        },
+        {
+          "option": "C. CVP eliminates the need for targeting",
+          "is_correct": false
+        },
+        {
+          "option": "D. CVP should be identical for all segments",
+          "is_correct": false
+        }
+      ],
+      "explanation": "CVP is essential to STP: after targeting specific segments, CVP clearly communicates the unique value delivered to those customers, creating differentiation and justifying positioning."
+    },
+    {
+      "id": 81,
+      "question": "How does experience-driven branding differ from traditional product-focused branding?",
+      "answers": [
+        {
+          "option": "A. They are identical approaches",
+          "is_correct": false
+        },
+        {
+          "option": "B. Experience-driven focuses on memorable customer interactions and emotional connections across touchpoints, while product-focused emphasizes features and benefits",
+          "is_correct": true
+        },
+        {
+          "option": "C. Product-focused is more modern",
+          "is_correct": false
+        },
+        {
+          "option": "D. Experience-driven ignores product quality",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Experience-driven branding prioritizes meaningful customer interactions and emotional connections at every touchpoint, moving beyond product features to holistic brand experiences."
+    },
+    {
+      "id": 82,
+      "question": "Which IT capabilities are MOST critical for implementing Marketing 6.0 successfully?",
+      "answers": [
+        {
+          "option": "A. Data analytics and personalization only",
+          "is_correct": false
+        },
+        {
+          "option": "B. Integrated data systems, AI/automation, omnichannel platform integration, real-time analytics, and immersive technologies (AR/VR)",
+          "is_correct": true
+        },
+        {
+          "option": "C. Email systems exclusively",
+          "is_correct": false
+        },
+        {
+          "option": "D. Manual customer management processes",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Marketing 6.0 requires integrated technical infrastructure: data systems, AI capabilities, platform integration, real-time analytics, and immersive technologies to create seamless experiences."
+    },
+    {
+      "id": 83,
+      "question": "Create a comprehensive marketing strategy for a new SaaS productivity tool entering a crowded market. Which elements must be included?",
+      "answers": [
+        {
+          "option": "A. Pricing strategy only",
+          "is_correct": false
+        },
+        {
+          "option": "B. Market research, STP analysis, unique CVP positioning, integrated marketing mix, digital marketing channels, CRM for customer retention, and continuous optimization through metrics",
+          "is_correct": true
+        },
+        {
+          "option": "C. Rely only on competitor analysis",
+          "is_correct": false
+        },
+        {
+          "option": "D. Focus only on advertising spend",
+          "is_correct": false
+        }
+      ],
+      "explanation": "A comprehensive strategy requires: understanding the market (research), identifying the right customers (STP), articulating clear value (CVP), coordinating all elements (4Ps), and measuring performance (metrics)."
+    },
+    {
+      "id": 84,
+      "question": "Analyze the failure of a student-developed mobile app. What was MOST likely the missing element according to the lecture?",
+      "answers": [
+        {
+          "option": "A. Poor coding quality",
+          "is_correct": false
+        },
+        {
+          "option": "B. Lack of market research and failure to understand market fit—inadequate marketing and go-to-market strategy",
+          "is_correct": true
+        },
+        {
+          "option": "C. Excessive features",
+          "is_correct": false
+        },
+        {
+          "option": "D. High development costs",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The lecture specifically states: 'Many student-developed mobile apps never gain users because marketing is ignored'—highlighting poor market fit and missing marketing as key failure factors."
+    },
+    {
+      "id": 85,
+      "question": "How can brand management create a sustainable competitive advantage?",
+      "answers": [
+        {
+          "option": "A. Through low prices alone",
+          "is_correct": false
+        },
+        {
+          "option": "B. By building strong brand equity through consistent identity, emotional connections, and superior customer experiences—making customers prefer the brand despite alternatives",
+          "is_correct": true
+        },
+        {
+          "option": "C. By copying competitors",
+          "is_correct": false
+        },
+        {
+          "option": "D. By avoiding customer interactions",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Strong brand management creates sustainable advantage through differentiated identity, customer emotional connections, and superior experiences—making competitors' offerings less attractive."
+    },
+    {
+      "id": 86,
+      "question": "What is the role of customer retention in maximizing Customer Lifetime Value?",
+      "answers": [
+        {
+          "option": "A. Retention is unrelated to CLV",
+          "is_correct": false
+        },
+        {
+          "option": "B. Retention extends customer relationships, enabling multiple purchases, repeat business, and growing total value delivered—directly multiplying CLV",
+          "is_correct": true
+        },
+        {
+          "option": "C. Only new customer acquisition matters for CLV",
+          "is_correct": false
+        },
+        {
+          "option": "D. Retention reduces company profitability",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Customer retention is critical to CLV: keeping customers longer increases purchase frequency, reduces acquisition costs, and enables lifetime value growth through loyalty and advocacy."
+    },
+    {
+      "id": 87,
+      "question": "Evaluate this CRM investment decision: A small business with $50,000 annual budget chooses Salesforce over HubSpot. Is this wise?",
+      "answers": [
+        {
+          "option": "A. Yes, Salesforce is always the best choice",
+          "is_correct": false
+        },
+        {
+          "option": "B. No, Salesforce implementation and licensing costs would likely exceed the budget; HubSpot or Zoho would be more cost-efficient",
+          "is_correct": true
+        },
+        {
+          "option": "C. CRM is unnecessary for small businesses",
+          "is_correct": false
+        },
+        {
+          "option": "D. Budget is irrelevant to CRM selection",
+          "is_correct": false
+        }
+      ],
+      "explanation": "For a small business with limited budget, Salesforce's high implementation and licensing costs are prohibitive. HubSpot (user-friendly, affordable) or Zoho (customizable, cost-effective) are wiser choices."
+    },
+    {
+      "id": 88,
+      "question": "How does data-driven decision making transform marketing from an art into a science?",
+      "answers": [
+        {
+          "option": "A. It eliminates the need for creativity",
+          "is_correct": false
+        },
+        {
+          "option": "B. By using metrics, analytics, and customer insights to inform strategic decisions, optimize campaigns, and measure results objectively instead of relying solely on intuition",
+          "is_correct": true
+        },
+        {
+          "option": "C. Data makes marketing less effective",
+          "is_correct": false
+        },
+        {
+          "option": "D. Science and marketing are incompatible",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Data-driven marketing combines analytical rigor with creative execution: metrics validate decisions, analytics optimize performance, and customer insights enable informed strategy—balancing art and science."
+    },
+    {
+      "id": 89,
+      "question": "Design a product launch strategy for an innovative IT solution using all lecture concepts. Which marketing elements are essential?",
+      "answers": [
+        {
+          "option": "A. Press release only",
+          "is_correct": false
+        },
+        {
+          "option": "B. Market research (validate opportunity), STP (identify ideal customers), compelling CVP, integrated marketing mix, digital marketing campaigns, CRM for early adopters, and metrics for optimization",
+          "is_correct": true
+        },
+        {
+          "option": "C. Heavy discount pricing",
+          "is_correct": false
+        },
+        {
+          "option": "D. Wait for organic growth",
+          "is_correct": false
+        }
+      ],
+      "explanation": "A comprehensive launch integrates research insights, clear targeting, differentiated positioning, coordinated marketing mix, digital engagement, customer relationship management, and data-driven optimization."
+    },
+    {
+      "id": 90,
+      "question": "What is the relationship between market research and product management?",
+      "answers": [
+        {
+          "option": "A. They are independent functions",
+          "is_correct": false
+        },
+        {
+          "option": "B. Market research informs product management by revealing customer needs; product management translates insights into viable solutions addressing those needs",
+          "is_correct": true
+        },
+        {
+          "option": "C. Product management should ignore research findings",
+          "is_correct": false
+        },
+        {
+          "option": "D. Research eliminates the need for product management",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Market research and product management are interconnected: research identifies opportunities and customer needs; product management designs solutions that deliver value—they complement each other."
+    },
+    {
+      "id": 91,
+      "question": "How might a company transitioning from Maturity to Decline stage in the PLC strategically adapt its marketing?",
+      "answers": [
+        {
+          "option": "A. Increase all marketing spending",
+          "is_correct": false
+        },
+        {
+          "option": "B. Focus on profitability through cost reduction, harvest existing customers, selectively maintain positioning, and possibly reallocate resources to newer products",
+          "is_correct": true
+        },
+        {
+          "option": "C. Abandon the product immediately",
+          "is_correct": false
+        },
+        {
+          "option": "D. Ignore competitive threats",
+          "is_correct": false
+        }
+      ],
+      "explanation": "In Decline stage, marketing should shift from growth focus to profitability management: retain profitable customer segments, minimize costs, and redirect resources to emerging products."
+    },
+    {
+      "id": 92,
+      "question": "Compare the strategic implications of being a Market Leader vs. a Market Challenger in terms of STP strategy.",
+      "answers": [
+        {
+          "option": "A. Both should target identical customer segments",
+          "is_correct": false
+        },
+        {
+          "option": "B. Market Leaders can defend broad segments; Challengers should target underserved niches with differentiated value propositions to compete effectively",
+          "is_correct": true
+        },
+        {
+          "option": "C. Position is irrelevant to STP",
+          "is_correct": false
+        },
+        {
+          "option": "D. Challengers should ignore segmentation",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Market position shapes STP strategy: Leaders exploit broad segments and strong brands; Challengers win by identifying underserved niches and delivering superior differentiated value to those segments."
+    },
+    {
+      "id": 93,
+      "question": "What would be the consequences if a company invests heavily in marketing without conducting adequate market research?",
+      "answers": [
+        {
+          "option": "A. Guaranteed success",
+          "is_correct": false
+        },
+        {
+          "option": "B. High risk of wasting marketing budget on wrong customer segments, incorrect positioning, poor market fit, and campaign failure despite high spending",
+          "is_correct": true
+        },
+        {
+          "option": "C. No consequences, spending always works",
+          "is_correct": false
+        },
+        {
+          "option": "D. Market research is unnecessary",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Without research, marketing spend is poorly targeted: wrong audience segments, weak positioning, unclear value propositions result in wasted budgets and campaign failures—this is why research precedes strategy."
+    },
+    {
+      "id": 94,
+      "question": "How can a B2B company leverage experience-driven branding to differentiate itself in an industry dominated by commodity products?",
+      "answers": [
+        {
+          "option": "A. Focus only on product specifications",
+          "is_correct": false
+        },
+        {
+          "option": "B. Create memorable customer experiences through exceptional service, personalized solutions, consultative support, and strong relationships that build emotional loyalty beyond features",
+          "is_correct": true
+        },
+        {
+          "option": "C. Reduce customer interactions",
+          "is_correct": false
+        },
+        {
+          "option": "D. Copy competitor strategies",
+          "is_correct": false
+        }
+      ],
+      "explanation": "In commodity markets, experience-driven branding creates differentiation through exceptional service quality, personalized solutions, strong relationships, and memorable interactions—not product features alone."
+    },
+    {
+      "id": 95,
+      "question": "What would be an ideal integration of digital marketing and CRM for an e-commerce business?",
+      "answers": [
+        {
+          "option": "A. Digital marketing and CRM operate independently",
+          "is_correct": false
+        },
+        {
+          "option": "B. Digital marketing attracts customers; CRM data from purchases inform personalized email campaigns, recommendations, and retention strategies—creating a feedback loop",
+          "is_correct": true
+        },
+        {
+          "option": "C. Use only digital marketing",
+          "is_correct": false
+        },
+        {
+          "option": "D. Ignore customer data from digital interactions",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Integrated digital marketing and CRM: marketing attracts traffic, CRM captures customer data, analytics personalize future marketing, creating virtuous cycles of engagement and loyalty."
+    },
+    {
+      "id": 96,
+      "question": "Synthesize all lecture concepts: What would be a comprehensive competitive strategy for a new AI-powered marketing automation platform entering a market with established competitors?",
+      "answers": [
+        {
+          "option": "A. Undercut prices only",
+          "is_correct": false
+        },
+        {
+          "option": "B. Conduct market research identifying underserved segments (startups/SMEs), target with clear CVP (affordable + powerful), differentiate through ease-of-use and customer-centric experience design, and build loyalty through superior support and continuous innovation",
+          "is_correct": true
+        },
+        {
+          "option": "C. Copy competitor offerings",
+          "is_correct": false
+        },
+        {
+          "option": "D. Focus only on acquiring large enterprises",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Comprehensive strategy combines research-based targeting of underserved segments, differentiated positioning, customer-centric design, superior experience, and continuous improvement—the complete STP + Marketing 6.0 approach."
+    },
+    {
+      "id": 97,
+      "question": "How do digital metrics and CRM analytics work together to create actionable business intelligence?",
+      "answers": [
+        {
+          "option": "A. They operate independently",
+          "is_correct": false
+        },
+        {
+          "option": "B. Digital metrics track campaign performance while CRM analytics reveal customer behavior patterns; together they identify high-value customers, optimize marketing spend, and personalize retention strategies",
+          "is_correct": true
+        },
+        {
+          "option": "C. Metrics and analytics conflict",
+          "is_correct": false
+        },
+        {
+          "option": "D. Business intelligence is only theoretical",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Integrated digital metrics and CRM analytics create business intelligence: campaign performance data + customer behavior patterns = actionable insights for optimization and strategic decisions."
+    },
+    {
+      "id": 98,
+      "question": "Evaluate the statement: 'In Marketing 6.0, technology has completely replaced human creativity and decision-making.'",
+      "answers": [
+        {
+          "option": "A. True, algorithms make all marketing decisions now",
+          "is_correct": false
+        },
+        {
+          "option": "B. False, Marketing 6.0 combines human understanding with technology; humans provide strategic direction and creativity while technology enables personalization and optimization",
+          "is_correct": true
+        },
+        {
+          "option": "C. Technology is irrelevant to modern marketing",
+          "is_correct": false
+        },
+        {
+          "option": "D. Humans and technology cannot work together",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The lecture defines Marketing 6.0 as 'Human + Tech'—technology augments human capabilities in creativity, strategy, and relationship-building; it doesn't replace human insight and judgment."
+    },
+    {
+      "id": 99,
+      "question": "What is the ultimate goal of implementing comprehensive marketing strategies (STP, Marketing Mix, CRM, digital marketing) as discussed throughout the lecture?",
+      "answers": [
+        {
+          "option": "A. To maximize revenue at any cost",
+          "is_correct": false
+        },
+        {
+          "option": "B. To create sustainable competitive advantage through customer value, satisfaction, loyalty, and long-term profitable relationships",
+          "is_correct": true
+        },
+        {
+          "option": "C. To eliminate competition",
+          "is_correct": false
+        },
+        {
+          "option": "D. To focus only on product features",
+          "is_correct": false
+        }
+      ],
+      "explanation": "All lecture concepts converge toward one goal: sustainable business success through delivering customer value, building loyalty, maximizing customer lifetime value, and creating differentiated competitive positioning."
+    },
+    {
+      "id": 100,
+      "question": "Synthesize the entire lecture: Design a three-year strategic marketing plan for a new IT startup developing enterprise software. Include all major concepts covered.",
+      "answers": [
+        {
+          "option": "A. Focus only on product development",
+          "is_correct": false
+        },
+        {
+          "option": "B. Year 1: Research + STP to identify early adopters, develop clear CVP, establish brand. Year 2: Scale marketing mix, implement CRM, measure digital metrics. Year 3: Optimize based on PLC stage, deepen customer relationships, build brand equity",
+          "is_correct": true
+        },
+        {
+          "option": "C. Copy competitor strategies",
+          "is_correct": false
+        },
+        {
+          "option": "D. Rely solely on sales without marketing",
+          "is_correct": false
+        }
+      ],
+      "explanation": "A comprehensive strategic plan integrates research, segmentation/targeting/positioning, marketing mix, brand development, CRM implementation, digital metrics, and continuous optimization throughout product lifecycle stages."
+    }
+  ]
+}
