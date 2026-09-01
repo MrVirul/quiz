@@ -37,33 +37,60 @@ npm run preview
 
 ## Adding or Editing Questions
 
-All quiz questions are stored in:
+Quiz questions are stored as JSON data files in:
 
 ```text
-src/data/questions.json
+src/data/questions*.json
 ```
 
-Each question follows this structure:
+Each file is a separate quiz set. There are several files (`questions0.json`, `questions1.json`, `questions3.json`, `questions4.json`, etc.), and all are loaded automatically via `src/data/index.ts`. Each file **must** be wrapped in an object with a `description` and a `questions` array:
 
 ```json
 {
-  "id": 1,
-  "lecture": "Lecture 1",
-  "question": "Your question text here?",
-  "answers": [
-    { "option": "Answer A", "is_correct": false },
-    { "option": "Answer B", "is_correct": true }
-  ],
-  "explanation": "Optional explanation shown in the review."
+  "description": "Introduction to Marketing",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Your question text here?",
+      "answers": [
+        { "option": "Answer A", "is_correct": true },
+        { "option": "Answer B", "is_correct": false }
+      ],
+      "explanation": "Optional explanation shown in the review."
+    }
+  ]
+}
+```
+
+### File structure
+
+```text
+{
+  "description": "string",        // shown as the quiz title
+  "questions": [                   // array of question objects
+    {
+      "id": 1,                     // number, unique within the file
+      "question": "string",        // the question text
+      "answers": [                 // array of answer objects
+        {
+          "option": "string",      // answer text
+          "is_correct": boolean    // whether this answer is correct
+        }
+      ],
+      "explanation": "string"      // optional; shown in the review
+    }
+  ]
 }
 ```
 
 Important:
 
+- The top level **must** be an object with both `description` and `questions`.
 - Always use `"is_correct"` (with underscore) for marking correct answers.
 - Each question must have at least one correct answer.
 - The `explanation` field is optional.
-- Question count and lecture grouping are calculated automatically from the JSON file.
+- Question count and any grouping are calculated automatically from the JSON file.
+- `id` values should be unique within each file.
 
 ## Automatic Multiple-Answer Detection
 
@@ -98,7 +125,7 @@ No environment variables or backend configuration is required.
 ```text
 src/
 ├── components/     # UI components
-├── data/           # questions.json
+├── data/           # questions*.json quiz data files
 ├── types/          # TypeScript interfaces
 ├── utils/          # Scoring and helper functions
 ├── App.tsx         # Main quiz logic
