@@ -9,6 +9,25 @@ interface AnswerReviewProps {
   onRetake: () => void;
 }
 
+function getQuestionStatusStyles(isAnswered: boolean, isCorrect: boolean) {
+  if (!isAnswered) {
+    return {
+      card: 'border-yellow-300 bg-yellow-50',
+      badge: 'border-yellow-400 bg-yellow-100 text-yellow-800',
+    };
+  }
+  if (isCorrect) {
+    return {
+      card: 'border-green-300 bg-green-50',
+      badge: 'border-green-400 bg-green-100 text-green-800',
+    };
+  }
+  return {
+    card: 'border-red-300 bg-red-50',
+    badge: 'border-red-400 bg-red-100 text-red-800',
+  };
+}
+
 export function AnswerReview({ score, onBack, onRetake }: AnswerReviewProps) {
   return (
     <div className="mx-auto max-w-3xl px-6 py-12">
@@ -47,6 +66,11 @@ export function AnswerReview({ score, onBack, onRetake }: AnswerReviewProps) {
               ? 'Correct'
               : 'Incorrect';
 
+          const { card: cardStyles, badge: badgeStyles } = getQuestionStatusStyles(
+            isAnswered,
+            isCorrect
+          );
+
           const userAnswerLabels = getAnswerLabels(
             question.answers,
             userSelectedIndexes
@@ -59,20 +83,14 @@ export function AnswerReview({ score, onBack, onRetake }: AnswerReviewProps) {
           return (
             <article
               key={question.id}
-              className="rounded-lg border border-gray-200 bg-white p-6"
+              className={`rounded-lg border p-6 ${cardStyles}`}
             >
               <div className="mb-4 flex flex-wrap items-center gap-3">
                 <h2 className="text-lg font-semibold text-charcoal">
                   Question {index + 1}
                 </h2>
                 <span
-                  className={`rounded-full border px-3 py-0.5 text-xs font-medium ${
-                    !isAnswered
-                      ? 'border-gray-300 text-charcoal/70'
-                      : isCorrect
-                        ? 'border-accent/40 bg-accent/10 text-charcoal'
-                        : 'border-charcoal/20 bg-charcoal/5 text-charcoal'
-                  }`}
+                  className={`rounded-full border px-3 py-0.5 text-xs font-medium ${badgeStyles}`}
                 >
                   [{statusLabel}]
                 </span>
