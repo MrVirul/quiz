@@ -1,0 +1,465 @@
+{
+  "description": "MEM In-class Quizzes 2/3/5",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which of the following are considered \"Needs\" as defined in the course material?",
+      "answers": [
+        {
+          "option": "a. Healthcare",
+          "is_correct": true
+        },
+        {
+          "option": "b. Shelter",
+          "is_correct": true
+        },
+        {
+          "option": "c. High-end smartphones",
+          "is_correct": false
+        },
+        {
+          "option": "d. Luxury vacations",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Needs are basic things required for survival and a good quality of life. Healthcare is a need because people require medical care to maintain health. Shelter is a need because people require a safe place to live. High-end smartphones and luxury vacations are wants because they improve comfort or lifestyle but are not essential for survival."
+    },
+    {
+      "id": 2,
+      "question": "If the number of software vendors in the market increases:",
+      "answers": [
+        {
+          "option": "a. Total quantity supplied at every price increases.",
+          "is_correct": false
+        },
+        {
+          "option": "b. Competition likely increases.",
+          "is_correct": true
+        },
+        {
+          "option": "c. The market supply curve shifts to the right.",
+          "is_correct": true
+        },
+        {
+          "option": "d. The price of software will automatically rise.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "More software vendors mean more companies are offering software products. This increases competition among sellers. The total amount of software available in the market increases, causing the supply curve to shift right. The price does not automatically rise; increased supply often puts downward pressure on prices."
+    },
+    {
+      "id": 3,
+      "question": "Which of the following describes an \"Inelastic\" demand?",
+      "answers": [
+        {
+          "option": "a. Examples include essential medicines or unique software.",
+          "is_correct": true
+        },
+        {
+          "option": "b. Demand drops sharply with price hikes.",
+          "is_correct": false
+        },
+        {
+          "option": "c. Demand stays stable regardless of price hikes.",
+          "is_correct": true
+        },
+        {
+          "option": "d. Buyers are highly sensitive to price changes.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Inelastic demand means buyers are not very sensitive to price changes. Even if the price increases, people continue buying the product. Examples: Essential medicines (people need them regardless of price), Unique software with no alternatives. If demand drops sharply after a price increase, it is elastic demand, not inelastic."
+    },
+    {
+      "id": 4,
+      "question": "Fill in the Blank: \"The ___ relationship between price and quantity is known as the Law of Demand.\"",
+      "answers": [
+        {
+          "option": "a. Negative",
+          "is_correct": true
+        },
+        {
+          "option": "b. Direct",
+          "is_correct": false
+        },
+        {
+          "option": "c. Inverse",
+          "is_correct": true
+        },
+        {
+          "option": "d. Positive",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The Law of Demand states that price and quantity demanded have an inverse relationship. When price increases → quantity demanded decreases. When price decreases → quantity demanded increases. \"Negative\" and \"inverse\" describe the same relationship. Example: Laptop price increases → fewer people buy laptops."
+    },
+    {
+      "id": 5,
+      "question": "For the same SaaS company, \"Variable Costs\" might include:",
+      "answers": [
+        {
+          "option": "a. Cloud usage fees that scale with data traffic.",
+          "is_correct": true
+        },
+        {
+          "option": "b. Annual property tax for the office.",
+          "is_correct": false
+        },
+        {
+          "option": "c. Marketing costs per click.",
+          "is_correct": true
+        },
+        {
+          "option": "d. Payment processing fees per transaction.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Variable costs change depending on the amount of production, sales, or usage. Cloud fees increase when more customers use the service. Pay-per-click marketing increases when more advertisements are clicked. Payment fees increase when more transactions occur. Office property tax is a fixed cost because it remains the same regardless of output."
+    },
+    {
+      "id": 6,
+      "question": "Which of the following would cause a \"Leftward Shift\" in the demand for luxury cars?",
+      "answers": [
+        {
+          "option": "a. A change in consumer tastes toward public transport.",
+          "is_correct": true
+        },
+        {
+          "option": "b. An increase in the price of luxury cars.",
+          "is_correct": false
+        },
+        {
+          "option": "c. A decrease in the price of high-end SUVs (substitutes).",
+          "is_correct": true
+        },
+        {
+          "option": "d. A nationwide recession leading to lower incomes.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "A leftward shift means demand decreases. Reasons: If people prefer public transport → fewer luxury cars are demanded. If substitute products (SUVs) become cheaper → people buy SUVs instead of luxury cars. During a recession → people have lower income and reduce luxury purchases. Note: An increase in luxury car prices causes a movement along the demand curve, not a shift."
+    },
+    {
+      "id": 7,
+      "question": "In the case of \"Complementary Goods\" (e.g., Computers and Software):",
+      "answers": [
+        {
+          "option": "a. If the price of Computers falls, the demand for Software increases.",
+          "is_correct": true
+        },
+        {
+          "option": "b. They are used together.",
+          "is_correct": true
+        },
+        {
+          "option": "c. If the price of Computers rises, the demand for Software decreases.",
+          "is_correct": true
+        },
+        {
+          "option": "d. An increase in the price of one shifts the demand for the other to the right.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Complementary goods are products used together. Examples: Computers + Software, Printers + Ink cartridges. If computers become cheaper: More people buy computers. More people need software. Software demand increases. If computers become expensive: Fewer computers are bought. Software demand decreases."
+    },
+    {
+      "id": 8,
+      "question": "\"Average Fixed Cost\" (AFC):",
+      "answers": [
+        {
+          "option": "a. Always declines as output rises.",
+          "is_correct": true
+        },
+        {
+          "option": "b. Is calculated as Fixed Cost divided by Quantity.",
+          "is_correct": true
+        },
+        {
+          "option": "c. Is the reason the ATC curve falls initially.",
+          "is_correct": true
+        },
+        {
+          "option": "d. Increases as you produce more units.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Formula: AFC = Fixed Cost ÷ Quantity. Fixed costs (rent, salaries, equipment) stay constant. When production increases, the fixed cost is spread over more units. Therefore, AFC decreases. Example: Rent = $1000. Produce 100 units → AFC = $10. Produce 200 units → AFC = $5. This reduction in AFC helps the Average Total Cost (ATC) curve fall initially."
+    },
+    {
+      "id": 9,
+      "question": "A \"Rightward Shift\" in the demand curve means:",
+      "answers": [
+        {
+          "option": "a. Quantity demanded decreases because of a price hike.",
+          "is_correct": false
+        },
+        {
+          "option": "b. More of the good is purchased even if the price remains the same.",
+          "is_correct": true
+        },
+        {
+          "option": "c. Tastes and preferences have become more favorable.",
+          "is_correct": true
+        },
+        {
+          "option": "d. Demand increases at every price level.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "A rightward shift means demand increases. Causes: Consumers like the product more. More buyers enter the market. Income increases (for normal goods). More quantity is demanded at every possible price. Example: A new trend makes a smartphone popular → demand increases."
+    },
+    {
+      "id": 10,
+      "question": "If demand increases (shifts right) and supply remains constant:",
+      "answers": [
+        {
+          "option": "a. Equilibrium price rises.",
+          "is_correct": true
+        },
+        {
+          "option": "b. Equilibrium price falls.",
+          "is_correct": false
+        },
+        {
+          "option": "c. A temporary shortage occurs before the price adjusts.",
+          "is_correct": true
+        },
+        {
+          "option": "d. Equilibrium quantity rises.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "When demand increases: More customers want the product. At the old price, sellers cannot supply enough → shortage occurs. Sellers increase prices. Higher prices encourage more production. New equilibrium: Price increases, Quantity increases. Example: Demand for laptops suddenly increases. Stores run out temporarily. Prices rise. Companies produce more laptops."
+    },
+    {
+      "id": 11,
+      "question": "Which of the following are also among the Big Five Personality Traits?",
+      "answers": [
+        {
+          "option": "a. Agreeableness",
+          "is_correct": true
+        },
+        {
+          "option": "b. Financial Literacy",
+          "is_correct": false
+        },
+        {
+          "option": "c. Extraversion",
+          "is_correct": true
+        },
+        {
+          "option": "d. Emotional Stability (Neuroticism)",
+          "is_correct": true
+        }
+      ],
+      "explanation": ""
+    },
+    {
+      "id": 12,
+      "question": "Scenario: A software company only evaluates its developers once a year, with no feedback in between. Which consequences are likely?",
+      "answers": [
+        {
+          "option": "a. This approach matches best practice for fast-changing IT environments",
+          "is_correct": false
+        },
+        {
+          "option": "b. Issues may go unaddressed for months, unlike a continuous-feedback approach",
+          "is_correct": true
+        },
+        {
+          "option": "c. Employees may not get timely guidance to improve performance",
+          "is_correct": true
+        },
+        {
+          "option": "d. The company may miss opportunities for continuous improvement",
+          "is_correct": true
+        }
+      ],
+      "explanation": ""
+    },
+    {
+      "id": 13,
+      "question": "Which of the following correctly classify a reward as Financial vs. Non-Financial?",
+      "answers": [
+        {
+          "option": "a. An annual bonus — Financial",
+          "is_correct": true
+        },
+        {
+          "option": "b. Flexible working hours — Non-Financial",
+          "is_correct": true
+        },
+        {
+          "option": "c. \"Employee of the Month\" award — Non-Financial",
+          "is_correct": true
+        },
+        {
+          "option": "d. A pay raise — Non-Financial",
+          "is_correct": false
+        }
+      ],
+      "explanation": ""
+    },
+    {
+      "id": 14,
+      "question": "Assertion (A): Performance management should not be treated as a once-a-year event. Reason (R): IT work is project-based and fast-changing, requiring continuous monitoring and feedback.",
+      "answers": [
+        {
+          "option": "a. Both A and R are true, and R explains A",
+          "is_correct": true
+        },
+        {
+          "option": "b. R has no bearing on how frequently performance should be managed",
+          "is_correct": false
+        },
+        {
+          "option": "c. A is false since annual reviews are sufficient in IT",
+          "is_correct": false
+        },
+        {
+          "option": "d. Both A and R are true",
+          "is_correct": false
+        }
+      ],
+      "explanation": ""
+    },
+    {
+      "id": 15,
+      "question": "Which of the following are among the eight areas of HRM importance in IT discussed in HRM practice?",
+      "answers": [
+        {
+          "option": "a. Strategic Alignment with Business Goals",
+          "is_correct": true
+        },
+        {
+          "option": "b. Ignoring employee well-being to maximize output",
+          "is_correct": false
+        },
+        {
+          "option": "c. Human Capital as a Key Competitive Advantage",
+          "is_correct": true
+        },
+        {
+          "option": "d. Managing Organizational Change",
+          "is_correct": true
+        }
+      ],
+      "explanation": ""
+    },
+    {
+      "id": 16,
+      "question": "Which of the following describe \"Employee Development\" as a component of performance management?",
+      "answers": [
+        {
+          "option": "a. Identifying skill gaps",
+          "is_correct": true
+        },
+        {
+          "option": "b. Has no relationship to identified performance gaps",
+          "is_correct": false
+        },
+        {
+          "option": "c. Supporting training for future performance",
+          "is_correct": true
+        },
+        {
+          "option": "d. A forward-looking component tied to performance outcomes",
+          "is_correct": true
+        }
+      ],
+      "explanation": ""
+    },
+    {
+      "id": 17,
+      "question": "Fill in the blank: E-Recruitment Systems use ___ systems for job postings, application tracking, and ___.",
+      "answers": [
+        {
+          "option": "a. automated; screening",
+          "is_correct": false
+        },
+        {
+          "option": "b. manual; screening",
+          "is_correct": false
+        },
+        {
+          "option": "c. automated; candidate screening",
+          "is_correct": true
+        },
+        {
+          "option": "d. automated; termination",
+          "is_correct": false
+        }
+      ],
+      "explanation": ""
+    },
+    {
+      "id": 18,
+      "question": "Which of the following statements correctly describe Human Resource Management (HRM)?",
+      "answers": [
+        {
+          "option": "a. HRM is purely an administrative record-keeping function",
+          "is_correct": false
+        },
+        {
+          "option": "b. HRM involves recruiting, hiring, deploying, and managing an organization's employees",
+          "is_correct": true
+        },
+        {
+          "option": "c. HRM is a strategic and coherent approach to managing people as key organizational assets",
+          "is_correct": true
+        },
+        {
+          "option": "d. HRM has no link to business performance",
+          "is_correct": false
+        }
+      ],
+      "explanation": ""
+    },
+    {
+      "id": 19,
+      "question": "Assertion (A): \"All HR functions must work together\" is a key teaching point in HRM practice. Reason (R): Recruitment brings in the right people, performance manages their work, rewards motivate and retain them, learning develops skills, and employee relations maintain harmony.",
+      "answers": [
+        {
+          "option": "a. Both A and R are true, and R supports A",
+          "is_correct": true
+        },
+        {
+          "option": "b. Both A and R are true",
+          "is_correct": false
+        },
+        {
+          "option": "c. R has no connection to why HR functions must work together",
+          "is_correct": false
+        },
+        {
+          "option": "d. A is false because HR functions operate independently",
+          "is_correct": false
+        }
+      ],
+      "explanation": ""
+    },
+    {
+      "id": 20,
+      "question": "Which of the following correctly describe \"Extraversion\"?",
+      "answers": [
+        {
+          "option": "a. Describes assertiveness in interactions",
+          "is_correct": true
+        },
+        {
+          "option": "b. Refers to cooperativeness and friendliness instead",
+          "is_correct": false
+        },
+        {
+          "option": "c. Describes energy",
+          "is_correct": true
+        },
+        {
+          "option": "d. Describes sociability",
+          "is_correct": true
+        }
+      ],
+      "explanation": ""
+    }
+  ]
+}

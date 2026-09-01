@@ -1,5 +1,4 @@
 import type {
-  LecturePerformance,
   QuestionResult,
   QuizQuestion,
   QuizScore,
@@ -48,24 +47,6 @@ export function calculateScore(
   const percentage =
     totalQuestions > 0 ? Math.round((correctCount / totalQuestions) * 100) : 0;
 
-  const lectureMap = new Map<string, { correct: number; total: number }>();
-
-  for (const result of questionResults) {
-    const lecture = result.question.lecture;
-    const existing = lectureMap.get(lecture) ?? { correct: 0, total: 0 };
-    existing.total += 1;
-    if (result.isCorrect) existing.correct += 1;
-    lectureMap.set(lecture, existing);
-  }
-
-  const lecturePerformance: LecturePerformance[] = Array.from(
-    lectureMap.entries()
-  ).map(([lecture, stats]) => ({
-    lecture,
-    correct: stats.correct,
-    total: stats.total,
-  }));
-
   return {
     totalQuestions,
     correctCount,
@@ -73,6 +54,5 @@ export function calculateScore(
     unansweredCount,
     percentage,
     questionResults,
-    lecturePerformance,
   };
 }

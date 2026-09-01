@@ -96,7 +96,6 @@ export function AnswerReview({ score, onBack, onRetake }: AnswerReviewProps) {
                 </span>
               </div>
 
-              <p className="mb-1 text-sm font-medium text-accent">{question.lecture}</p>
               <p className="mb-4 text-charcoal">{question.question}</p>
 
               <ScenarioList scenarios={getQuestionScenarios(question)} />

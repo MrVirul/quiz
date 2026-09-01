@@ -1,0 +1,695 @@
+{
+  "description": "MEM Mid Pracice Quiz",
+  "questions": [
+    {
+      "id": 1,
+      "question": "A software development firm has secured a massive government contract. The CTO sets strategic goals, groups engineering teams into specialized units, and establishes reporting lines. Which management functions is the CTO performing? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Planning",
+          "is_correct": true
+        },
+        {
+          "option": "B. Leading",
+          "is_correct": false
+        },
+        {
+          "option": "C. Organizing",
+          "is_correct": true
+        },
+        {
+          "option": "D. Controlling",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are A and C. Setting goals is Planning, while grouping teams and creating reporting structures is Organizing."
+    },
+    {
+      "id": 2,
+      "question": "An IT organization offers high salaries and excellent office facilities, but employees fear massive layoffs. According to Maslow's Hierarchy of Needs, what best describes their motivational state? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Their Physiological Needs are satisfied.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Their Safety Needs are fundamentally unmet.",
+          "is_correct": true
+        },
+        {
+          "option": "C. They are highly motivated to achieve Self-Actualization because their base needs are covered.",
+          "is_correct": false
+        },
+        {
+          "option": "D. They cannot effectively focus on Esteem Needs at this time.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answers are A, B and D. High salaries satisfy basic needs, but job insecurity threatens Safety Needs and prevents focus on higher-level needs."
+    },
+    {
+      "id": 3,
+      "question": "A project manager introduces flexible working hours and health insurance to reduce employee dissatisfaction. Complaints stop, but productivity and engagement remain stagnant. According to Herzberg's Two-Factor Theory, why? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. The manager only addressed Hygiene Factors.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Health insurance and flexible hours actively drive engagement but take years to show results.",
+          "is_correct": false
+        },
+        {
+          "option": "C. The manager failed to introduce Motivators.",
+          "is_correct": true
+        },
+        {
+          "option": "D. The employees have reached market equilibrium and are acting rationally.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are A and C. Hygiene Factors reduce dissatisfaction, but Motivators are needed to increase engagement and satisfaction."
+    },
+    {
+      "id": 4,
+      "question": "A Product Manager verifies that a new AI feature can be built and aligns with company revenue targets, but the feature becomes a market failure. Which critical product management dimension was neglected? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Business Strategy",
+          "is_correct": false
+        },
+        {
+          "option": "B. Available Technology",
+          "is_correct": false
+        },
+        {
+          "option": "C. User Experience (Customer Need)",
+          "is_correct": true
+        },
+        {
+          "option": "D. Strategic Alignment",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is C. The feature could be built and matched business goals, but the PM failed to check whether customers actually needed it."
+    },
+    {
+      "id": 5,
+      "question": "A retail bank has an excellent AI-powered mobile app, but branch staff are unhelpful and digital information does not sync with branch systems. Why is the bank failing at Customer Experience (CX)? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. They lack a seamless and consistent experience across channels.",
+          "is_correct": true
+        },
+        {
+          "option": "B. They failed to combine digital experiences with emotional and functional satisfaction.",
+          "is_correct": true
+        },
+        {
+          "option": "C. They are not utilizing customer data and AI.",
+          "is_correct": false
+        },
+        {
+          "option": "D. CX only covers digital touchpoints, so the bank is actually succeeding.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are A and B. CX must provide a smooth and satisfying experience across both digital and physical channels."
+    },
+    {
+      "id": 6,
+      "question": "A cloud hosting provider has limited server racks but unlimited client requests. It gives the remaining servers to one enterprise client instead of five startups. Which economic principles are demonstrated? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Scarcity",
+          "is_correct": true
+        },
+        {
+          "option": "B. Infinite Wants",
+          "is_correct": true
+        },
+        {
+          "option": "C. Opportunity Cost",
+          "is_correct": true
+        },
+        {
+          "option": "D. The Circular Flow Model",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are A, B and C. Servers are limited, demand is unlimited, and choosing one client means giving up the alternative."
+    },
+    {
+      "id": 7,
+      "question": "In a software marketplace, thousands of buyers and sellers trade identical API licenses. No company can control prices, and buyers switch when prices become too high. Which Neoclassical Market assumptions are shown? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Rational Behavior",
+          "is_correct": true
+        },
+        {
+          "option": "B. Perfect Competition",
+          "is_correct": true
+        },
+        {
+          "option": "C. Market Equilibrium",
+          "is_correct": true
+        },
+        {
+          "option": "D. Government Intervention",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are A, B and C. Buyers act rationally, many competitors create perfect competition, and prices adjust toward equilibrium."
+    },
+    {
+      "id": 8,
+      "question": "According to the Neoclassical Circular Flow Diagram, a freelance software engineer provides coding services to a tech company and receives a salary. How is this transaction mapped? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. The engineer is a part of Firms.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The transaction occurs in the Factor Markets.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The engineer provides Labor Services.",
+          "is_correct": true
+        },
+        {
+          "option": "D. The transaction occurs in the Product Markets.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are B and C. The engineer provides labor to a firm and receives wages through the Factor Market."
+    },
+    {
+      "id": 9,
+      "question": "An IT consultancy is losing top developers to competitors. The company introduces a framework for managing, developing, and retaining employees. Which organizational function is being used? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Financial Accounting",
+          "is_correct": false
+        },
+        {
+          "option": "B. Human Resource Management (HRM)",
+          "is_correct": true
+        },
+        {
+          "option": "C. Product Management",
+          "is_correct": false
+        },
+        {
+          "option": "D. The Circular Flow Model",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. HRM focuses on managing, developing, and retaining employees."
+    },
+    {
+      "id": 10,
+      "question": "A software company wants rapid digital transformation. HR hires cloud architects and introduces bonuses for early project delivery. How is HRM operating? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Acting strictly as an administrative function.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Aligning employee efforts with organizational goals.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Supporting digital transformation through Core HR practices.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Executing Talent Acquisition and Retention.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answers are B, C and D. HR is strategically supporting business goals through recruitment, rewards, and talent management."
+    },
+    {
+      "id": 11,
+      "question": "An investor wants to know whether a startup has enough cash to survive the next three months and the total value of its assets right now. Which financial statements are needed? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Cash Flow Statement",
+          "is_correct": true
+        },
+        {
+          "option": "B. Income Statement",
+          "is_correct": false
+        },
+        {
+          "option": "C. Balance Sheet",
+          "is_correct": true
+        },
+        {
+          "option": "D. Profit and Loss Statement",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are A and C. The Cash Flow Statement shows cash movement, while the Balance Sheet shows assets at a specific time."
+    },
+    {
+      "id": 12,
+      "question": "An IT hardware manufacturer purchases $50,000 of server components using cash. How does this affect the Balance Sheet? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Total Assets increase.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Total Liabilities increase.",
+          "is_correct": false
+        },
+        {
+          "option": "C. Total Equity decreases.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Total Assets remain unchanged.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answer is D. Cash is exchanged for another asset, so total assets remain the same."
+    },
+    {
+      "id": 13,
+      "question": "A network engineer identifies a security problem, creates a solution, releases an MVP to users, and starts a cybersecurity company. Which entrepreneurial characteristics are demonstrated? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Opportunity Recognition",
+          "is_correct": true
+        },
+        {
+          "option": "B. Customer-Centric Thinking",
+          "is_correct": false
+        },
+        {
+          "option": "C. Continuous Learning and Adaptability",
+          "is_correct": true
+        },
+        {
+          "option": "D. Perfect Competition",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are A and C. The engineer identified an opportunity and used an MVP to test and learn."
+    },
+    {
+      "id": 14,
+      "question": "An analyst says a business has a balanced but relatively high use of debt to support growth. Which financial ratio category was used? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Profitability ratios",
+          "is_correct": false
+        },
+        {
+          "option": "B. Liquidity ratios",
+          "is_correct": false
+        },
+        {
+          "option": "C. Gearing ratios",
+          "is_correct": true
+        },
+        {
+          "option": "D. Efficiency ratios",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is C. Gearing ratios measure the use of debt and financial risk."
+    },
+    {
+      "id": 15,
+      "question": "A software engineer wants to become an entrepreneur using technical skills to create scalable digital products. What is the correct sequence of the initial entrepreneurial phases? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Feasibility Analysis -> Idea Generation -> Business Planning",
+          "is_correct": false
+        },
+        {
+          "option": "B. Idea Generation -> Opportunity Identification -> Feasibility Analysis -> Business Planning",
+          "is_correct": true
+        },
+        {
+          "option": "C. Product Development & Validation -> Business Launch -> Idea Generation",
+          "is_correct": false
+        },
+        {
+          "option": "D. Growth & Scaling -> Feasibility Analysis",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The process starts with an idea, identifies the opportunity, checks feasibility, and then creates a business plan."
+    },
+    {
+      "id": 16,
+      "question": "One company document tracks cash moving in and out, while another reports revenues and expenses over a period. Which statements are these? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Balance Sheet and Income Statement",
+          "is_correct": false
+        },
+        {
+          "option": "B. Cash Flow Statement and Income Statement",
+          "is_correct": true
+        },
+        {
+          "option": "C. Profit & Loss Statement and Cash Flow Statement",
+          "is_correct": true
+        },
+        {
+          "option": "D. Balance Sheet and Cash Flow Statement",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are B and C. Income Statement and Profit & Loss Statement mean the same thing, while the Cash Flow Statement tracks cash movement."
+    },
+    {
+      "id": 17,
+      "question": "Sri Lanka's digital economy provides opportunities for ICT entrepreneurs. Which of the following are major opportunity areas? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. FinTech",
+          "is_correct": true
+        },
+        {
+          "option": "B. AgriTech",
+          "is_correct": true
+        },
+        {
+          "option": "C. Tourism Tech",
+          "is_correct": true
+        },
+        {
+          "option": "D. Heavy Manufacturing Tech",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are A, B and C. FinTech, AgriTech, and Tourism Tech are listed ICT entrepreneurship opportunities."
+    },
+    {
+      "id": 18,
+      "question": "A manager offers recognition and challenging work but ignores unsafe working conditions and very low salaries. According to Herzberg's Theory, what will happen? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. The team will become highly satisfied and productive.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The team will remain deeply dissatisfied.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The motivators will successfully override the lack of hygiene factors.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The absence of hygiene factors guarantees dissatisfaction regardless of motivators.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answers are B and D. Without basic Hygiene Factors such as fair salary and safety, employees remain dissatisfied."
+    },
+    {
+      "id": 19,
+      "question": "A tech startup builds an entire platform based on an unverified assumption about users, runs out of funding, and cannot pivot. What should the entrepreneurs have done? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Relied purely on opportunity recognition and launched the final product immediately.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Developed Minimum Viable Products (MVPs).",
+          "is_correct": true
+        },
+        {
+          "option": "C. Gathered customer feedback to test assumptions.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Adapted their solutions based on market needs.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answers are B, C and D. Entrepreneurs should test ideas early, collect feedback, and adapt to market needs."
+    },
+    {
+      "id": 20,
+      "question": "Which definitions accurately describe an economic Market? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. A place strictly reserved for digital transactions like eBay.",
+          "is_correct": false
+        },
+        {
+          "option": "B. A location (physical or virtual) where people go to buy and sell things.",
+          "is_correct": true
+        },
+        {
+          "option": "C. A system that exclusively brings buyers together without sellers.",
+          "is_correct": false
+        },
+        {
+          "option": "D. A mechanism that brings buyers and sellers together.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answers are B and D. A market can be physical or virtual and brings buyers and sellers together."
+    },
+    {
+      "id": 21,
+      "question": "Why is Human Resource Management (HRM) a critical source of competitive advantage in the IT industry? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Because people are treated as expendable administrative overhead.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Because knowledge and skills are key assets.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Because organizations gain advantage through talent quality and expertise.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Because HRM eliminates the need for product management.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are B and C. IT companies depend heavily on skilled people, knowledge, and expertise."
+    },
+    {
+      "id": 22,
+      "question": "Which elements are considered the Core HR components for effective HRM and employee retention? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Recruitment",
+          "is_correct": true
+        },
+        {
+          "option": "B. Performance",
+          "is_correct": true
+        },
+        {
+          "option": "C. Rewards",
+          "is_correct": true
+        },
+        {
+          "option": "D. Supply & Demand",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are A, B and C. Core HR consists of Recruitment, Performance, and Rewards."
+    },
+    {
+      "id": 23,
+      "question": "A technology company uses customer data, analytics, and AI to predict customer needs before they arise. What are they enhancing? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Customer Experience (CX)",
+          "is_correct": true
+        },
+        {
+          "option": "B. Financial Accounting",
+          "is_correct": false
+        },
+        {
+          "option": "C. The Factor Market",
+          "is_correct": false
+        },
+        {
+          "option": "D. Employee Well-being",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is A. Data and AI can personalize interactions and improve Customer Experience."
+    },
+    {
+      "id": 24,
+      "question": "When defining the core economic problem, what creates the gap between what society has and what it wants? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. The fact that land, labor, and capital are finite resources.",
+          "is_correct": true
+        },
+        {
+          "option": "B. The fact that human desires have no natural ceiling.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The infinite availability of capital.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The continuous learning mindset.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are A and B. Resources are limited, but human wants are unlimited."
+    },
+    {
+      "id": 25,
+      "question": "What is the primary distinction between Vision and Leadership and Resilience and Perseverance in an entrepreneurial mindset? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Vision involves having a clear picture for the future and inspiring others.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Resilience involves recovering from setbacks, failures, and challenges.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Leadership focuses on adapting to market assumptions, while Resilience focuses on customer feedback.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Resilience enables individuals to learn from mistakes and continue moving forward.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answers are A, B and D. Vision focuses on the future and inspiring others, while resilience focuses on recovering and continuing after setbacks."
+    },
+    {
+      "id": 26,
+      "question": "If an IT company wants to evaluate its financial position at a specific moment rather than its performance over a period, which statement should investors request? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Income Statement",
+          "is_correct": false
+        },
+        {
+          "option": "B. Balance Sheet",
+          "is_correct": true
+        },
+        {
+          "option": "C. Cash Flow Statement",
+          "is_correct": false
+        },
+        {
+          "option": "D. Profit and Loss Statement",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. A Balance Sheet shows the company's financial position at a specific point in time."
+    },
+    {
+      "id": 27,
+      "question": "Which statements correctly describe Motivation compared with Leadership in HR's impact on business success? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Motivation provides direction and inspiration.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Motivation ensures employees remain engaged and committed.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Leadership ensures higher productivity and better team performance.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Leadership provides direction and inspiration.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answers are B and D. Motivation keeps employees engaged, while leadership provides direction and inspiration."
+    },
+    {
+      "id": 28,
+      "question": "A tech startup spends three years developing a product without consulting end-users. Which entrepreneurial characteristic did they lack? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Customer-Centric Thinking",
+          "is_correct": true
+        },
+        {
+          "option": "B. Infinite Wants",
+          "is_correct": false
+        },
+        {
+          "option": "C. Financial Accounting",
+          "is_correct": false
+        },
+        {
+          "option": "D. Perfect Competition",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is A. Entrepreneurs must understand customer needs and collect user feedback."
+    },
+    {
+      "id": 29,
+      "question": "Google started as an innovative search engine and expanded into AI and digital services. What actions drove this entrepreneurial success? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Identifying real customer problems.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Ignoring market needs to push proprietary tech.",
+          "is_correct": false
+        },
+        {
+          "option": "C. Leveraging technology to create innovative solutions.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Building scalable business models with long-term growth potential.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answers are A, C and D. Success came from solving real problems, using technology innovatively, and building scalable business models."
+    },
+    {
+      "id": 30,
+      "question": "In the Neoclassical Market framework, what happens when there is a shortage of a highly demanded software product? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. The government intervenes to set a price ceiling.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The market automatically adjusts prices.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Prices rise until supply matches demand.",
+          "is_correct": true
+        },
+        {
+          "option": "D. The most efficient allocation of scarce resources is achieved.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answers are B, C and D. Prices rise automatically until supply and demand reach equilibrium, helping allocate scarce resources efficiently."
+    }
+  ]
+}

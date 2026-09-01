@@ -4,7 +4,7 @@ import { formatTime } from '../utils/quizHelpers';
 interface QuizHeaderProps {
   currentIndex: number;
   totalQuestions: number;
-  lecture: string;
+  description: string;
   timeRemaining: number;
   answeredCount: number;
 }
@@ -12,7 +12,7 @@ interface QuizHeaderProps {
 export function QuizHeader({
   currentIndex,
   totalQuestions,
-  lecture,
+  description,
   timeRemaining,
   answeredCount,
 }: QuizHeaderProps) {
@@ -38,7 +38,7 @@ export function QuizHeader({
         <p className="text-sm text-charcoal/70">Answered: {answeredCount} / {totalQuestions}</p>
       </div>
 
-      <p className="text-sm font-medium text-accent">{lecture}</p>
+      <p className="text-sm font-medium text-accent">{description}</p>
     </header>
   );
 }

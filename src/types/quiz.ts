@@ -5,7 +5,6 @@ export interface QuizAnswer {
 
 export interface QuizQuestion {
   id: number;
-  lecture: string;
   question: string;
   scenarios?: string[];
   answers: QuizAnswer[];
@@ -32,11 +31,4 @@ export interface QuizScore {
   unansweredCount: number;
   percentage: number;
   questionResults: QuestionResult[];
-  lecturePerformance: LecturePerformance[];
-}
-
-export interface LecturePerformance {
-  lecture: string;
-  correct: number;
-  total: number;
 }

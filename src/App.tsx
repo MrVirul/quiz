@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
-import questionsData from './data/questions.json';
 import { AnswerReview } from './components/AnswerReview';
 import { Footer } from './components/Footer';
 import { ProgressBar } from './components/ProgressBar';
@@ -7,18 +6,26 @@ import { QuestionCard } from './components/QuestionCard';
 import { QuestionNavigation } from './components/QuestionNavigation';
 import { QuizHeader } from './components/QuizHeader';
 import { QuizResults } from './components/QuizResults';
-import { QuizWelcome } from './components/QuizWelcome';
+import { QuizSelection } from './components/QuizSelection';
 import { SubmitConfirmation } from './components/SubmitConfirmation';
+import { getQuizSets } from './data';
 import type { QuizPhase, QuizScore, UserAnswers } from './types/quiz';
 import { calculateScore } from './utils/scoring';
 import {
   isQuestionAnswered,
   QUIZ_DURATION_SECONDS,
-  validateQuestions,
 } from './utils/quizHelpers';
 
 function App() {
-  const questions = useMemo(() => validateQuestions(questionsData), []);
+  const quizSets = useMemo(() => getQuizSets(), []);
+  const [selectedQuizId, setSelectedQuizId] = useState<number | null>(null);
+
+  const quiz = useMemo(
+    () => quizSets.find((set) => set.id === selectedQuizId) ?? null,
+    [quizSets, selectedQuizId]
+  );
+
+  const questions = quiz?.questions ?? [];
   const questionIds = useMemo(() => questions.map((q) => q.id), [questions]);
 
   const [phase, setPhase] = useState<QuizPhase>('welcome');
@@ -41,7 +48,6 @@ function App() {
     setPhase('results');
     setShowSubmitDialog(false);
   }, [questions, userAnswers]);
-
   useEffect(() => {
     if (phase !== 'quiz') return;
 
@@ -64,7 +70,8 @@ function App() {
     }
   }, [phase, timeRemaining, submitQuiz]);
 
-  const handleStart = () => {
+  const handleStart = (quizId: number) => {
+    setSelectedQuizId(quizId);
     setPhase('quiz');
     setCurrentIndex(0);
     setUserAnswers({});
@@ -73,6 +80,7 @@ function App() {
   };
 
   const handleRetake = () => {
+    setSelectedQuizId(null);
     setPhase('welcome');
     setCurrentIndex(0);
     setUserAnswers({});
@@ -98,17 +106,15 @@ function App() {
   };
 
   const currentQuestion = questions[currentIndex];
-  const currentSelected = userAnswers[currentQuestion.id] ?? [];
+  const currentSelected = currentQuestion
+    ? userAnswers[currentQuestion.id] ?? []
+    : [];
 
   let content: ReactNode;
 
-  if (phase === 'welcome') {
+  if (phase === 'welcome' || !quiz) {
     content = (
-      <QuizWelcome
-        questionCount={questions.length}
-        durationMinutes={QUIZ_DURATION_SECONDS / 60}
-        onStart={handleStart}
-      />
+      <QuizSelection quizSets={quizSets} onSelect={handleStart} />
     );
   } else if (phase === 'results' && score) {
     content = (
@@ -128,7 +134,7 @@ function App() {
         <QuizHeader
           currentIndex={currentIndex}
           totalQuestions={questions.length}
-          lecture={currentQuestion.lecture}
+          description={quiz.description}
           timeRemaining={timeRemaining}
           answeredCount={answeredCount}
         />

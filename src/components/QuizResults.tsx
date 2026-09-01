@@ -36,20 +36,6 @@ export function QuizResults({ score, onReview, onRetake }: QuizResultsProps) {
         </div>
       </div>
 
-      <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6">
-        <h2 className="mb-4 text-lg font-semibold text-charcoal">Lecture Performance</h2>
-        <ul className="space-y-2">
-          {score.lecturePerformance.map((lecture) => (
-            <li key={lecture.lecture} className="flex justify-between text-charcoal">
-              <span>{lecture.lecture}</span>
-              <span className="font-medium">
-                {lecture.correct} / {lecture.total}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
       <div className="flex flex-col gap-3 sm:flex-row">
         <button
           type="button"

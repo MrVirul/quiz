@@ -59,9 +59,6 @@ export function validateQuestions(questions: unknown): QuizQuestion[] {
     if (typeof q.id !== 'number') {
       throw new Error(`Question at index ${index} is missing a valid id`);
     }
-    if (typeof q.lecture !== 'string' || !q.lecture.trim()) {
-      throw new Error(`Question ${q.id} is missing a valid lecture`);
-    }
     if (typeof q.question !== 'string' || !q.question.trim()) {
       throw new Error(`Question ${q.id} is missing question text`);
     }
@@ -106,7 +103,6 @@ export function validateQuestions(questions: unknown): QuizQuestion[] {
 
     return {
       id: q.id,
-      lecture: q.lecture,
       question: q.question,
       scenarios,
       answers,
