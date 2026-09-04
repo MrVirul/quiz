@@ -1,695 +1,695 @@
 {
-  "description": "MEM Mid Pracice Quiz",
+  "description": "Database Programming Mid Practice Quiz",
   "questions": [
     {
       "id": 1,
-      "question": "A software development firm has secured a massive government contract. The CTO sets strategic goals, groups engineering teams into specialized units, and establishes reporting lines. Which management functions is the CTO performing? [Select ALL correct answers]",
+      "question": "A developer opens an explicit cursor defined by the query: SELECT emp_name, salary FROM employees WHERE salary > 4000;. After the cursor is opened, but before any rows are fetched, a concurrent database session inserts 10 new employee records matching the query criteria and issues a COMMIT;. In the original session, the developer proceeds to fetch all records in a loop. What will the developer's cursor loop process?",
       "answers": [
         {
-          "option": "A. Planning",
+          "option": "A. The cursor will process only the records that existed and matched the criteria at the exact moment the cursor was opened.",
           "is_correct": true
         },
         {
-          "option": "B. Leading",
+          "option": "B. The cursor will dynamically detect the 10 new rows during FETCH because the cursor reads from the underlying active database.",
           "is_correct": false
         },
         {
-          "option": "C. Organizing",
-          "is_correct": true
+          "option": "C. The cursor will raise a CURSOR_ALREADY_OPEN or TRANSACTION_SERIALIZATION_FAILURE exception due to concurrent modification.",
+          "is_correct": false
         },
         {
-          "option": "D. Controlling",
+          "option": "D. The cursor will fetch the new 10 rows only if the cursor is declared as a \"dynamic cursor\" in the PL/SQL declaration block.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answers are A and C. Setting goals is Planning, while grouping teams and creating reporting structures is Organizing."
+      "explanation": "Correct answer is A. When an explicit cursor is opened, the active set is established at the time of the OPEN statement based on read-consistency rules, so commits by other sessions after opening are not visible to the cursor's FETCH operations."
     },
     {
       "id": 2,
-      "question": "An IT organization offers high salaries and excellent office facilities, but employees fear massive layoffs. According to Maslow's Hierarchy of Needs, what best describes their motivational state? [Select ALL correct answers]",
+      "question": "A student writes the following PL/SQL block to fetch a department name: DECLARE v_dept_name VARCHAR2(50); BEGIN SELECT dept_name INTO v_dept_name FROM departments WHERE dept_id = 99; DBMS_OUTPUT.PUT_LINE('Department is: ' || v_dept_name); END; If dept_id = 99 matches exactly zero records in the departments table, what will happen during the execution of this block, and how does the database handle the cursor?",
       "answers": [
         {
-          "option": "A. Their Physiological Needs are satisfied.",
-          "is_correct": true
-        },
-        {
-          "option": "B. Their Safety Needs are fundamentally unmet.",
-          "is_correct": true
-        },
-        {
-          "option": "C. They are highly motivated to achieve Self-Actualization because their base needs are covered.",
+          "option": "A. An implicit cursor is created, the block executes successfully, and v_dept_name remains uninitialized (NULL).",
           "is_correct": false
         },
         {
-          "option": "D. They cannot effectively focus on Esteem Needs at this time.",
+          "option": "B. An implicit cursor is created, and the database automatically raises the predefined exception NO_DATA_FOUND at runtime, causing the block to terminate abruptly.",
           "is_correct": true
+        },
+        {
+          "option": "C. The database compiler rejects the block during the compilation phase because a single-row SELECT must always guarantee a returned row.",
+          "is_correct": false
+        },
+        {
+          "option": "D. An explicit cursor must be used instead; implicit cursors cannot handle SELECT queries that return zero rows under any circumstances.",
+          "is_correct": false
         }
       ],
-      "explanation": "Correct answers are A, B and D. High salaries satisfy basic needs, but job insecurity threatens Safety Needs and prevents focus on higher-level needs."
+      "explanation": "Correct answer is B. When a single-row SELECT INTO returns zero rows, Oracle PL/SQL raises the predefined NO_DATA_FOUND exception at runtime, causing the block to terminate abruptly if the exception is unhandled."
     },
     {
       "id": 3,
-      "question": "A project manager introduces flexible working hours and health insurance to reduce employee dissatisfaction. Complaints stop, but productivity and engagement remain stagnant. According to Herzberg's Two-Factor Theory, why? [Select ALL correct answers]",
+      "question": "An explicit cursor contains exactly 3 rows in its active set. The developer writes a loop to fetch from this cursor 5 times sequentially without checking %NOTFOUND inside the loop. What is the behavior of the variables populated by the fetch on the 4th and 5th iterations?",
       "answers": [
         {
-          "option": "A. The manager only addressed Hygiene Factors.",
-          "is_correct": true
-        },
-        {
-          "option": "B. Health insurance and flexible hours actively drive engagement but take years to show results.",
+          "option": "A. The variables will be automatically set to NULL on the 4th and 5th fetches.",
           "is_correct": false
         },
         {
-          "option": "C. The manager failed to introduce Motivators.",
+          "option": "B. The database raises an INVALID_CURSOR exception on the 4th fetch because the active set has been exhausted.",
+          "is_correct": false
+        },
+        {
+          "option": "C. The variables will retain the values fetched from the 3rd row during the 4th and 5th fetches.",
           "is_correct": true
         },
         {
-          "option": "D. The employees have reached market equilibrium and are acting rationally.",
+          "option": "D. The loop terminates automatically at the 4th fetch because PL/SQL's execution engine performs implicit boundary checks.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answers are A and C. Hygiene Factors reduce dissatisfaction, but Motivators are needed to increase engagement and satisfaction."
+      "explanation": "Correct answer is C. When a FETCH fails to retrieve a new row, the target variables are not modified, so they retain the values from the last successfully fetched row."
     },
     {
       "id": 4,
-      "question": "A Product Manager verifies that a new AI feature can be built and aligns with company revenue targets, but the feature becomes a market failure. Which critical product management dimension was neglected? [Select ALL correct answers]",
+      "question": "A table employees contains 5 records. A developer executes the following statement block: BEGIN UPDATE employees SET salary = salary * 1.1 WHERE department_id = 999; -- Line X END; Assuming department_id = 999 matches zero rows, what will the values of the implicit cursor attributes SQL%FOUND and SQL%ROWCOUNT be if evaluated at Line X?",
       "answers": [
         {
-          "option": "A. Business Strategy",
+          "option": "A. SQL%FOUND is TRUE, and SQL%ROWCOUNT is 0.",
           "is_correct": false
         },
         {
-          "option": "B. Available Technology",
+          "option": "B. SQL%FOUND is FALSE, and SQL%ROWCOUNT is NULL.",
           "is_correct": false
         },
         {
-          "option": "C. User Experience (Customer Need)",
+          "option": "C. SQL%FOUND is FALSE, and SQL%ROWCOUNT is 0.",
           "is_correct": true
         },
         {
-          "option": "D. Strategic Alignment",
+          "option": "D. An exception is thrown, preventing any attributes from being evaluated.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answer is C. The feature could be built and matched business goals, but the PM failed to check whether customers actually needed it."
+      "explanation": "Correct answer is C. An UPDATE that affects zero rows raises no exception; SQL%FOUND is FALSE and SQL%ROWCOUNT is 0."
     },
     {
       "id": 5,
-      "question": "A retail bank has an excellent AI-powered mobile app, but branch staff are unhelpful and digital information does not sync with branch systems. Why is the bank failing at Customer Experience (CX)? [Select ALL correct answers]",
+      "question": "What occurs if a standard SELECT query that returns exactly three rows is executed directly in the execution section of a PL/SQL block without an explicit cursor declaration, such as: BEGIN SELECT salary INTO v_sal FROM employees; END?",
       "answers": [
         {
-          "option": "A. They lack a seamless and consistent experience across channels.",
-          "is_correct": true
-        },
-        {
-          "option": "B. They failed to combine digital experiences with emotional and functional satisfaction.",
-          "is_correct": true
-        },
-        {
-          "option": "C. They are not utilizing customer data and AI.",
+          "option": "A. The block compiles successfully, and v_sal is populated with the value of the first record in the active set.",
           "is_correct": false
         },
         {
-          "option": "D. CX only covers digital touchpoints, so the bank is actually succeeding.",
+          "option": "B. The block compiles successfully, but at runtime, the database raises the TOO_MANY_ROWS predefined exception, and the block terminates abruptly if unhandled.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The block fails compilation because standard SELECT statements in the execution section of PL/SQL must always have an explicit cursor.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The block compiles and executes, but only the last retrieved row is stored in v_sal.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answers are A and B. CX must provide a smooth and satisfying experience across both digital and physical channels."
+      "explanation": "Correct answer is B. A SELECT INTO is designed to handle exactly one row; if the query returns more than one row, the predefined TOO_MANY_ROWS exception is raised at runtime."
     },
     {
       "id": 6,
-      "question": "A cloud hosting provider has limited server racks but unlimited client requests. It gives the remaining servers to one enterprise client instead of five startups. Which economic principles are demonstrated? [Select ALL correct answers]",
+      "question": "Which of the following statements correctly describes the properties of an explicit cursor? [Select ALL correct answers]",
       "answers": [
         {
-          "option": "A. Scarcity",
+          "option": "A. It is a temporary work area used to store data retrieved from the database and manipulate it.",
           "is_correct": true
         },
         {
-          "option": "B. Infinite Wants",
+          "option": "B. It can hold more than one row but can process only one row at a time.",
           "is_correct": true
         },
         {
-          "option": "C. Opportunity Cost",
+          "option": "C. The set of rows the explicit cursor holds is called the active set.",
           "is_correct": true
         },
         {
-          "option": "D. The Circular Flow Model",
+          "option": "D. It is created automatically whenever an INSERT or UPDATE statement is executed.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answers are A, B and C. Servers are limited, demand is unlimited, and choosing one client means giving up the alternative."
+      "explanation": "Correct answers are A, B and C. A cursor is a temporary work area for retrieved data, can hold multiple rows but processes one at a time, and its rows form the active set. D is wrong because explicit cursors are user-defined, while implicit cursors are created automatically by DML."
     },
     {
       "id": 7,
-      "question": "In a software marketplace, thousands of buyers and sellers trade identical API licenses. No company can control prices, and buyers switch when prices become too high. Which Neoclassical Market assumptions are shown? [Select ALL correct answers]",
+      "question": "A student needs to choose between an explicit cursor and an implicit cursor. Which scenario strictly mandates the declaration and use of an explicit cursor?",
       "answers": [
         {
-          "option": "A. Rational Behavior",
+          "option": "A. Running an INSERT statement that adds a single record to the database.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Executing a SELECT statement that is expected to return exactly one row for a specific primary key.",
+          "is_correct": false
+        },
+        {
+          "option": "C. Processing a multi-row query result-set sequentially, row-by-row, within a loop in PL/SQL.",
           "is_correct": true
         },
         {
-          "option": "B. Perfect Competition",
-          "is_correct": true
-        },
-        {
-          "option": "C. Market Equilibrium",
-          "is_correct": true
-        },
-        {
-          "option": "D. Government Intervention",
+          "option": "D. Deleting multiple records from a table using a DELETE statement.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answers are A, B and C. Buyers act rationally, many competitors create perfect competition, and prices adjust toward equilibrium."
+      "explanation": "Correct answer is C. Explicit cursors are required when processing a SELECT result that returns more than one row row-by-row; DML and single-row SELECTs are handled by implicit cursors."
     },
     {
       "id": 8,
-      "question": "According to the Neoclassical Circular Flow Diagram, a freelance software engineer provides coding services to a tech company and receives a salary. How is this transaction mapped? [Select ALL correct answers]",
+      "question": "When processing an explicit cursor, how does the current row pointer behave, and how is it advanced?",
       "answers": [
         {
-          "option": "A. The engineer is a part of Firms.",
+          "option": "A. The pointer is positioned at the first row when the cursor is declared, and advances only when the transaction commits.",
           "is_correct": false
         },
         {
-          "option": "B. The transaction occurs in the Factor Markets.",
+          "option": "B. The pointer is uninitialized when the cursor is opened, and each FETCH operation retrieves the current row and advances the pointer to the next row in the active set.",
           "is_correct": true
         },
         {
-          "option": "C. The engineer provides Labor Services.",
-          "is_correct": true
+          "option": "C. The pointer is managed by the client application and must be manually incremented using an index variable.",
+          "is_correct": false
         },
         {
-          "option": "D. The transaction occurs in the Product Markets.",
+          "option": "D. The pointer is always fixed at the last row retrieved, requiring a PREVIOUS keyword to traverse backward.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answers are B and C. The engineer provides labor to a firm and receives wages through the Factor Market."
+      "explanation": "Correct answer is B. Each FETCH retrieves the current row and automatically advances the pointer to the next row; cursors are forward-only traversal mechanisms."
     },
     {
       "id": 9,
-      "question": "An IT consultancy is losing top developers to competitors. The company introduces a framework for managing, developing, and retaining employees. Which organizational function is being used? [Select ALL correct answers]",
+      "question": "Under which of the following conditions does Oracle database create an implicit cursor by default? [Select ALL correct answers]",
       "answers": [
         {
-          "option": "A. Financial Accounting",
-          "is_correct": false
-        },
-        {
-          "option": "B. Human Resource Management (HRM)",
+          "option": "A. During the execution of an UPDATE statement that modifies 50 rows.",
           "is_correct": true
         },
         {
-          "option": "C. Product Management",
-          "is_correct": false
+          "option": "B. During the execution of a DELETE statement that removes 0 rows.",
+          "is_correct": true
         },
         {
-          "option": "D. The Circular Flow Model",
+          "option": "C. During the execution of a SELECT statement that returns exactly one row.",
+          "is_correct": true
+        },
+        {
+          "option": "D. During the execution of a DECLARE block containing local variables.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answer is B. HRM focuses on managing, developing, and retaining employees."
+      "explanation": "Correct answers are A, B and C. Implicit cursors are created for DML statements (INSERT/UPDATE/DELETE) regardless of how many rows are affected, and for single-row SELECTs. Declaring variables does not create a cursor."
     },
     {
       "id": 10,
-      "question": "A software company wants rapid digital transformation. HR hires cloud architects and introduces bonuses for early project delivery. How is HRM operating? [Select ALL correct answers]",
+      "question": "Why are explicit cursors preferred over implicit cursors when retrieving and processing a large dataset of 10,000 rows?",
       "answers": [
         {
-          "option": "A. Acting strictly as an administrative function.",
+          "option": "A. Implicit cursors will automatically load all 10,000 rows into the local client memory, causing an out-of-memory error.",
           "is_correct": false
         },
         {
-          "option": "B. Aligning employee efforts with organizational goals.",
+          "option": "B. An implicit cursor cannot handle multiple rows and would raise a TOO_MANY_ROWS exception immediately upon finding more than one row during a standard SELECT INTO.",
           "is_correct": true
         },
         {
-          "option": "C. Supporting digital transformation through Core HR practices.",
-          "is_correct": true
+          "option": "C. Explicit cursors allow the database to bypass transaction logging, making row retrieval significantly faster.",
+          "is_correct": false
         },
         {
-          "option": "D. Executing Talent Acquisition and Retention.",
-          "is_correct": true
+          "option": "D. Explicit cursors are compiled faster because they do not require any validation checks.",
+          "is_correct": false
         }
       ],
-      "explanation": "Correct answers are B, C and D. HR is strategically supporting business goals through recruitment, rewards, and talent management."
+      "explanation": "Correct answer is B. A standard single-row SELECT INTO is structurally restricted to single-row results, so explicit cursors must be used to process a large dataset row-by-row."
     },
     {
       "id": 11,
-      "question": "An investor wants to know whether a startup has enough cash to survive the next three months and the total value of its assets right now. Which financial statements are needed? [Select ALL correct answers]",
+      "question": "As a senior DBA, you are reviewing subprogram designs. Which of the following statements represents a correct structural difference between a Procedure and a Function in PL/SQL? [Select ALL correct answers]",
       "answers": [
         {
-          "option": "A. Cash Flow Statement",
+          "option": "A. Functions can accept multiple input parameters and return exactly one value, whereas Procedures can return multiple values via OUT parameters.",
           "is_correct": true
         },
         {
-          "option": "B. Income Statement",
-          "is_correct": false
-        },
-        {
-          "option": "C. Balance Sheet",
+          "option": "B. Functions can be used inside standard SQL syntax (e.g., SELECT or WHERE clauses), whereas Procedures cannot.",
           "is_correct": true
         },
         {
-          "option": "D. Profit and Loss Statement",
+          "option": "C. Procedures are mandatory for database operations, whereas Functions are optional utility blocks.",
           "is_correct": false
+        },
+        {
+          "option": "D. A Function can return multiple values through OUT parameters in addition to its return value, but this prevents it from being called within standard SQL queries.",
+          "is_correct": true
         }
       ],
-      "explanation": "Correct answers are A and C. The Cash Flow Statement shows cash movement, while the Balance Sheet shows assets at a specific time."
+      "explanation": "Correct answers are A, B and D. Procedures return multiple values via OUT parameters while functions return one value via RETURN, functions can be used in SQL syntax, and functions with OUT parameters cannot be called within SQL. C is wrong because both are modularization tools."
     },
     {
       "id": 12,
-      "question": "An IT hardware manufacturer purchases $50,000 of server components using cash. How does this affect the Balance Sheet? [Select ALL correct answers]",
+      "question": "Consider the following procedure definition: CREATE OR REPLACE PROCEDURE calculate_data (p_val1 IN NUMBER, p_val2 OUT NUMBER, p_val3 IN OUT NUMBER) IS BEGIN p_val2 := p_val1 * 2; p_val3 := p_val3 + p_val2; END calculate_data; If a developer executes this procedure with the following block: DECLARE v_a NUMBER := 10; v_b NUMBER := 50; v_c NUMBER := 5; BEGIN calculate_data(v_a, v_b, v_c); DBMS_OUTPUT.PUT_LINE(v_b || ' and ' || v_c); END; What will be the printed output of the block?",
       "answers": [
         {
-          "option": "A. Total Assets increase.",
-          "is_correct": false
-        },
-        {
-          "option": "B. Total Liabilities increase.",
-          "is_correct": false
-        },
-        {
-          "option": "C. Total Equity decreases.",
-          "is_correct": false
-        },
-        {
-          "option": "D. Total Assets remain unchanged.",
+          "option": "A. 20 and 25",
           "is_correct": true
+        },
+        {
+          "option": "B. 20 and 75",
+          "is_correct": false
+        },
+        {
+          "option": "C. 100 and 105",
+          "is_correct": false
+        },
+        {
+          "option": "D. 50 and 25",
+          "is_correct": false
         }
       ],
-      "explanation": "Correct answer is D. Cash is exchanged for another asset, so total assets remain the same."
+      "explanation": "Correct answer is A. p_val1 is 10, p_val2 (OUT) is set to 20, and p_val3 (IN OUT) starts at 5 and becomes 5 + 20 = 25, so v_b and v_c are updated to 20 and 25."
     },
     {
       "id": 13,
-      "question": "A network engineer identifies a security problem, creates a solution, releases an MVP to users, and starts a cybersecurity company. Which entrepreneurial characteristics are demonstrated? [Select ALL correct answers]",
+      "question": "A developer writes a procedure but gets a compilation error. What is the syntax error in the following block? CREATE OR REPLACE PROCEDURE display_message (p_msg IN VARCHAR2) DECLARE v_suffix VARCHAR2(10) := '!!!'; BEGIN DBMS_OUTPUT.PUT_LINE(p_msg || v_suffix); END display_message;",
       "answers": [
         {
-          "option": "A. Opportunity Recognition",
-          "is_correct": true
-        },
-        {
-          "option": "B. Customer-Centric Thinking",
+          "option": "A. The parameter p_msg must specify a size constraint (e.g., VARCHAR2(30)).",
           "is_correct": false
         },
         {
-          "option": "C. Continuous Learning and Adaptability",
+          "option": "B. The keyword DECLARE is used. Procedures must use IS or AS and declare local variables before BEGIN without the DECLARE keyword.",
           "is_correct": true
         },
         {
-          "option": "D. Perfect Competition",
+          "option": "C. Procedures cannot accept parameters of type VARCHAR2 without a default value.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The procedure lacks an EXCEPTION block, which is mandatory for all procedures.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answers are A and C. The engineer identified an opportunity and used an MVP to test and learn."
+      "explanation": "Correct answer is B. In subprogram definitions the declaration section starts with the keyword IS or AS; DECLARE is only used for anonymous PL/SQL blocks. Note also that parameter declarations must not include size constraints."
     },
     {
       "id": 14,
-      "question": "An analyst says a business has a balanced but relatively high use of debt to support growth. Which financial ratio category was used? [Select ALL correct answers]",
+      "question": "A student creates a function to calculate a discount: CREATE OR REPLACE FUNCTION apply_discount(p_price IN NUMBER) RETURN NUMBER IS BEGIN UPDATE inventory SET last_accessed = SYSDATE; RETURN p_price * 0.9; END apply_discount; When this function is executed via: SELECT apply_discount(price) FROM products;, what will happen?",
       "answers": [
         {
-          "option": "A. Profitability ratios",
+          "option": "A. The query executes successfully and updates the inventory table for every row in products.",
           "is_correct": false
         },
         {
-          "option": "B. Liquidity ratios",
-          "is_correct": false
-        },
-        {
-          "option": "C. Gearing ratios",
+          "option": "B. The query fails at runtime because functions called from SQL SELECT queries are not allowed to perform DML operations (such as UPDATE) on database tables.",
           "is_correct": true
         },
         {
-          "option": "D. Efficiency ratios",
+          "option": "C. The query compiles but only updates the first row in inventory due to performance optimizations.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The SQL engine automatically wraps the DML in an autonomous transaction and commits it.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answer is C. Gearing ratios measure the use of debt and financial risk."
+      "explanation": "Correct answer is B. A PL/SQL function used inside standard SQL cannot perform DML statements on database tables; attempting to do so raises a runtime exception."
     },
     {
       "id": 15,
-      "question": "A software engineer wants to become an entrepreneur using technical skills to create scalable digital products. What is the correct sequence of the initial entrepreneurial phases? [Select ALL correct answers]",
+      "question": "Which of the following represents a valid syntax for declaring parameters in a PL/SQL procedure or function?",
       "answers": [
         {
-          "option": "A. Feasibility Analysis -> Idea Generation -> Business Planning",
+          "option": "A. CREATE PROCEDURE proc1 (p_id IN NUMBER(10))",
           "is_correct": false
         },
         {
-          "option": "B. Idea Generation -> Opportunity Identification -> Feasibility Analysis -> Business Planning",
+          "option": "B. CREATE PROCEDURE proc1 (p_id IN NUMBER)",
           "is_correct": true
         },
         {
-          "option": "C. Product Development & Validation -> Business Launch -> Idea Generation",
+          "option": "C. CREATE PROCEDURE proc1 (p_name IN OUT VARCHAR2(50))",
           "is_correct": false
         },
         {
-          "option": "D. Growth & Scaling -> Feasibility Analysis",
+          "option": "D. CREATE PROCEDURE proc1 (p_date DATE(7))",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answer is B. The process starts with an idea, identifies the opportunity, checks feasibility, and then creates a business plan."
+      "explanation": "Correct answer is B. In PL/SQL subprogram parameters only the base datatype name is specified (e.g., NUMBER, VARCHAR2, DATE); size or precision constraints are illegal in the parameter list."
     },
     {
       "id": 16,
-      "question": "One company document tracks cash moving in and out, while another reports revenues and expenses over a period. Which statements are these? [Select ALL correct answers]",
+      "question": "Based on the class activity to create update_salary_by_dept(p_dept_id IN NUMBER, p_percent IN NUMBER, p_updated_count OUT NUMBER): if a department ID does not exist in the database, what is the correct implementation behavior?",
       "answers": [
         {
-          "option": "A. Balance Sheet and Income Statement",
+          "option": "A. The UPDATE statement throws an implicit NO_DATA_FOUND exception, forcing execution to the exception block.",
           "is_correct": false
         },
         {
-          "option": "B. Cash Flow Statement and Income Statement",
+          "option": "B. The UPDATE statement completes without error, setting p_updated_count to 0, and the procedure completes gracefully.",
           "is_correct": true
         },
         {
-          "option": "C. Profit & Loss Statement and Cash Flow Statement",
-          "is_correct": true
+          "option": "C. The database raises a TOO_MANY_ROWS exception because multiple updates were attempted.",
+          "is_correct": false
         },
         {
-          "option": "D. Balance Sheet and Cash Flow Statement",
+          "option": "D. The database automatically rolls back the entire transaction history since the last connection.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answers are B and C. Income Statement and Profit & Loss Statement mean the same thing, while the Cash Flow Statement tracks cash movement."
+      "explanation": "Correct answer is B. SQL DML statements like UPDATE do not throw NO_DATA_FOUND when they match zero rows; the update affects 0 rows, so SQL%ROWCOUNT (0) should be assigned to p_updated_count."
     },
     {
       "id": 17,
-      "question": "Sri Lanka's digital economy provides opportunities for ICT entrepreneurs. Which of the following are major opportunity areas? [Select ALL correct answers]",
+      "question": "An examiner writes a function with an exception handler: CREATE OR REPLACE FUNCTION get_val(p_num IN NUMBER) RETURN VARCHAR2 IS BEGIN IF p_num > 100 THEN RETURN 'High'; END IF; EXCEPTION WHEN OTHERS THEN RETURN 'Error'; END get_val; If this function is called with p_num = 50, what happens at runtime?",
       "answers": [
         {
-          "option": "A. FinTech",
+          "option": "A. The function returns NULL because the IF condition failed and no default was specified.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The database raises an \"ORA-06503: PL/SQL: Function returned without value\" exception at runtime.",
           "is_correct": true
         },
         {
-          "option": "B. AgriTech",
-          "is_correct": true
+          "option": "C. The function automatically jumps to the EXCEPTION block and returns 'Error'.",
+          "is_correct": false
         },
         {
-          "option": "C. Tourism Tech",
-          "is_correct": true
-        },
-        {
-          "option": "D. Heavy Manufacturing Tech",
+          "option": "D. The function is rejected by the compiler during compilation because all execution paths must statically prove a return value.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answers are A, B and C. FinTech, AgriTech, and Tourism Tech are listed ICT entrepreneurship opportunities."
+      "explanation": "Correct answer is B. With p_num = 50 the IF block is skipped and no RETURN executes; since no exception occurred, control reaches the END block and raises ORA-06503 (Function returned without value)."
     },
     {
       "id": 18,
-      "question": "A manager offers recognition and challenging work but ignores unsafe working conditions and very low salaries. According to Herzberg's Theory, what will happen? [Select ALL correct answers]",
+      "question": "In the activity get_employee_annual_salary, the formula for the annual salary is defined as (salary * 12). However, if the employee has a bonus percentage, it must be added. If a developer implements the assignment as: v_annual := (v_salary * 12) + (v_salary * 12 * v_bonus_percent); What will happen if an employee has a valid v_salary but their v_bonus_percent is NULL in the database?",
       "answers": [
         {
-          "option": "A. The team will become highly satisfied and productive.",
+          "option": "A. The function will calculate the salary ignoring the bonus (equivalent to a bonus of 0).",
           "is_correct": false
         },
         {
-          "option": "B. The team will remain deeply dissatisfied.",
+          "option": "B. The calculation will return NULL for the entire annual salary because any arithmetic operation involving a NULL operand yields NULL.",
           "is_correct": true
         },
         {
-          "option": "C. The motivators will successfully override the lack of hygiene factors.",
+          "option": "C. The database automatically substitutes NULL with 1 during arithmetic operations.",
           "is_correct": false
         },
         {
-          "option": "D. The absence of hygiene factors guarantees dissatisfaction regardless of motivators.",
-          "is_correct": true
+          "option": "D. A VALUE_ERROR exception is thrown at runtime, interrupting the function.",
+          "is_correct": false
         }
       ],
-      "explanation": "Correct answers are B and D. Without basic Hygiene Factors such as fair salary and safety, employees remain dissatisfied."
+      "explanation": "Correct answer is B. Any arithmetic operation involving a NULL operand yields NULL, so the whole annual salary becomes NULL. NVL or COALESCE must be used to handle NULLs."
     },
     {
       "id": 19,
-      "question": "A tech startup builds an entire platform based on an unverified assumption about users, runs out of funding, and cannot pivot. What should the entrepreneurs have done? [Select ALL correct answers]",
+      "question": "Review the database procedure from the slides: CREATE OR REPLACE PROCEDURE update_emp_salary (p_emp_id IN NUMBER, p_percent IN NUMBER) IS BEGIN UPDATE employees SET salary = salary + (salary * (p_percent / 100)) WHERE employee_id = p_emp_id; COMMIT; DBMS_OUTPUT.PUT_LINE('Salary updated.'); END update_emp_salary; If a calling anonymous block performs several inserts into another audit table, and then calls update_emp_salary, what is the scope of the COMMIT; statement executed inside the procedure?",
       "answers": [
         {
-          "option": "A. Relied purely on opportunity recognition and launched the final product immediately.",
+          "option": "A. The COMMIT only saves the UPDATE statement inside the procedure, leaving the inserts in the calling block uncommitted.",
           "is_correct": false
         },
         {
-          "option": "B. Developed Minimum Viable Products (MVPs).",
+          "option": "B. The COMMIT saves both the UPDATE inside the procedure and all pending modifications (including the inserts) in the current session transaction.",
           "is_correct": true
         },
         {
-          "option": "C. Gathered customer feedback to test assumptions.",
-          "is_correct": true
+          "option": "C. The COMMIT is ignored because nested procedures are not allowed to control transactions.",
+          "is_correct": false
         },
         {
-          "option": "D. Adapted their solutions based on market needs.",
-          "is_correct": true
+          "option": "D. The procedure fails compilation because a COMMIT statement cannot exist within a subprogram.",
+          "is_correct": false
         }
       ],
-      "explanation": "Correct answers are B, C and D. Entrepreneurs should test ideas early, collect feedback, and adapt to market needs."
+      "explanation": "Correct answer is B. A COMMIT statement commits the entire current transaction in the session, saving both the procedure's DML and any preceding DML from the calling block."
     },
     {
       "id": 20,
-      "question": "Which definitions accurately describe an economic Market? [Select ALL correct answers]",
+      "question": "Which of the following is true regarding functions in PL/SQL? [Select ALL correct answers]",
       "answers": [
         {
-          "option": "A. A place strictly reserved for digital transactions like eBay.",
-          "is_correct": false
-        },
-        {
-          "option": "B. A location (physical or virtual) where people go to buy and sell things.",
+          "option": "A. A function can be called as part of an expression in a standard SQL SELECT query.",
           "is_correct": true
         },
         {
-          "option": "C. A system that exclusively brings buyers together without sellers.",
+          "option": "B. A function can have NO parameters but must always declare a RETURN datatype.",
+          "is_correct": true
+        },
+        {
+          "option": "C. A function's return value must be a scalar database type; it cannot be customized.",
           "is_correct": false
         },
         {
-          "option": "D. A mechanism that brings buyers and sellers together.",
-          "is_correct": true
+          "option": "D. A function executes automatically in response to DML operations on a table.",
+          "is_correct": false
         }
       ],
-      "explanation": "Correct answers are B and D. A market can be physical or virtual and brings buyers and sellers together."
+      "explanation": "Correct answers are A and B. Functions can be used in SQL syntax, and parameters are optional but a RETURN datatype is always required. C is wrong because functions can return complex types; D is wrong because triggers execute automatically in response to DML."
     },
     {
       "id": 21,
-      "question": "Why is Human Resource Management (HRM) a critical source of competitive advantage in the IT industry? [Select ALL correct answers]",
+      "question": "How does the execution of a Database Trigger fundamentally differ from that of Procedures and Functions?",
       "answers": [
         {
-          "option": "A. Because people are treated as expendable administrative overhead.",
+          "option": "A. Triggers must be explicitly called with parameter values, whereas Procedures execute automatically.",
           "is_correct": false
         },
         {
-          "option": "B. Because knowledge and skills are key assets.",
+          "option": "B. Triggers cannot perform DML statements on other tables, whereas Procedures can.",
+          "is_correct": false
+        },
+        {
+          "option": "C. Triggers execute (fire) automatically in response to specific events (like DML) on a table or view, requiring no application or explicit code call, whereas Procedures/Functions must be explicitly executed.",
           "is_correct": true
         },
         {
-          "option": "C. Because organizations gain advantage through talent quality and expertise.",
-          "is_correct": true
-        },
-        {
-          "option": "D. Because HRM eliminates the need for product management.",
+          "option": "D. Triggers are compiled at runtime on each execution, whereas Procedures and Functions are pre-compiled database objects.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answers are B and C. IT companies depend heavily on skilled people, knowledge, and expertise."
+      "explanation": "Correct answer is C. Triggers fire automatically in response to events, while procedures and functions must be explicitly invoked."
     },
     {
       "id": 22,
-      "question": "Which elements are considered the Core HR components for effective HRM and employee retention? [Select ALL correct answers]",
+      "question": "A database designer wants to write a trigger on the employees table that automatically capitalizes the employee's name (emp_name) before saving it to the table. Which configuration is appropriate and why?",
       "answers": [
         {
-          "option": "A. Recruitment",
+          "option": "A. An AFTER INSERT trigger, because name changes can only be verified after the record has been successfully inserted into the database.",
+          "is_correct": false
+        },
+        {
+          "option": "B. A BEFORE INSERT FOR EACH ROW trigger, because it allows the trigger to modify the :NEW.emp_name field directly before the data is written to the disk.",
           "is_correct": true
         },
         {
-          "option": "B. Performance",
-          "is_correct": true
+          "option": "C. A statement-level BEFORE INSERT trigger, because it optimizes performance by capitalizing all names in a single step.",
+          "is_correct": false
         },
         {
-          "option": "C. Rewards",
-          "is_correct": true
-        },
-        {
-          "option": "D. Supply & Demand",
+          "option": "D. Either BEFORE or AFTER row-level trigger; they both allow modifications to the :NEW fields.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answers are A, B and C. Core HR consists of Recruitment, Performance, and Rewards."
+      "explanation": "Correct answer is B. Only a BEFORE row-level trigger can modify :NEW fields; in AFTER triggers :NEW is read-only, and statement-level triggers do not have access to individual row :NEW/:OLD values."
     },
     {
       "id": 23,
-      "question": "A technology company uses customer data, analytics, and AI to predict customer needs before they arise. What are they enhancing? [Select ALL correct answers]",
+      "question": "An employees table currently has 100 employee records. A developer executes the statement: UPDATE employees SET salary = salary * 1.05;. If there are two triggers active on the table: Trigger 1: CREATE TRIGGER tr1 AFTER UPDATE ON employees ... (Statement-level); Trigger 2: CREATE TRIGGER tr2 AFTER UPDATE ON employees FOR EACH ROW ... (Row-level). How many times will each trigger execute during this update transaction?",
       "answers": [
         {
-          "option": "A. Customer Experience (CX)",
+          "option": "A. Trigger 1 will execute 1 time; Trigger 2 will execute 1 time.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Trigger 1 will execute 100 times; Trigger 2 will execute 100 times.",
+          "is_correct": false
+        },
+        {
+          "option": "C. Trigger 1 will execute 1 time; Trigger 2 will execute 100 times.",
           "is_correct": true
         },
         {
-          "option": "B. Financial Accounting",
-          "is_correct": false
-        },
-        {
-          "option": "C. The Factor Market",
-          "is_correct": false
-        },
-        {
-          "option": "D. Employee Well-being",
+          "option": "D. Trigger 1 will execute 0 times because no row filters were specified; Trigger 2 will execute 100 times.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answer is A. Data and AI can personalize interactions and improve Customer Experience."
+      "explanation": "Correct answer is C. A statement-level trigger (without FOR EACH ROW) executes once per DML statement, while a row-level trigger (FOR EACH ROW) executes once per affected row (100 times)."
     },
     {
       "id": 24,
-      "question": "When defining the core economic problem, what creates the gap between what society has and what it wants? [Select ALL correct answers]",
+      "question": "In a row-level database trigger, which of the following accurately describes the availability of the :OLD and :NEW qualifiers? [Select ALL correct answers]",
       "answers": [
         {
-          "option": "A. The fact that land, labor, and capital are finite resources.",
-          "is_correct": true
-        },
-        {
-          "option": "B. The fact that human desires have no natural ceiling.",
-          "is_correct": true
-        },
-        {
-          "option": "C. The infinite availability of capital.",
+          "option": "A. During an INSERT statement, :OLD values are fully populated with default database parameters.",
           "is_correct": false
         },
         {
-          "option": "D. The continuous learning mindset.",
-          "is_correct": false
+          "option": "B. During an INSERT statement, :OLD is NULL (or unpopulated), and :NEW contains the values to be inserted.",
+          "is_correct": true
+        },
+        {
+          "option": "C. During a DELETE statement, :OLD contains the existing row values being deleted, and :NEW is NULL (or unpopulated).",
+          "is_correct": true
+        },
+        {
+          "option": "D. During an UPDATE statement, :OLD contains the pre-update row values, and :NEW contains the post-update values.",
+          "is_correct": true
         }
       ],
-      "explanation": "Correct answers are A and B. Resources are limited, but human wants are unlimited."
+      "explanation": "Correct answers are B, C and D. :OLD is empty during INSERT, :NEW is empty during DELETE, and during UPDATE :OLD holds pre-update values while :NEW holds the proposed new values. A is wrong because :OLD is simply not populated during an INSERT."
     },
     {
       "id": 25,
-      "question": "What is the primary distinction between Vision and Leadership and Resilience and Perseverance in an entrepreneurial mindset? [Select ALL correct answers]",
+      "question": "A junior developer attempts to compile the following trigger and gets an error: CREATE OR REPLACE TRIGGER trg_salary_cap AFTER UPDATE ON employees FOR EACH ROW BEGIN IF :NEW.salary > 200000 THEN :NEW.salary := 200000; END IF; END; What is the exact reason for the compilation error?",
       "answers": [
         {
-          "option": "A. Vision involves having a clear picture for the future and inspiring others.",
-          "is_correct": true
-        },
-        {
-          "option": "B. Resilience involves recovering from setbacks, failures, and challenges.",
-          "is_correct": true
-        },
-        {
-          "option": "C. Leadership focuses on adapting to market assumptions, while Resilience focuses on customer feedback.",
+          "option": "A. The database does not allow comparing :NEW values inside an IF statement.",
           "is_correct": false
         },
         {
-          "option": "D. Resilience enables individuals to learn from mistakes and continue moving forward.",
+          "option": "B. :NEW values are read-only in AFTER triggers and cannot be assigned new values.",
           "is_correct": true
+        },
+        {
+          "option": "C. The parameter 200000 is missing a currency symbol or unit of measurement.",
+          "is_correct": false
+        },
+        {
+          "option": "D. FOR EACH ROW cannot be used in conjunction with AFTER triggers.",
+          "is_correct": false
         }
       ],
-      "explanation": "Correct answers are A, B and D. Vision focuses on the future and inspiring others, while resilience focuses on recovering and continuing after setbacks."
+      "explanation": "Correct answer is B. In AFTER triggers the DML changes have already been written to the table, so :NEW fields are strictly read-only; a BEFORE trigger must be used to modify proposed values."
     },
     {
       "id": 26,
-      "question": "If an IT company wants to evaluate its financial position at a specific moment rather than its performance over a period, which statement should investors request? [Select ALL correct answers]",
+      "question": "A developer wants to restrict a row-level trigger to fire only when the new salary is greater than 100,000. Which of the following syntaxes is valid for the trigger header?",
       "answers": [
         {
-          "option": "A. Income Statement",
+          "option": "A. CREATE TRIGGER trg ON employees FOR EACH ROW WHEN (:NEW.salary > 100000)",
           "is_correct": false
         },
         {
-          "option": "B. Balance Sheet",
+          "option": "B. CREATE TRIGGER trg ON employees FOR EACH ROW WHEN (NEW.salary > 100000)",
+          "is_correct": false
+        },
+        {
+          "option": "C. CREATE TRIGGER trg ON employees FOR EACH ROW BEGIN IF :NEW.salary > 100000 THEN ...",
+          "is_correct": false
+        },
+        {
+          "option": "D. Both B and C are syntactically valid methods of applying conditional criteria.",
           "is_correct": true
-        },
-        {
-          "option": "C. Cash Flow Statement",
-          "is_correct": false
-        },
-        {
-          "option": "D. Profit and Loss Statement",
-          "is_correct": false
         }
       ],
-      "explanation": "Correct answer is B. A Balance Sheet shows the company's financial position at a specific point in time."
+      "explanation": "Correct answer is D. In the WHEN clause of a trigger header the colon prefix must NOT be used (option B is correct), and the check can alternatively be written with an IF statement inside the body using the colon prefix (option C)."
     },
     {
       "id": 27,
-      "question": "Which statements correctly describe Motivation compared with Leadership in HR's impact on business success? [Select ALL correct answers]",
+      "question": "Why is a database trigger prohibited from executing transaction control statements like COMMIT; or ROLLBACK; directly in its body?",
       "answers": [
         {
-          "option": "A. Motivation provides direction and inspiration.",
+          "option": "A. Triggers run in a completely offline sandbox and do not interact with active transactions.",
           "is_correct": false
         },
         {
-          "option": "B. Motivation ensures employees remain engaged and committed.",
+          "option": "B. Triggers execute as an integral part of the triggering DML statement's transaction. Allowing a trigger to commit would prematurely finalize parent transactions, breaking database integrity.",
           "is_correct": true
         },
         {
-          "option": "C. Leadership ensures higher productivity and better team performance.",
+          "option": "C. Trigger execution blocks are too small to support the memory required for commits.",
           "is_correct": false
         },
         {
-          "option": "D. Leadership provides direction and inspiration.",
-          "is_correct": true
+          "option": "D. Standard Oracle SQL syntax does not recognize the keyword COMMIT inside triggers.",
+          "is_correct": false
         }
       ],
-      "explanation": "Correct answers are B and D. Motivation keeps employees engaged, while leadership provides direction and inspiration."
+      "explanation": "Correct answer is B. A trigger operates as part of the transaction that executes the triggering DML statement; allowing COMMIT or ROLLBACK would prematurely finalize or roll back the parent transaction, compromising integrity."
     },
     {
       "id": 28,
-      "question": "A tech startup spends three years developing a product without consulting end-users. Which entrepreneurial characteristic did they lack? [Select ALL correct answers]",
+      "question": "Trace the slide example trigger trg_audit_salary_update: CREATE OR REPLACE TRIGGER trg_audit_salary_update AFTER UPDATE OF salary ON employees FOR EACH ROW BEGIN IF :OLD.salary < :NEW.salary THEN INSERT INTO salary_audit VALUES (:OLD.emp_id, :OLD.salary, :NEW.salary, SYSTIMESTAMP); END IF; END; If Alice Smith has an initial salary of 5000.00 and an update is issued: UPDATE employees SET salary = 4800.00 WHERE emp_id = 101; What will be recorded in the salary_audit table?",
       "answers": [
         {
-          "option": "A. Customer-Centric Thinking",
+          "option": "A. A record showing a change from 5000.00 to 4800.00 with the timestamp.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Nothing is inserted because the condition :OLD.salary < :NEW.salary evaluates to FALSE (4800 is not greater than 5000).",
           "is_correct": true
         },
         {
-          "option": "B. Infinite Wants",
+          "option": "C. The trigger throws a runtime error because salary decreases are not allowed.",
           "is_correct": false
         },
         {
-          "option": "C. Financial Accounting",
-          "is_correct": false
-        },
-        {
-          "option": "D. Perfect Competition",
+          "option": "D. A row is inserted, but with NULL values for the salaries.",
           "is_correct": false
         }
       ],
-      "explanation": "Correct answer is A. Entrepreneurs must understand customer needs and collect user feedback."
+      "explanation": "Correct answer is B. Since the old salary (5000) is greater than the new salary (4800), the condition :OLD.salary < :NEW.salary is FALSE, so the INSERT is bypassed and nothing is recorded."
     },
     {
       "id": 29,
-      "question": "Google started as an innovative search engine and expanded into AI and digital services. What actions drove this entrepreneurial success? [Select ALL correct answers]",
+      "question": "In the activity trg_prevent_salary_decrease, the trigger must prevent the salary from decreasing and prevent the salary from exceeding 200,000. To successfully prevent these updates from being written to the database, what should the trigger do?",
       "answers": [
         {
-          "option": "A. Identifying real customer problems.",
-          "is_correct": true
-        },
-        {
-          "option": "B. Ignoring market needs to push proprietary tech.",
+          "option": "A. Execute a ROLLBACK; statement directly inside the exception handler.",
           "is_correct": false
         },
         {
-          "option": "C. Leveraging technology to create innovative solutions.",
+          "option": "B. Raise a custom exception or use RAISE_APPLICATION_ERROR to interrupt execution, which halts the DML statement and rolls back its changes.",
           "is_correct": true
         },
         {
-          "option": "D. Building scalable business models with long-term growth potential.",
-          "is_correct": true
+          "option": "C. Reset the :NEW.salary := :OLD.salary; silently without notifying the user application.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Delete the modified employee record entirely from the table.",
+          "is_correct": false
         }
       ],
-      "explanation": "Correct answers are A, C and D. Success came from solving real problems, using technology innovatively, and building scalable business models."
+      "explanation": "Correct answer is B. Raising a runtime error (e.g., RAISE_APPLICATION_ERROR) halts execution, aborts the SQL statement, and rolls back its changes while notifying the application. Direct ROLLBACK is illegal in triggers."
     },
     {
       "id": 30,
-      "question": "In the Neoclassical Market framework, what happens when there is a shortage of a highly demanded software product? [Select ALL correct answers]",
+      "question": "An update statement on employees fires a BEFORE UPDATE trigger, which updates a record in the departments table. The update in departments subsequently fires a trigger on departments which inserts a row in audit_log. Which of the following is true?",
       "answers": [
         {
-          "option": "A. The government intervenes to set a price ceiling.",
+          "option": "A. The execution of nested triggers is illegal; the engine will crash on the second trigger.",
           "is_correct": false
         },
         {
-          "option": "B. The market automatically adjusts prices.",
+          "option": "B. All trigger executions are flattened, and they execute concurrently in parallel threads.",
+          "is_correct": false
+        },
+        {
+          "option": "C. The triggers execute sequentially in a cascading fashion within the single, shared transaction boundary. If any trigger fails, all changes in the cascade are rolled back.",
           "is_correct": true
         },
         {
-          "option": "C. Prices rise until supply matches demand.",
-          "is_correct": true
-        },
-        {
-          "option": "D. The most efficient allocation of scarce resources is achieved.",
-          "is_correct": true
+          "option": "D. The parent update must commit before the department trigger can fire.",
+          "is_correct": false
         }
       ],
-      "explanation": "Correct answers are B, C and D. Prices rise automatically until supply and demand reach equilibrium, helping allocate scarce resources efficiently."
+      "explanation": "Correct answer is C. Oracle supports cascading triggers within the same session and transaction boundary; if any trigger fails, the entire chain is rolled back."
     }
   ]
 }

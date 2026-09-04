@@ -1,2 +1,2 @@
-export const SUBJECT_NAME = 'Modern Enterprise Management';
+export const SUBJECT_NAME = 'Databas System';
 export const QUIZ_TITLE = 'Mid Practice Quiz';
