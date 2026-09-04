@@ -1,0 +1,695 @@
+{
+  "description": "Oracle Engine Architecture - Lecture 2 - Mid Practice Quiz",
+  "questions": [
+    {
+      "id": 1,
+      "question": "In an Oracle Database environment, when a database user initiates a query via a client tool (such as SQL*Plus), which process reads/writes to the System Global Area (SGA) memory, and what is the client's relationship to this memory space?",
+      "answers": [
+        {
+          "option": "A. The client process directly reads and writes SQL statements into the Shared Pool of the SGA to minimize network latency.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The client process cannot directly access the SGA; instead, a server process is initiated on the database host which has read/write privileges to the SGA and acts on behalf of the client.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Both client and server processes run within the same shared memory segment of the host OS, allowing simultaneous SGA access.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The Oracle Net Listener reads the query from the client, writes it directly into the Redo Log Buffer of the SGA, and notifies the client process.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The client process is strictly isolated from the SGA and cannot read or write to it directly. Instead, a server process running on the database host connects to the Oracle instance and reads/writes to the SGA on behalf of the client. The Listener is only a networking mediator and does not write queries into the SGA."
+    },
+    {
+      "id": 2,
+      "question": "A database experiences extreme write latency during peak hours when a massive batch job is updating millions of records. A DBA notes that the Log Writer (LGWR) and Database Writer (DBWn) are highly active. Which SGA components are these background processes reading from and writing to, and why?",
+      "answers": [
+        {
+          "option": "A. DBWn reads dirty blocks from the Redo Log Buffer, while LGWR reads change vectors from the Database Buffer Cache.",
+          "is_correct": false
+        },
+        {
+          "option": "B. DBWn reads from the Shared Pool to write execution plans, while LGWR writes database blocks from the Buffer Cache to disk.",
+          "is_correct": false
+        },
+        {
+          "option": "C. DBWn writes dirty data blocks from the Database Buffer Cache to the physical data files, while LGWR writes changes from the Redo Log Buffer to the physical redo log files.",
+          "is_correct": true
+        },
+        {
+          "option": "D. LGWR and DBWn both read directly from the client's Program Global Area (PGA) to bypass the SGA for high-speed batch execution.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is C. The Database Buffer Cache holds copies of data blocks; when they are modified (dirty blocks), DBWn writes them to the physical data files. The Redo Log Buffer stores redo entries, which LGWR writes to the physical redo log files to ensure recoverability. A reverses the two roles; B is wrong because the Shared Pool does not store data blocks; D is wrong because background processes operate through the shared SGA, not a private PGA."
+    },
+    {
+      "id": 3,
+      "question": "A junior database administrator attempts to tune database memory parameters and manually opens the spfileorcl.ora binary file in a standard Linux text editor (such as vi) to adjust the sga_target parameter. They save the changes and attempt to execute STARTUP;. What is the result?",
+      "answers": [
+        {
+          "option": "A. The database starts successfully and dynamically adjusts the SGA size based on the manual text edit.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The database fails to start and throws an error because an spfile is a binary file that cannot be modified manually; any manual text modifications corrupt its structural integrity.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The database automatically detects the corruption, discards the spfile, and searches the OS file system to generate a brand-new default text-based init.ora file.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The database starts in NOMOUNT state but triggers an automatic script to convert the binary spfile into an editable text file.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. An spfile is a binary file and the preferred parameter file type for Oracle databases; it can only be modified using database commands such as ALTER SYSTEM SET. Manual text edits corrupt the file and prevent the instance from starting. Oracle will not auto-generate or auto-convert init.ora files on startup."
+    },
+    {
+      "id": 4,
+      "question": "During an active transaction, a hardware failure causes the drive containing the database's primary control file to fail. Why does the database engine immediately crash or halt operations upon losing access to this file?",
+      "answers": [
+        {
+          "option": "A. The control file contains all the user data blocks, so losing it is equivalent to losing the entire tablespace data.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The control file is a binary file that contains critical database status information, including the Database Name, Data File and Redo Log File names, physical file locations, and Log Sequence Numbers. Without it, the engine cannot maintain consistency or track active transaction boundaries.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The control file holds the SQL execution plans for all background processes; without it, the background processes cannot run.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The control file is responsible for allocating IP addresses to incoming client processes; losing it prevents connection routing.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The control file holds critical database status metadata (Database Name, data file and redo log file names, locations, and Log Sequence Numbers). If lost or corrupted, the database cannot verify physical consistency and halts. A is wrong because user data blocks are stored in data files; C is wrong because SQL plans live in the Shared Pool; D is wrong because connection routing is the Listener's job."
+    },
+    {
+      "id": 5,
+      "question": "A client workstation running a critical financial application suddenly crashes due to a power outage while a transaction is mid-execution. Which background process detects this orphaned session, and what specific cleanup operations does it perform?",
+      "answers": [
+        {
+          "option": "A. SMON (System Monitor) recovers the transaction by performing instance recovery and rolling forward the uncommitted changes.",
+          "is_correct": false
+        },
+        {
+          "option": "B. PMON (Process Monitor) detects the connection failure, rolls back the uncommitted transaction, releases any active table/row locks, and deallocates the PGA resources of the terminated client process.",
+          "is_correct": true
+        },
+        {
+          "option": "C. DBWn (Database Writer) automatically writes a transaction abort marker into the data files and flushes the buffer cache.",
+          "is_correct": false
+        },
+        {
+          "option": "D. LGWR (Log Writer) writes a ROLLBACK record to the online redo logs and closes the client's network port.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. PMON detects failed user processes, rolls back the uncommitted transaction, releases locks, and frees the associated resources. A is wrong because SMON handles system-level instance recovery, not individual user process cleanup; C and D are wrong because DBWn and LGWR are I/O processes that do not manage transactional cleanup."
+    },
+    {
+      "id": 6,
+      "question": "A database designer wants to minimize transaction commit wait times. To optimize physical write operations, under which conditions will the Log Writer (LGWR) flush the Redo Log Buffer memory area to the online redo log files on disk? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Exactly every 3 seconds, regardless of database activity.",
+          "is_correct": true
+        },
+        {
+          "option": "B. When a user commits a transaction.",
+          "is_correct": true
+        },
+        {
+          "option": "C. When the Redo Log Buffer is one-third full.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Every time a new data block is loaded from disk into the Database Buffer Cache.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are A, B and C. LGWR flushes the redo buffer when a transaction commits, every 3 seconds, and when the redo log buffer is one-third full. D is wrong because loading a block into the Buffer Cache does not generate redo and does not trigger LGWR writes."
+    },
+    {
+      "id": 7,
+      "question": "Which of the following statements correctly distinguishes the System Global Area (SGA) from the Program Global Area (PGA)?",
+      "answers": [
+        {
+          "option": "A. The SGA is private memory allocated to each individual server process, while the PGA is shared among all processes in the Oracle instance.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The SGA is a shared memory structure allocated when the Oracle instance starts, accessible by all background and server processes, while the PGA is private memory allocated to each individual server and background process.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The SGA resides on physical disk storage as temporary files, while the PGA is volatile RAM.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The SGA only stores SQL execution plans, while the PGA stores the database's active data blocks.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The SGA is a shared memory group containing data and control information for one Oracle instance, while the PGA is a private memory region allocated for each server process. A reverses the definitions; C is wrong because both are RAM-based structures; D is wrong because the SGA houses multiple components and the PGA does not store data blocks."
+    },
+    {
+      "id": 8,
+      "question": "A developer is analyzing SQL parse times and notices a high rate of hard parsing. Which sub-component of the Shared Pool is responsible for holding the SQL execution plans, and which sub-component holds object metadata?",
+      "answers": [
+        {
+          "option": "A. The Database Buffer Cache holds SQL plans; the Redo Log Buffer holds metadata.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The Library Cache holds executable SQL code and execution plans; the Data Dictionary Cache holds definitions of database objects and privileges.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The Java Pool holds SQL plans; the Large Pool holds metadata.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The Parameter File holds SQL plans; the Control File holds metadata.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The Shared Pool's Library Cache stores executable SQL statements, PL/SQL code, and execution plans, while the Data Dictionary Cache stores metadata of database objects and privileges. The Buffer Cache and Redo Log Buffer are separate SGA components; Java Pool and Large Pool do not handle SQL plans."
+    },
+    {
+      "id": 9,
+      "question": "A DBA needs to boot an Oracle Instance. The default directory contains both a binary server parameter file (spfileorcl.ora) and a text-based initialization parameter file (initorcl.ora). If the DBA issues a standard STARTUP; command without any parameters, which file will Oracle use, and how will it handle dynamic modifications?",
+      "answers": [
+        {
+          "option": "A. Oracle will prioritize the text-based initorcl.ora file because text files are easier for the OS file system to parse during initial boot.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Oracle will prioritize the binary spfileorcl.ora file. Any subsequent ALTER SYSTEM command can write changes directly to this file, whereas the text-based file cannot be modified via SQL commands.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Oracle will merge both files and create a temporary initialization file in memory.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Oracle will fail to start and throw an ORA-00099 \"multiple parameter files detected\" exception, requiring the manual deletion of one file.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Oracle searches parameter files in a predefined priority order and prioritizes the binary spfile over the text init file. An spfile can be modified dynamically via database commands like ALTER SYSTEM, while the text init.ora file is edited with a text editor and cannot receive direct SQL modifications."
+    },
+    {
+      "id": 10,
+      "question": "Under a heavy transaction workload, the database's active transactions generate a massive volume of redo entries. What is the operational relationship between Online Redo Log Files and Archive Log Files during this process?",
+      "answers": [
+        {
+          "option": "A. Archive Log files are active files written to by LGWR, while Online Redo Log files are only read-only backup files.",
+          "is_correct": false
+        },
+        {
+          "option": "B. LGWR writes to Online Redo Log files in a circular fashion. When one file becomes full, a log switch occurs and the instance begins writing to the next log. If the database is in ARCHIVELOG mode, the ARCn background process copies the filled online redo log to an Archive Log file before it is overwritten.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Online Redo Logs and Archive Logs are identical files, but Archive Logs are compressed using OS utilities while active.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Redo entries are written to Archive Logs first; once verified by SMON, they are consolidated into the Online Redo Logs.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. LGWR writes to Online Redo Log files in a circular group; on a log switch the instance writes to the next log, and in ARCHIVELOG mode the ARCn process copies the filled log to an Archive Log before reuse. LGWR never writes directly to archive logs, and they are not identical files."
+    },
+    {
+      "id": 11,
+      "question": "A database designer is mapping logical schemas to physical storage. Which of the following statements correctly describes the structural relationship between Tablespaces and Datafiles?",
+      "answers": [
+        {
+          "option": "A. A tablespace consists of only one data file, and a data file can belong to multiple tablespaces.",
+          "is_correct": false
+        },
+        {
+          "option": "B. A tablespace consists of one or more physical data files, and a single data file can belong to only one tablespace.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Tablespaces and data files are completely independent; they are linked dynamically during runtime execution by the listener.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Tablespaces reside in memory as part of the SGA, while data files are the physical disk representations.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. A tablespace consists of one or more physical data files, and a single data file belongs to only one tablespace. The relationship is hard-coded physical metadata stored in the control files, and tablespaces are logical storage allocations, not memory components."
+    },
+    {
+      "id": 12,
+      "question": "An Enterprise Database encounters an error when attempting to insert rows because a specific table segment cannot extend. To troubleshoot this, a DBA must trace the logical space allocation hierarchy. Which of the following lists the logical storage components in order from finest granularity to largest, and accurately explains their relationships?",
+      "answers": [
+        {
+          "option": "A. Segment -> Extent -> Data Block -> Tablespace",
+          "is_correct": false
+        },
+        {
+          "option": "B. Data Block -> Extent -> Segment -> Tablespace",
+          "is_correct": true
+        },
+        {
+          "option": "C. Extent -> Data Block -> Tablespace -> Segment",
+          "is_correct": false
+        },
+        {
+          "option": "D. Data Block -> Segment -> Extent -> Tablespace",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The hierarchy from finest granularity to largest is: Data Block, Extent (contiguous blocks), Segment (set of extents for a data structure), and Tablespace (largest logical structure). A, C and D violate the structural relationship where blocks make up extents, extents make up segments, and segments reside in tablespaces."
+    },
+    {
+      "id": 13,
+      "question": "When creating an Oracle database, the DBA configures the Oracle Data Block size to be 8KB. The underlying Linux Operating System has a default block size of 4KB. How do these two block structures interact during physical disk read operations?",
+      "answers": [
+        {
+          "option": "A. Oracle must split every 8KB data block into two separate database files, causing severe data fragmentation.",
+          "is_correct": false
+        },
+        {
+          "option": "B. When the database server requests a single 8KB Oracle block, the OS file system executes a physical read operation to retrieve exactly two contiguous 4KB OS blocks from disk.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The database block size must be identical to the OS block size; otherwise, the database installation fails.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Oracle bypasses the OS blocks entirely and directly controls physical sector addressing on the hard drive.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. An Oracle data block must be a multiple of the OS block size; an 8KB Oracle block maps to two contiguous 4KB OS blocks. The mapping is handled seamlessly by the OS file system and does not cause fragmentation, and Oracle block sizes are commonly larger than OS block sizes."
+    },
+    {
+      "id": 14,
+      "question": "A database administrator is setting up a highly customized database from scratch. Which tablespaces are absolutely mandatory and must be created for the successful compilation and operation of the Oracle Database?",
+      "answers": [
+        {
+          "option": "A. SYSTEM and USERS",
+          "is_correct": false
+        },
+        {
+          "option": "B. SYSTEM and UNDO",
+          "is_correct": true
+        },
+        {
+          "option": "C. TEMP and SYSAUX",
+          "is_correct": false
+        },
+        {
+          "option": "D. USERS and DATA",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. SYSTEM (which holds the data dictionary) and UNDO (which holds transaction rollback records) are the mandatory tablespaces for a database to function. USERS, TEMP and SYSAUX are highly recommended and standard but not structurally mandatory."
+    },
+    {
+      "id": 15,
+      "question": "An application creates a new table named PRODUCT_CATALOG and an index on its primary key PROD_ID. How does Oracle organize the storage for these two objects within the tablespace?",
+      "answers": [
+        {
+          "option": "A. The data for PRODUCT_CATALOG and its index are interleaved and stored within the same physical segment to speed up query access.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Oracle creates two separate segments: a table segment to store the table data, and an index segment to store the index data. Each segment is allocated its own set of extents within the tablespace.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The index is stored in the Shared Pool of the SGA, while the table data is written directly to the control file.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Tables and indexes share a single physical datafile; they cannot reside in different datafiles even if they are in the same tablespace.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Oracle creates a table segment for table data and a separate index segment for index data, each with its own extents. Table and index data are never interleaved; segments are disk-based structures, and segments can span multiple datafiles of the same tablespace."
+    },
+    {
+      "id": 16,
+      "question": "A client application has successfully established a connection to the Oracle Database and is actively executing SELECT queries. How does the Oracle Net Listener interact with this client's SQL traffic during the active session?",
+      "answers": [
+        {
+          "option": "A. The Oracle Net Listener intercepts every SQL query, parses the syntax, and routes it to the database buffer cache.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The Oracle Net Listener is only involved in the initial connection establishment process. Once the connection is established, the client directly communicates with the allocated server process, and the listener has no further involvement in that session's traffic.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The Oracle Net Listener constantly monitors the active session and encrypts/decrypts the SQL traffic on the fly.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The SQL query must pass through the listener to be committed; if the listener is stopped during a query, the transaction is rolled back.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The Listener is a server-side mediator only for connection establishment. Once a server process is assigned, the client communicates directly with it, and stopping the listener does not affect active established connections. Parsing is done by the server process, and encryption is handled by the Oracle Net protocol stack."
+    },
+    {
+      "id": 17,
+      "question": "A DBA starts a new Oracle database instance, but realizes the Oracle Net Listener was not running. They immediately start the listener daemon. How does the newly started listener become aware of the database service without requiring a manual database restart?",
+      "answers": [
+        {
+          "option": "A. The listener automatically scans the OS memory space to locate any running Oracle instances.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The PMON process periodically performs dynamic service registration, contacting the listener and providing the instance name, database service names, and the type/addresses of service handlers.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The database server files are hard-coded with the listener's process ID, allowing direct inter-process communication.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The client application must send a registration packet to both the listener and the instance.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. PMON periodically performs dynamic service registration, providing the listener with the instance name, database service names, and service handler addresses. This is a server-side interaction transparent to the client; there are no hard-coded listener process IDs or memory scanning."
+    },
+    {
+      "id": 18,
+      "question": "To make a successful client connection to an Oracle Database, what four key networking details must the client-side naming method or connection string resolve?",
+      "answers": [
+        {
+          "option": "A. Username, Password, Database Name, and Tablespace Name.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Host where the listener is running, Port that the listener is monitoring, Protocol that the listener is using, and Name of the service that the listener is handling.",
+          "is_correct": true
+        },
+        {
+          "option": "C. IP Address, Subnet Mask, Default Gateway, and OS Version.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Instance Name, Process ID, Memory Address, and Session ID.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Oracle Net requires the client to know the Host, Port, Protocol, and Service Name of the connection. Credentials and database name are used but tablespace is not a networking parameter, and C and D list generic OS or internal session metrics."
+    },
+    {
+      "id": 19,
+      "question": "A developer wants to connect to a remote database server using the Easy Connect naming method: CONNECT hr/hr@sales-server:1521/sales.us.acme.com. However, the infrastructure team requires that the connection support \"Connect-time failover\" to a secondary server and \"Load balancing\" across multiple listener ports. What is the outcome of this request?",
+      "answers": [
+        {
+          "option": "A. Easy Connect will automatically enable load balancing and failover by appending multiple port numbers to the string.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Easy Connect cannot satisfy this request. It supports only TCP/IP and offers no support for advanced connection options such as connect-time failover, source routing, or load balancing. The developer must use Local Naming (via tnsnames.ora).",
+          "is_correct": true
+        },
+        {
+          "option": "C. Easy Connect will work, but only if the client-side names resolution file is manually modified.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Easy Connect will fail because it does not support TCP/IP connections.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Easy Connect requires no client-side configuration and supports only standard TCP/IP, with no support for advanced options like connect-time failover or load balancing. The Local Naming method (tnsnames.ora) must be used for such advanced options."
+    },
+    {
+      "id": 20,
+      "question": "A developer is troubleshooting a database connection error. They execute the command tnsping orcl on the client terminal and receive a successful confirmation with a response time of 20ms. However, when they execute sqlplus scott/tiger@orcl, they receive an ORA-12514 error stating that the listener does not currently know of the requested service. Why did tnsping succeed while the connection failed?",
+      "answers": [
+        {
+          "option": "A. tnsping bypasses the listener entirely and pings the physical database host directly, whereas SQL*Plus must connect to the listener.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The tnsping utility only ensures network connectivity between the client and the Oracle Net Listener and verifies that the alias exists; it does not verify that the requested database service is actually registered or available.",
+          "is_correct": true
+        },
+        {
+          "option": "C. SQL*Plus requires a separate password file to be configured on the client, which tnsping does not check.",
+          "is_correct": false
+        },
+        {
+          "option": "D. tnsping was run with administrative privileges, whereas SQL*Plus was run as a standard user.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. tnsping only verifies network connectivity and that the alias resolves; it does not verify that the service is actually registered with the listener. A listener can be running while the service has failed or not yet registered, causing SQL*Plus connections to fail."
+    },
+    {
+      "id": 21,
+      "question": "To explain Oracle's multitenant design, the slides use an \"apartment building\" analogy. Which of the following correctly describes how this analogy maps to the CDB/PDB structures?",
+      "answers": [
+        {
+          "option": "A. Each tenant represents a physical server, while the apartment building is the global cloud.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Tenants share common infrastructure (such as plumbing, foundations, and physical security) representing the CDB's shared background processes and memory, but live in private, fully isolated apartment units representing the Pluggable Databases (PDBs).",
+          "is_correct": true
+        },
+        {
+          "option": "C. Every PDB acts as its own apartment building, while the CDB is a single room within one apartment.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The analogy describes how multiple users share the same table rows, bypassing logical database security.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The apartment building analogy maps shared infrastructure (plumbing, foundations) to the CDB's shared instance memory and background processes, while the private, isolated apartment units represent the PDBs where data is kept secure and isolated. A, C and D are incorrect mappings."
+    },
+    {
+      "id": 22,
+      "question": "In an Oracle Multitenant CDB environment, what is the architectural division of labor and metadata storage between the Root Container (CDB$ROOT) and the individual PDBs?",
+      "answers": [
+        {
+          "option": "A. PDBs store all of the system metadata, while the Root Container is completely empty.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Every CDB has exactly one Root Container named CDB$ROOT. The root container stores system metadata required to manage the PDBs, and all PDBs belong to this root. Crucially, the CDB root does not store user data, which is kept isolated inside the user-created PDBs.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Both root and PDBs replicate all metadata identically, doubling the storage requirements for redundancy.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The Root Container manages database network security, while PDBs control physical disk sector allocations.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Every CDB has exactly one Root Container, CDB$ROOT, which stores the system metadata needed to manage the PDBs. The root does not store user data; that is kept isolated in the PDBs. The multitenant model avoids metadata replication, and physical block allocation is handled by the database engine."
+    },
+    {
+      "id": 23,
+      "question": "An application administrator connects to the Container Database and attempts to execute DDL statements (such as CREATE TABLE) directly inside the system-supplied Seed PDB (PDB$SEED). What is the outcome of this operation?",
+      "answers": [
+        {
+          "option": "A. The operation succeeds, and the new table becomes a mandatory column template for all future PDBs.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The operation fails because the seed PDB (PDB$SEED) is a system-supplied, read-only template used by the CDB to instantiate and provision new PDBs; objects inside PDB$SEED cannot be added, modified, or deleted.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The CDB automatically intercepts the command and redirects the table creation to the CDB$ROOT container.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The operation succeeds but requires the database to be restarted in exclusive mode.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. PDB$SEED is a system-supplied, read-only template used to instantiate and provision new PDBs; users cannot add, modify, or delete objects inside it. Oracle does not silently redirect DDL or allow template modifications."
+    },
+    {
+      "id": 24,
+      "question": "A server hosts a CDB containing 25 Pluggable Databases (PDBs). When a DBA views running OS processes and memory allocations, how many Oracle instances (SGA and background processes) will they see active for this environment?",
+      "answers": [
+        {
+          "option": "A. They will see 26 distinct Oracle Instances (1 for the CDB and 1 for each of the 25 PDBs).",
+          "is_correct": false
+        },
+        {
+          "option": "B. They will see exactly 1 Oracle Instance. Under the multitenant architecture, all PDBs share the single CDB's memory (SGA) and background processes, representing a massive consolidation of resources.",
+          "is_correct": true
+        },
+        {
+          "option": "C. They will see 25 instances, as the CDB itself does not require memory.",
+          "is_correct": false
+        },
+        {
+          "option": "D. They will see a dynamic number of instances that scales up and down based on active network traffic.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The core benefit of multitenancy is resource consolidation: all PDBs share the single CDB's SGA and background processes. A, C and D describe a non-multitenant model or a multiple-instance setup."
+    },
+    {
+      "id": 25,
+      "question": "An organization consolidates three separate business databases into a single Container Database (CDB) as Pluggable Databases: hrpdb, salespdb, and finpdb. During quarter-end, salespdb executes a series of highly unoptimized queries that consume 95% of the host server's CPU and disk I/O. What is the impact on the other PDBs, and how does this map to the multitenant risks?",
+      "answers": [
+        {
+          "option": "A. The other PDBs are completely unaffected because PDBs operate on independent physical host CPU cores.",
+          "is_correct": false
+        },
+        {
+          "option": "B. This represents the \"Noisy Neighbor\" risk. Because PDBs share the underlying physical server hardware, memory instance, and background processes, high traffic or resource consumption in one tenant can potentially degrade the performance of others.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The CDB will automatically shut down the offending salespdb and isolate its data files in a quarantined tablespace.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The other PDBs will automatically borrow CPU power from the client application servers to maintain their performance.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. This is the \"Noisy Neighbor\" risk: since PDBs share the same physical server resources, memory instance, and background processes, heavy resource use by one tenant can degrade others. The database does not auto-quarantine PDBs, and client servers cannot supply CPU to the host."
+    },
+    {
+      "id": 26,
+      "question": "A company wants to migrate an existing payroll application from a non-multitenant Oracle 11g database to an Oracle 12c multitenant container database (CDB) as a PDB. What changes must the development team make to the payroll application's front-end code and SQL queries to support this new architecture?",
+      "answers": [
+        {
+          "option": "A. Every SQL query in the application must be rewritten to prefix table names with the container ID (e.g., SELECT * FROM CDB_1.employees).",
+          "is_correct": false
+        },
+        {
+          "option": "B. The team does not need to make any changes to the application code or SQL queries. The multitenant architecture allows existing databases to be converted to pluggable databases without changes at other tiers of the application.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The application must be rewritten to bypass the client process and run directly as a server background process on the host.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The application must be updated to use Easy Connect because Local Naming is unsupported for pluggable databases.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. A core design goal of Oracle multitenancy is application portability: existing databases can be plugged in without structural changes at other tiers. Schema references remain local and transparent within the PDB, and both Easy Connect and Local Naming are supported."
+    },
+    {
+      "id": 27,
+      "question": "A CDB houses 50 Pluggable Databases (PDBs) representing various company branches. The DBA needs to apply an Oracle security patch to fix a vulnerability in the core database dictionary views. Under the multitenant architecture, how is this maintenance performed?",
+      "answers": [
+        {
+          "option": "A. The DBA must take each of the 50 PDBs offline individually, apply the patch 50 times, and restart each database sequentially.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The DBA applies the patch once centrally to the Container Database (CDB) Root Container. Because the PDBs share system metadata and the underlying infrastructure, the patch is deployed and rolled out to all 50 PDBs simultaneously.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Security patches cannot be applied to CDBs; the DBA must unplug all PDBs, patch them on a temporary standalone server, and plug them back in.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The patch must be installed on the client workstation to update the Oracle Net configuration files.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Centralized maintenance is a major benefit of multitenancy: patches and updates are deployed once centrally to the CDB and rolled out to all PDBs simultaneously, avoiding the tedious per-database patching model."
+    },
+    {
+      "id": 28,
+      "question": "A cloud service provider hosts two competing retail companies' databases as retail_pdb1 and retail_pdb2 inside the same physical CDB. What security measures prevent the administrator of retail_pdb1 from viewing or modifying tables belonging to retail_pdb2?",
+      "answers": [
+        {
+          "option": "A. The database relies on the physical disk hardware to encrypt the files based on the server's MAC address.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Oracle enforces strict application-level and database-level security rules. Each PDB is fully isolated from other PDBs in the CDB, with its own private dictionary views, user schemas, and tablespaces, preventing cross-tenant data access.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Competing companies cannot be hosted inside the same CDB; they must use separate physical servers.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The listener blocks all connections that attempt to read from more than one database tablespace at a time.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Strict application-level and database-level security rules are enforced, and each PDB has its own private dictionary views, user schemas, and tablespaces, ensuring full data isolation despite shared hardware. Hosting multiple tenants safely in one CDB is the exact use-case of multitenancy."
+    },
+    {
+      "id": 29,
+      "question": "A client needs to connect to the pluggable database hrpdb. Which configuration files or parameters are required on the client side if the DBA mandates using Local Naming versus Easy Connect?",
+      "answers": [
+        {
+          "option": "A. Local Naming requires editing listener.ora on the client; Easy Connect requires editing sqlnet.ora.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Local Naming requires a client-side Names Resolution file (tnsnames.ora) containing an alias mapped to the hrpdb service name. Easy Connect requires no client-side configuration files; the client simply passes the connection parameters directly in the TCP/IP string (e.g., @host:port/hrpdb).",
+          "is_correct": true
+        },
+        {
+          "option": "C. Both methods require an active directory (LDAP) server to be configured on the client computer.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Easy Connect is only supported if the client-side names resolution file is completely deleted from the system.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Local Naming requires the client-side tnsnames.ora names resolution file, while Easy Connect requires no client-side configuration and passes parameters directly in the TCP/IP string. listener.ora is server-side, LDAP is a separate naming method, and Easy Connect can coexist with local naming files."
+    },
+    {
+      "id": 30,
+      "question": "A DBA is inspecting the physical disk files of a Container Database (CDB) hosting three Pluggable Databases (PDBs). Which of the following correctly describes the distribution of physical files (Control Files, Redo Log Files, and Data Files) across this multitenant environment?",
+      "answers": [
+        {
+          "option": "A. Every PDB has its own private set of Control Files and Redo Log Files, while they all share a single giant Data File.",
+          "is_correct": false
+        },
+        {
+          "option": "B. There is only one shared set of Control Files and Online Redo Log Files for the entire CDB, but each PDB possesses its own private set of Data Files containing its specific tablespaces (like SYSTEM, SYSAUX, and user-defined tablespaces).",
+          "is_correct": true
+        },
+        {
+          "option": "C. Control Files, Redo Log Files, and Data Files are all completely merged into a single system binary file, making directory listing impossible.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Physical files do not exist in multitenant architectures; CDBs write all transactions directly to raw memory sectors.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The CDB has one shared set of physical control files and online redo log files, while each PDB has its own private data files containing its specific tablespaces (SYSTEM, SYSAUX, and user-defined tablespaces) to maintain data isolation."
+    }
+  ]
+}

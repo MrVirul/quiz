@@ -1,0 +1,695 @@
+{
+  "description": "Indexing and File Organization Mid Practice Quiz",
+  "questions": [
+    {
+      "id": 1,
+      "question": "A database system needs to execute a query that performs a full table scan on a dataset containing 10,000 pages. Which of the following statements correctly compares the performance and mechanics of this scan across Heap, Sorted (Sequential), and Hashed file organizations? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. In a Heap file, a full scan requires reading every page in arbitrary order, but it is highly efficient because there is no overhead to maintain record order.",
+          "is_correct": true
+        },
+        {
+          "option": "B. In a Sorted file, a full scan takes significantly fewer page reads than a Heap file because the pages are already ordered sequentially on disk.",
+          "is_correct": false
+        },
+        {
+          "option": "C. In a Hashed file, a full scan requires traversing the primary directory and reading all primary bucket pages as well as any associated overflow pages.",
+          "is_correct": true
+        },
+        {
+          "option": "D. A full scan on a Sorted file takes the exact same number of I/O block reads (10,000 page transfers) as a Heap file, despite the records in the Sorted file being ordered.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answers are A, C and D. Heap files scan all pages in raw sequential order, hashed files must read every primary and overflow bucket page, and both Heap and Sorted files must read all 10,000 pages for a full scan. B is wrong because sorted files only reduce costs for equality or range searches, not full scans."
+    },
+    {
+      "id": 2,
+      "question": "An application frequently deletes records from a database. If the table is stored as a Sorted File (sorted on Employee_ID) rather than a Heap File, what is the worst-case performance implication of a deletion operation?",
+      "answers": [
+        {
+          "option": "A. The deletion in a Sorted file is faster because binary search locates the record in O(log N) steps and the slot is immediately marked as empty with no further I/O.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The deletion in a Sorted file requires searching for the record, deleting it, and then physically moving subsequent records and pages to maintain sorted order on disk.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The database automatically converts the Sorted file into a Heap file upon the first deletion to prevent performance degradation.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Deletions are forbidden in Sorted files; developers must use explicit logical views to filter out deleted records.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. To maintain physical sorted order, deleting a record requires moving/shifting subsequent records on disk, causing high write overhead. Simply marking the slot empty causes fragmentation, and the database does not automatically convert file organizations."
+    },
+    {
+      "id": 3,
+      "question": "A senior architect is designing secondary indexes for a high-volume transactional table. Which of the following statements correctly evaluates the trade-offs between Alternative 1, Alternative 2, and Alternative 3 for index data entries? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Alternative 1 contains the actual data record itself inside the index, meaning the index file is also the primary data file.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Alternative 2 stores data entries of the form <k, rid>, where rid is the record ID of the data record on disk. This results in smaller index entries than Alternative 1.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Alternative 3 stores data entries of the form <k, list of rids>, which is more space-efficient than Alternative 2 when there are many duplicate search key values.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Alternative 1 is the only alternative that allows the index to be unclustered, because the records can be scattered across different pages.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are A, B and C. Alternative 1 embeds the actual data records, Alternative 2 stores <k, rid> pairs, and Alternative 3 stores <k, list of rids> which is more compact for duplicated keys. D is wrong because Alternative 1 must be clustered since the physical records are embedded in the index leaf nodes."
+    },
+    {
+      "id": 4,
+      "question": "A table orders is stored physically on disk sorted by order_date. A developer wants to build two indexes: idx_order_date (on order_date) and idx_customer_id (on customer_id). Which of the following statements is true regarding these indexes?",
+      "answers": [
+        {
+          "option": "A. Both indexes can be created as clustered indexes to optimize range queries on both fields.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Only idx_order_date can be a clustered index, while idx_customer_id must be an unclustered index.",
+          "is_correct": true
+        },
+        {
+          "option": "C. idx_customer_id can be clustered if we force the database to dynamically duplicate and sort the table on a separate disk partition.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Unclustered indexes are always smaller and faster than clustered indexes because they do not require sorting the leaf data.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. A table can have at most one clustered index because physical records can be sorted in only one sequence. Since the table is already sorted by order_date, only idx_order_date can be clustered; idx_customer_id must be unclustered, and unclustered range queries suffer random disk I/O."
+    },
+    {
+      "id": 5,
+      "question": "A database researcher defines an index as \"Sparse\". Which of the following conditions must hold true for this index? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. There must be at least one data entry in the index for every unique search key value present in the data file.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The index can only be sparse if it is also a clustered index.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Sparse indexes are generally smaller in physical storage size than dense indexes.",
+          "is_correct": true
+        },
+        {
+          "option": "D. A sparse index always uses Alternative 1 for its data entries.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are B and C. Every sparse index is clustered because the data file must be physically sorted by the search key, and sparse indexes store only a subset of entries so they are smaller than dense indexes. A describes a dense index, and Alternative 1 always produces a dense index."
+    },
+    {
+      "id": 6,
+      "question": "A composite index is created on the sales table: CREATE INDEX idx_composite ON sales(region, sale_amount);. Which of the following queries can efficiently utilize this index to perform an index seek/range scan rather than a full index scan? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. SELECT * FROM sales WHERE region = 'WEST' AND sale_amount = 500;",
+          "is_correct": true
+        },
+        {
+          "option": "B. SELECT * FROM sales WHERE region = 'WEST' AND sale_amount > 1000;",
+          "is_correct": true
+        },
+        {
+          "option": "C. SELECT * FROM sales WHERE sale_amount = 500;",
+          "is_correct": false
+        },
+        {
+          "option": "D. SELECT * FROM sales WHERE region > 'NORTH';",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answers are A, B and D. Queries using the leading column (region), whether equality or range, can use the index. C is wrong because it filters only by sale_amount without the leading region column, forcing a full index scan."
+    },
+    {
+      "id": 7,
+      "question": "A database table contains 100,000 records stored on 1,000 pages. An unclustered index exists on a search key field. A query retrieves 10,000 records matching a range condition. What is the approximate disk I/O cost (in page transfers) to retrieve these records using the unclustered index, compared to a full table scan?",
+      "answers": [
+        {
+          "option": "A. Approximately 100 page reads because the index filters 90% of the data.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Up to 10,000 page reads in the worst case, which is significantly worse than a full table scan (1,000 page reads).",
+          "is_correct": true
+        },
+        {
+          "option": "C. Exactly 1,000 page reads, since the database cache resolves duplicate reads instantly.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Exactly 10 page reads because index heights are capped at 3 or 4.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. In an unclustered index, records are scattered, so retrieving 10,000 records can require up to 10,000 random page reads in the worst case, far worse than the 1,000-page sequential full table scan. Index height only affects the lookup of RIDs, not the data page fetch cost."
+    },
+    {
+      "id": 8,
+      "question": "While indexes accelerate read operations, they introduce write overhead. Which of the following DML operations is structurally impacted by the presence of a B+ Tree index? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. INSERT operations, because a new data entry must be added to the index, potentially causing node splits and reorganizations.",
+          "is_correct": true
+        },
+        {
+          "option": "B. UPDATE operations that modify a non-indexed column, because the database must verify if the modified row still fits the physical leaf structure of the index.",
+          "is_correct": false
+        },
+        {
+          "option": "C. DELETE operations, because the corresponding index entry must be located and removed, potentially causing node merges or redistribution.",
+          "is_correct": true
+        },
+        {
+          "option": "D. UPDATE operations that modify the indexed search key column, because the data entry must be deleted from its old sorted position and inserted into its new sorted position in the tree.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answers are A, C and D. Inserts add entries (may split nodes), deletes remove entries (may merge/redistribute), and updates of an indexed key act like a delete followed by an insert. B is wrong because modifying a non-indexed column does not affect the index structure."
+    },
+    {
+      "id": 9,
+      "question": "A developer wants to evaluate the cost of finding all students with a GPA > 3.0 in a sorted data file of 1,000,000 records compared to using a B+ Tree index. If the data file is physically sorted by GPA, how is the range query processed?",
+      "answers": [
+        {
+          "option": "A. The database performs a binary search on the raw data file to find the first student with GPA > 3.0, and then scans sequentially to retrieve the rest.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Binary search cannot be used on sorted files because of physical page boundaries; a full scan is always executed.",
+          "is_correct": false
+        },
+        {
+          "option": "C. The database automatically builds an in-memory hash table of the entire 1,000,000 record file on each execution.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The sorted file is discarded and rewritten as a heap file before execution.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is A. With the file sorted by GPA, the engine binary-searches the page blocks to find the first matching record, then scans sequentially. Physical sorted files are preserved during query processing, and binary search is fully applicable to sorted disk files."
+    },
+    {
+      "id": 10,
+      "question": "You are a database engineer. You are asked to review a recommendation to build a secondary B+ Tree index on a column named is_active (which contains only 'Y' or 'N' values representing active/inactive accounts). Is this a good design decision?",
+      "answers": [
+        {
+          "option": "A. Yes, because a B+ Tree index performs exceptionally well on columns with low cardinality.",
+          "is_correct": false
+        },
+        {
+          "option": "B. No, because the column has extremely low selectivity. A search will likely match a large percentage of the table, making a full table scan more efficient than traversing an unclustered B+ Tree.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Yes, because B+ Trees automatically convert 'Y' and 'N' characters into binary bits to reduce storage.",
+          "is_correct": false
+        },
+        {
+          "option": "D. No, because B+ Trees are strictly limited to numeric columns and cannot index character datatypes.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. A B+ Tree secondary index is efficient only with high selectivity. For a low-selectivity column like is_active, an unclustered index causes massive random reads that are slower than a full table scan. Low-cardinality columns are better suited to Bitmap indexes, and B+ Trees can index any sortable type."
+    },
+    {
+      "id": 11,
+      "question": "Let a B+ Tree have a parameter d representing its \"order\" (minimum occupancy). Which of the following statements correctly represents the structural constraints of a B+ Tree of order d? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. Every leaf node and every non-leaf (index) node (except the root) must contain at least d entries and at most 2d entries.",
+          "is_correct": true
+        },
+        {
+          "option": "B. The root node is completely exempt from the minimum occupancy rule and can contain as few as 1 entry.",
+          "is_correct": true
+        },
+        {
+          "option": "C. If a leaf node overflows during an insert, it must contain exactly 2d + 1 entries before it is split.",
+          "is_correct": true
+        },
+        {
+          "option": "D. B+ Trees are height-balanced, meaning the paths from the root to any leaf node are of equal length.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answers are A, B, C and D. Each node except the root holds d to 2d entries, the root can have as few as 1 entry, an overflow occurs when a 2d-full node receives a (2d+1)-th entry, and all leaves are at the same depth."
+    },
+    {
+      "id": 12,
+      "question": "A B+ Tree index has an order d = 50, resulting in a maximum of 100 keys per node. Assuming a typical average fill-factor of 67%, the average fanout F is approximately 67. If the database buffer pool has enough memory to hold only the root node and Level 2 index nodes, how many pages must be read from disk in the worst case to retrieve a single record if the tree has a height of 4?",
+      "answers": [
+        {
+          "option": "A. 4 pages, because every index level requires a disk read.",
+          "is_correct": false
+        },
+        {
+          "option": "B. 2 pages, because Level 1 and Level 2 are already cached in memory, requiring disk reads only for Level 3 and the Leaf level (Level 4).",
+          "is_correct": true
+        },
+        {
+          "option": "C. 1 page, because only the leaf page needs to be fetched from disk.",
+          "is_correct": false
+        },
+        {
+          "option": "D. 0 pages, because a height 4 B+ Tree can reside entirely in memory.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. A height 4 tree has 4 levels: root, Level 2, Level 3, and Leaf (Level 4). With the root and Level 2 cached, only Level 3 and the leaf level require physical disk reads, totaling 2 page reads."
+    },
+    {
+      "id": 13,
+      "question": "In a non-leaf (index) node of a B+ Tree containing search keys K1, K2, ..., Km and child pointers P0, P1, ..., Pm, which mathematical inequality governs the set of key values K accessible through child pointer Pi (for 0 < i < m)?",
+      "answers": [
+        {
+          "option": "A. Ki < K <= K(i+1)",
+          "is_correct": false
+        },
+        {
+          "option": "B. Ki <= K < K(i+1)",
+          "is_correct": true
+        },
+        {
+          "option": "C. Ki <= K <= K(i+1)",
+          "is_correct": false
+        },
+        {
+          "option": "D. K < Ki",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Each pointer Pi points to a subtree containing all keys K such that Ki <= K < K(i+1), guaranteeing consistent routing boundaries during searches. A, C and D represent incorrect routing inequalities."
+    },
+    {
+      "id": 14,
+      "question": "During the insertion of a new data entry into a full leaf node of a B+ Tree of order d=2 (max 4 entries), a split occurs. The keys in the leaf node, including the new insert, are: [2, 3, 5, 7, 8]. How does the \"Copy-Up\" mechanism handle the redistribution and parent promotion?",
+      "answers": [
+        {
+          "option": "A. Key 5 is pushed up to the parent and removed from the leaf level entirely.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Key 5 is copied up to the parent, and it also remains as the first key of the new right-hand leaf node.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Key 3 is copied up to the parent, and the leaf splits into [2] and [3, 5, 7, 8].",
+          "is_correct": false
+        },
+        {
+          "option": "D. The tree height immediately doubles because every leaf split forces a root split.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. On a leaf split, the entries are redistributed and the middle key (5) is copied up to the parent while also remaining in the leaf level as the first key of the right sibling [5, 7, 8]. Removing it entirely (A) describes push-up for index splits; leaf splits do not always force a root split."
+    },
+    {
+      "id": 15,
+      "question": "Contrast the split of a leaf node with the split of an index (non-leaf) node. When a non-leaf index node with keys [5, 13, 17, 24, 30] splits during insertion, which key is promoted, and how is it structured?",
+      "answers": [
+        {
+          "option": "A. Key 17 is copied up to the parent and remains in the left child node.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Key 17 is pushed up to the parent and is physically removed from both child nodes.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Key 13 is pushed up to the parent, and the child nodes become [5, 13] and [17, 24, 30].",
+          "is_correct": false
+        },
+        {
+          "option": "D. Index nodes do not split; they simply grow overflow pages.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. During an index node split, the middle key (17) is pushed up to the parent and removed from the children, which become [5, 13] and [24, 30]. Keeping it in a child (A) describes copy-up for leaf splits, and index nodes must split to preserve height-balance."
+    },
+    {
+      "id": 16,
+      "question": "A B+ Tree leaf node L of order d=2 contains only 1 entry after a deletion. Its immediate sibling node S (under the same parent) contains 3 entries. What structural operation will occur to resolve the underflow?",
+      "answers": [
+        {
+          "option": "A. Node L and Node S will be merged into a single leaf node, and their parent index entry will be deleted.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Node L will borrow/redistribute an entry from S, and the parent node's separating key will be updated to reflect the new boundary.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The database will flag the index as corrupted and initiate an offline index rebuild.",
+          "is_correct": false
+        },
+        {
+          "option": "D. No change is made; B+ Trees allow underflow at the leaf level with no performance penalty.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. On underflow, the engine first attempts redistribution by borrowing from an adjacent sibling that has more than d entries, updating the parent separating key. Merging only occurs when redistribution fails (sibling has exactly d entries)."
+    },
+    {
+      "id": 17,
+      "question": "A B+ Tree deletion causes leaf node L and sibling S to merge. Which of the following statements correctly describes the subsequent effects of this merge on the parent node? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. The entry in the parent node pointing to L or S must be deleted.",
+          "is_correct": true
+        },
+        {
+          "option": "B. If the parent node was already at minimum occupancy (d entries), removing an entry will cause the parent node to underflow, propagating the merge recursively up the tree.",
+          "is_correct": true
+        },
+        {
+          "option": "C. If a merge propagates all the way to the root and causes the root to lose its last separating key, the height of the B+ Tree decreases by 1.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Merging at the leaf level always forces a complete restructure and rebuild of the entire tree from scratch.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are A, B and C. When leaf nodes merge, the parent entry pointing to the removed sibling is deleted, which may cascade underflow up the tree and, if the root loses its last key, reduce tree height by 1. Merging is a local, recursive update, not a full rebuild."
+    },
+    {
+      "id": 18,
+      "question": "In real-world databases, search key values are frequently duplicated. Which of the following represents the preferred approach by many commercial DBMSs to handle duplicates within B+ Tree indexes?",
+      "answers": [
+        {
+          "option": "A. Creating unlimited chains of overflow leaf pages attached to a single leaf entry.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Appending the record's unique row identifier (rowid) to the search key to guarantee that every index key is unique.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Storing duplicate values as nested XML arrays inside a single leaf index block.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Disabling duplicates; users must alter columns to be unique before indexing them.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Many DBMSs make index keys unique by appending the rowid to the search key, avoiding the search performance degradation of overflow-page chains. C and D are unrealistic design constraints."
+    },
+    {
+      "id": 19,
+      "question": "A user queries a B+ Tree for key 15 using the structure in the lecture slides (where leaf nodes are: [2, 3, 5, 7], [14, 16], and parent separator key is 17). How does the search algorithm behave, and how is the absence of 15 proven?",
+      "answers": [
+        {
+          "option": "A. The search fails at the root because 15 is not in the root node, preventing child traversal.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The search compares 15 < 17 at the root, routes to the left child, searches the leaf [14, 16], and determines 15 is absent because it is not present in its designated leaf boundary.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The search algorithm triggers a full table scan because any search index failure invalidates the B+ Tree temporarily.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The search traverses the entire leaf sequence set from left to right sequentially to prove the key is missing.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Starting at the root, 15 < 17 routes the search to the left subtree, whose leaf [14, 16] is scanned; since 15 is not there, the sorted leaf proves it is absent. Index nodes hold only routing bounds, and the search completes gracefully in O(log N) without a full scan."
+    },
+    {
+      "id": 20,
+      "question": "How does a B+ Tree increase its physical height?",
+      "answers": [
+        {
+          "option": "A. It grows from the bottom: when a leaf splits, it pushes down a new level of leaves, pushing the old leaves deeper.",
+          "is_correct": false
+        },
+        {
+          "option": "B. It grows from the top: when the root node overflows and splits, a new root is created above it, increasing the tree height by 1.",
+          "is_correct": true
+        },
+        {
+          "option": "C. It grows horizontally: by increasing the physical page size of the leaf nodes on disk.",
+          "is_correct": false
+        },
+        {
+          "option": "D. It grows when the database administrator manually runs a REORGANIZE HEIGHT command.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. B+ Trees grow from the top: when a split propagates to the root, a new root page is created above the split images, increasing the height by exactly one level. Page size is fixed at creation, and height adjustments are automatic."
+    },
+    {
+      "id": 21,
+      "question": "Why does Static Hashing struggle to maintain its O(1) search performance over time as a database table grows?",
+      "answers": [
+        {
+          "option": "A. The directory of pointers becomes too large to fit in physical RAM, causing disk thrashing.",
+          "is_correct": false
+        },
+        {
+          "option": "B. As more records are inserted, buckets overflow, creating long overflow page chains that must be searched sequentially, degrading search times to O(N).",
+          "is_correct": true
+        },
+        {
+          "option": "C. The hash function dynamically changes its mathematical equation on each insert, causing CPU bottlenecks.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Static hashing does not support equality selections, which are the most common database queries.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. In Static Hashing, buckets overflow into sequential overflow pages; as these chains grow, searches degrade toward O(N). Static hashing has no directory (that is Extendible Hashing), hash functions are static, and static hashing excels at equality selections."
+    },
+    {
+      "id": 22,
+      "question": "In an Extendible Hashing scheme, a bucket B with local depth dL overflows. The global depth of the directory is DG. Under what exact condition will splitting bucket B force the directory size to double?",
+      "answers": [
+        {
+          "option": "A. When dL < DG",
+          "is_correct": false
+        },
+        {
+          "option": "B. When dL = DG",
+          "is_correct": true
+        },
+        {
+          "option": "C. When dL > DG",
+          "is_correct": false
+        },
+        {
+          "option": "D. Whenever any bucket splits, regardless of depth values.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Splitting increments the local depth by 1; if dL = DG, the new local depth would exceed the global depth, so the directory must double (DG+1). If dL < DG, the split is handled by repointing existing directory elements, and local depth can never exceed global depth."
+    },
+    {
+      "id": 23,
+      "question": "An Extendible Hashing index has a global depth of 3 (directory size of 8). A record r has a search key hash value of h(r) = 13 (binary 1101). If the system uses the least significant bits (rightmost bits) for mapping, which directory slot points to the bucket containing this record?",
+      "answers": [
+        {
+          "option": "A. Slot 001 (decimal 1)",
+          "is_correct": false
+        },
+        {
+          "option": "B. Slot 101 (decimal 5)",
+          "is_correct": true
+        },
+        {
+          "option": "C. Slot 110 (decimal 6)",
+          "is_correct": false
+        },
+        {
+          "option": "D. Slot 100 (decimal 4)",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The binary of 13 is 1101; using the last (least significant) 3 bits gives 101 (decimal 5), so directory slot 101 points to the target bucket."
+    },
+    {
+      "id": 24,
+      "question": "Refer to the class slide example of Extendible Hashing. We have a directory with global depth 3 and a bucket with local depth 2 containing keys [4, 12, 20]. If we insert key 32 (hash binary 100000) into this bucket: Does the bucket split? Does the directory double?",
+      "answers": [
+        {
+          "option": "A. Yes, the bucket splits, and yes, the directory doubles because the bucket overflows.",
+          "is_correct": false
+        },
+        {
+          "option": "B. No, the bucket does not split because it has overflow pages.",
+          "is_correct": false
+        },
+        {
+          "option": "C. Yes, the bucket splits, but no, the directory does not double because the local depth of the bucket (2) is less than the global depth (3).",
+          "is_correct": true
+        },
+        {
+          "option": "D. The entire index is converted to static hashing because of key conflicts.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is C. Keys 4 (100), 12 (1100), 20 (10100) and 32 (100000) all end in 00, so inserting 32 triggers a split. Because the local depth (2) is less than the global depth (3), the directory does not double; keys are redistributed using 3 bits by adjusting existing pointers."
+    },
+    {
+      "id": 25,
+      "question": "Under what condition can the directory of an Extendible Hashing index be halved in size during a delete operation?",
+      "answers": [
+        {
+          "option": "A. When any bucket becomes completely empty.",
+          "is_correct": false
+        },
+        {
+          "option": "B. When the global depth becomes 0.",
+          "is_correct": false
+        },
+        {
+          "option": "C. When every directory element points to the same bucket as its split-image counterpart, allowing the global depth to decrement by 1.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Directories can never be halved; they are write-once structures that only grow.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is C. After merges, if every directory entry points to the same bucket as its split-image counterpart (entry i and entry i + 2^(DG-1)), the directory contains redundant duplicates and can be halved. Merging one bucket alone does not guarantee halving, and directories can shrink dynamically."
+    },
+    {
+      "id": 26,
+      "question": "A database contains an index: CREATE INDEX idx_emp_name ON employee(lname);. A developer runs the query: SELECT * FROM employee WHERE UPPER(lname) = 'SMITH';. How will the database engine execute this query, and why?",
+      "answers": [
+        {
+          "option": "A. It will use idx_emp_name to perform a fast index seek because the search key is lname.",
+          "is_correct": false
+        },
+        {
+          "option": "B. It will perform a full table scan because the use of the UPPER function on the column prevents the database from using the standard B-tree index.",
+          "is_correct": true
+        },
+        {
+          "option": "C. It will automatically rewrite the index on disk to be function-based at runtime.",
+          "is_correct": false
+        },
+        {
+          "option": "D. It will throw a syntax error because functions are not allowed in the WHERE clause.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The standard B-tree index stores raw column values, so applying UPPER to the column prevents a direct index seek and forces a full table scan. Databases do not rewrite physical index structures at runtime, and functions are fully supported in SQL predicates."
+    },
+    {
+      "id": 27,
+      "question": "To optimize the query in the previous question, the developer creates the following index: CREATE INDEX upper_ix ON employee (UPPER(lname));. Which of the following queries can now utilize this index? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. SELECT first_name, lname FROM employee WHERE UPPER(lname) = 'SMITH';",
+          "is_correct": true
+        },
+        {
+          "option": "B. SELECT first_name, lname FROM employee WHERE lname = 'SMITH';",
+          "is_correct": false
+        },
+        {
+          "option": "C. SELECT first_name, lname FROM employee WHERE UPPER(lname) LIKE 'S%';",
+          "is_correct": true
+        },
+        {
+          "option": "D. SELECT first_name, lname FROM employee WHERE LOWER(lname) = 'smith';",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answers are A and C. A matches the indexed expression UPPER(lname) exactly, and C can use the index on the uppercase prefix. B filters by lname directly, which does not match the function-based key, and D uses LOWER, which is a different expression than the indexed UPPER."
+    },
+    {
+      "id": 28,
+      "question": "A data warehouse table contains 50,000,000 rows. The column region_code has only 4 possible values: NE, NW, SE, SW. A B+ Tree index and a Bitmap index are evaluated for this column. Why is the Bitmap Index superior in this scenario? [Select ALL correct answers]",
+      "answers": [
+        {
+          "option": "A. The bitmap index represents the presence of each region using a single bit (0 or 1) for each row, making it extremely compact and saving massive disk space.",
+          "is_correct": true
+        },
+        {
+          "option": "B. The bitmap index allows the database to perform rapid bitwise logical operations (AND, OR, NOT) in memory when queries combine multiple low-cardinality filters.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The bitmap index is faster for transactional updates (high-frequency INSERTs/DELETEs) than a B+ Tree.",
+          "is_correct": false
+        },
+        {
+          "option": "D. A B+ Tree index on this column would be highly inefficient because the low selectivity would require traversing the index and then reading almost every table page anyway.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Correct answers are A, B and D. Bitmap indexes use compact bit arrays and support fast bitwise operations, while B+ Trees are inefficient for low-cardinality columns. C is wrong because updating a bitmap block locks thousands of rows, making bitmap indexes slow for OLTP writes."
+    },
+    {
+      "id": 29,
+      "question": "Refer to the class slide illustration of a Bitmap Index on REGION_CODE. The column mapping is structured such that: Bit 1 = NE, Bit 2 = NW, Bit 3 = SE, Bit 4 = SW. If the first row in the table has REGION_CODE = 'NW', what is the byte sequence representing the first row's bitmap values across these four regions?",
+      "answers": [
+        {
+          "option": "A. 1 0 0 0",
+          "is_correct": false
+        },
+        {
+          "option": "B. 0 1 0 0",
+          "is_correct": true
+        },
+        {
+          "option": "C. 0 0 1 0",
+          "is_correct": false
+        },
+        {
+          "option": "D. 0 0 0 1",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Since Bit 2 corresponds to NW and the row value is NW, the second bit is 1 and all others are 0, giving the binary sequence 0 1 0 0. A, C and D represent NE, SE and SW respectively."
+    },
+    {
+      "id": 30,
+      "question": "A database designer is choosing index types. Which of the following columns is most appropriate for a B+ Tree Index rather than a Bitmap Index?",
+      "answers": [
+        {
+          "option": "A. customer_email, because emails are unique to each customer (high data sparsity/selectivity) and B+ Trees Excel at locating highly sparse keys.",
+          "is_correct": true
+        },
+        {
+          "option": "B. marital_status (Single, Married, Divorced, Widowed), because it contains few repeating values.",
+          "is_correct": false
+        },
+        {
+          "option": "C. is_taxable (True/False), because it is a binary flag.",
+          "is_correct": false
+        },
+        {
+          "option": "D. shipping_status (Pending, Shipped, Delivered, Cancelled), because it has low cardinality.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is A. Columns with high sparsity (many unique values) such as customer_email are ideal for B+ Trees. B, C and D are low-cardinality columns with many repeating values, making them better candidates for Bitmap indexes."
+    }
+  ]
+}

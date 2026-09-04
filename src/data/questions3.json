@@ -1,0 +1,695 @@
+{
+  "description": "Query Processing - Lecture 4 - Mid Practice Quiz",
+  "questions": [
+    {
+      "id": 1,
+      "question": "A client issues a complex SQL SELECT statement to the database. During the initial \"Parsing and Translation\" phase, how does the DBMS utilize the system catalog, and what is the exact output of this step before it reaches the query optimizer?",
+      "answers": [
+        {
+          "option": "A. The DBMS executes the query on a cached data snapshot to check if it returns results; the output is a set of physical database row pointers.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The DBMS verifies syntactic correctness and semantic validity (such as column and table existence), converting the query block into an extended relational algebra tree or graph representing the query blocks.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The parser translates the SQL directly into machine execution code, bypassing relational algebra to optimize hardware register usage.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The parser estimates the cardinality of the query using histograms in the catalog and outputs an optimized physical execution plan.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The parsing and translation step is responsible for verifying the syntactic and semantic correctness of the query against the system catalog (metadata). It translates the query block into an internal form, which is an extended relational algebra expression, represented structurally as either a query tree or query graph. A is incorrect because parsing does not execute queries on data snapshots or output row pointers. C is incorrect because SQL is converted to relational algebra, not machine execution code, to allow algebraic optimization. D is incorrect because cardinality estimation and physical plan generation belong to the Optimization phase, which occurs after parsing and translation."
+    },
+    {
+      "id": 2,
+      "question": "Consider a schema with S (100 pages, 8,000 tuples) and SP (10,000 pages, 1,000,000 tuples). We need to evaluate: SELECT S.sname FROM S, SP WHERE S.sno = SP.sno AND SP.pno = 'P2'. Assume 50 tuples in SP match SP.pno = 'P2'. Plan 1 computes the Cartesian product S x SP, writes the intermediate result to disk, then applies the selection and projection. Plan 2 pushes the selection down (selection SP.pno = 'P2' applied to SP), keeps the 50 matching tuples in memory, and joins them with S. Assuming a simple block-by-block read/write with no page buffering optimizations, what is the exact physical I/O cost comparison between Plan 1 and Plan 2?",
+      "answers": [
+        {
+          "option": "A. Plan 1 costs ~10,100 I/Os; Plan 2 costs ~3,000,000 I/Os.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Plan 1 costs ~1,000,100 I/Os; Plan 2 costs ~10,100 I/Os.",
+          "is_correct": false
+        },
+        {
+          "option": "C. Plan 1 costs ~3,000,000 I/Os; Plan 2 costs ~10,100 I/Os.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Plan 1 costs ~1,100,000 I/Os; Plan 2 costs ~1,000 I/Os.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is C. Plan 1 (Cartesian Product): reading SP and S to compute the product requires reading 10,000 x 100 = 1,000,000 pages. Writing the massive intermediate product table (assuming 1,000,000 pages) requires 1,000,000 writes, and reading that intermediate result back to apply the selection requires another 1,000,000 reads. So the total cost is approximately 1,000,000 + 1,000,000 + 1,000,000 = 3,000,000 I/Os. Plan 2 (Pushed-Down Selection): first scan SP to apply the selection (10,000 page reads); the 50 matching tuples are kept in memory (0 write I/Os); then scan the 100 pages of S once to join. Total cost is 10,000 + 100 = 10,100 I/Os. A is incorrect because it reverses the costs. B and D are incorrect because they do not match the correct mathematical calculation of the Cartesian product intermediate file reads and writes."
+    },
+    {
+      "id": 3,
+      "question": "Which of the following statements correctly captures the relationship between equivalence rules and query optimization heuristics?",
+      "answers": [
+        {
+          "option": "A. Equivalence rules are used to prove which query tree is physically cheaper, while heuristics are used to compile the query into SQL.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Equivalence rules state that two relational algebra expressions yield the same result set, but do not determine which is faster; the optimizer uses heuristics (such as \"performing selections early\") to prune the search space of equivalent plans.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Heuristics are strict mathematical equations that must always be applied, whereas equivalence rules are optional guidelines for distributed databases.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Pushing selections down a query tree violates equivalence rules, but is allowed as a heuristic exception to speed up execution.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Equivalence rules prove that two algebraic expressions are mathematically equivalent (they produce the exact same output for any database state). However, they do not state which plan is cheaper. Because checking the cost of every equivalent plan is prohibitively expensive, the optimizer uses heuristics (e.g., \"bring selects down\", \"avoid Cartesian products\") to prune the plan search space. A is incorrect because equivalence rules only prove logical identity, not physical cost. C is incorrect because heuristics are rules of thumb (pruning guidelines), whereas equivalence rules are the strict mathematical foundations. D is incorrect because pushing selections down must strictly obey equivalence rules; otherwise, the transformation would alter the query's output."
+    },
+    {
+      "id": 4,
+      "question": "A relation R contains exactly 1,000 pages. The database system allocates a buffer pool size of B = 11 pages for sorting. If the DBMS performs an External Merge Sort, how many sorted runs (chunks) are produced in Pass 0, and what is the minimum number of buffer pages required to complete the merge in exactly one subsequent pass (Pass 1)?",
+      "answers": [
+        {
+          "option": "A. Pass 0 produces 91 chunks; merging them in Pass 1 requires at least 92 buffer pages.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Pass 0 produces 100 chunks; merging them in Pass 1 requires at least 100 buffer pages.",
+          "is_correct": false
+        },
+        {
+          "option": "C. Pass 0 produces 91 chunks; merging them in Pass 1 requires at least 11 buffer pages.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Pass 0 produces 11 chunks; merging them in Pass 1 requires at least 12 buffer pages.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is A. In Pass 0, the relation is read in chunks of size B = 11 pages. Each chunk is sorted in memory and written back. The number of sorted chunks produced is ceil(R / B) = ceil(1,000 / 11) = 91 chunks. To merge these 91 chunks in a single subsequent pass (Pass 1), the buffer pool must allocate 1 input buffer page for each chunk, plus 1 output buffer page. Thus, the minimum buffer size required is 91 + 1 = 92 pages. B is incorrect because the number of chunks is ceil(1,000 / 11) = 91, not 100. C is incorrect because 11 buffer pages are insufficient to merge 91 chunks in a single pass; it would require multiple merge passes. D is incorrect because it represents incorrect arithmetic."
+    },
+    {
+      "id": 5,
+      "question": "A relation R contains 100 pages, and the available buffer size is B = 11 pages. Assuming we perform a standard two-pass External Merge Sort (Pass 0 and Pass 1), what is the exact total disk I/O cost (reads and writes), and what is the algebraic condition that guarantees the sort completes in exactly two passes?",
+      "answers": [
+        {
+          "option": "A. Total Cost = 200 I/Os; condition: B >= ceil(R/B).",
+          "is_correct": false
+        },
+        {
+          "option": "B. Total Cost = 400 I/Os; condition: B >= ceil(R/B) + 1 (or B - 1 >= ceil(R/B)).",
+          "is_correct": true
+        },
+        {
+          "option": "C. Total Cost = 800 I/Os; condition: B >= R.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Total Cost = 400 I/Os; condition: B <= sqrt(R).",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. In Pass 0, all pages are read and written: 100 reads + 100 writes = 200 I/Os. The number of sorted chunks generated is ceil(100 / 11) = 10 chunks. In Pass 1, all chunks are merged and written out: 100 reads + 100 writes = 200 I/Os. Total I/O cost = 200 (Pass 0) + 200 (Pass 1) = 400 I/Os (which is 4 x R I/Os). The condition to complete in 2 passes is that the number of chunks produced in Pass 0 (ceil(R/B)) can fit into the available merge buffers. Since 1 output buffer is needed, we have B - 1 input buffers available, so B - 1 >= ceil(R/B), or B >= ceil(R/B) + 1. Here, 11 >= 10 + 1 (11 >= 11), which holds. A is incorrect because it represents only a single pass's cost (200 I/Os) and has an incorrect buffer condition. C is incorrect because the cost is 400, not 800, and B >= R is the condition for an internal (one-pass) sort. D is incorrect because the condition B <= sqrt(R) is reversed; B needs to be approximately greater than or equal to the square root of R to sort in two passes."
+    },
+    {
+      "id": 6,
+      "question": "A query contains an ORDER BY clause on a search key column. An unclustered B+ Tree index exists on this column. Under which of the following scenarios is the query optimizer likely to reject using this index for sorted retrieval, preferring instead a full table scan followed by an External Merge Sort?",
+      "answers": [
+        {
+          "option": "A. When the table is very small (e.g., less than 5 pages), because B+ Tree indexes are physically restricted from processing small tables.",
+          "is_correct": false
+        },
+        {
+          "option": "B. When the query contains a high-selectivity predicate that filters out 99% of the records.",
+          "is_correct": false
+        },
+        {
+          "option": "C. When the query retrieves a large portion of the records (low selectivity), because accessing data pages via an unclustered index results in random I/Os (up to 1 disk read per matching tuple), which quickly exceeds the sequential scan and sort cost.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Only when the buffer pool size B is exactly equal to 3 pages.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is C. An unclustered index does not store data pages in sorted key order. Fetching records in sorted order using an unclustered index means that for each index entry, the database must retrieve the corresponding data page. If many records are retrieved, this leads to repeated, random, single-page disk reads on the same pages. A sequential table scan followed by a highly optimized External Merge Sort is much cheaper because it leverages sequential I/O patterns. A is incorrect because B+ Trees can process any size table; they are just highly efficient for large datasets when retrieving a few rows. B is incorrect because if only 1% of records match, the unclustered index is extremely efficient because the total random I/Os are very low. D is incorrect because the cross-over point depends on table size and selectivity, not strictly B = 3."
+    },
+    {
+      "id": 7,
+      "question": "In Pass 0 of an External Merge Sort, what is the maximum length (in pages) of each sorted run produced, and which of the following represents the standard in-memory sorting method applied during this phase?",
+      "answers": [
+        {
+          "option": "A. Max length is 2 x B pages; sorted using the External Bubble Sort algorithm.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Max length is B pages; sorted using standard in-memory sorting algorithms (like Quicksort or Heap Sort) in the buffer pool.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Max length is unlimited because the database uses virtual disk swap space during Pass 0.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Max length is always exactly 1 page, regardless of the buffer size B.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. During Pass 0, the database reads B pages of the unsorted relation into memory (the buffer pool). These pages are sorted internally using high-speed in-memory algorithms (like Quicksort) and then written back to disk as a single sorted run of length B pages. A is incorrect because the database cannot load 2 x B pages into B buffer slots simultaneously during Pass 0. C is incorrect because virtual memory swapping defeats the purpose of database-managed external sorting. D is incorrect because if available buffers B > 1, the database will sort runs of size B pages, not just 1 page."
+    },
+    {
+      "id": 8,
+      "question": "Let relation R have M = 1,000 pages and relation S have N = 500 pages. Assuming that both relations are initially unsorted, and we have enough buffer pool pages to sort both relations in exactly two passes (Pass 0 and Pass 1). In the best-case scenario where each page of R matches exactly one page of S during the merge phase, what is the total Sort-Merge Join I/O cost?",
+      "answers": [
+        {
+          "option": "A. 1,500 I/Os",
+          "is_correct": false
+        },
+        {
+          "option": "B. 6,000 I/Os",
+          "is_correct": false
+        },
+        {
+          "option": "C. 7,500 I/Os",
+          "is_correct": true
+        },
+        {
+          "option": "D. 9,000 I/Os",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is C. The slide cost formula for Sort-Merge Join is: Cost = RSort + SSort + S & R Merge, where Cost = 4 x M + 4 x N + (M + N). Given M = 1,000 and N = 500: RSort = 4 x 1,000 = 4,000 I/Os; SSort = 4 x 500 = 2,000 I/Os; S & R Merge = M + N = 1,000 + 500 = 1,500 I/Os. Total Cost = 4,000 + 2,000 + 1,500 = 7,500 I/Os. A is incorrect because it is only the merge cost, omitting the sorting costs. B is incorrect because it is only the sorting costs (4 x 1,000 + 4 x 500 = 6,000), omitting the merge cost. D is incorrect because it represents an incorrect multiplier on the sorting or merging formulas."
+    },
+    {
+      "id": 9,
+      "question": "During the merge phase of a Sort-Merge Join, if multiple tuples in the outer relation R have the same join column value, how does the join engine handle the scan of the inner relation S, and how does the database buffer pool affect the performance of this operation?",
+      "answers": [
+        {
+          "option": "A. The engine raises a \"Duplicate Join Key\" exception and aborts the transaction.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The engine terminates the scan of R and forces a complete re-sort of both relations.",
+          "is_correct": false
+        },
+        {
+          "option": "C. The scan of S must backtrack to the beginning of the matching \"S group\". If this S group fits in the buffer pool, subsequent rescans will retrieve the pages from memory, minimizing physical I/O.",
+          "is_correct": true
+        },
+        {
+          "option": "D. The engine uses a hash table to avoid backtracking, which doubles the physical page write cost.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is C. In a Sort-Merge Join, when duplicate keys are encountered in R (the current R group), the engine must match them with all matching keys in S (the S group). To do this, the scan of S must backtrack to the start of the matching S group for each duplicate R tuple. If the S group is cached in the buffer pool, the backtrack is extremely fast because it avoids physical disk access. A is incorrect because duplicate join keys are standard and do not throw exceptions. B is incorrect because sorting is a pre-requisite; the engine does not re-sort during the merge phase. D is incorrect because a standard Sort-Merge Join does not dynamically construct hash tables during the merge scan."
+    },
+    {
+      "id": 10,
+      "question": "When a complex SQL query contains several nested subqueries (e.g., in the WHERE clause), how does the database parser structurally break down and translate the query?",
+      "answers": [
+        {
+          "option": "A. The parser flattens the query into a single, global Cartesian product before parsing.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The parser translates each SELECT-FROM-WHERE-GROUP BY statement as an independent \"query block\" into an extended relational algebra expression, which are then integrated.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The parser ignores nested queries, leaving them to be executed as client-side filters.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The parser compiles each nested block into a separate database trigger.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. A standard SQL query is decomposed by the parser into a set of \"query blocks\". A query block consists of a single SELECT-FROM-WHERE-GROUP BY clause. The parser translates each query block into an extended relational algebra representation, which are then combined to form the complete query tree. A is incorrect because the parser does not immediately flatten the query or generate Cartesian products without structural block analysis. C is incorrect because subqueries are processed server-side. D is incorrect because subqueries are query blocks, not triggers."
+    },
+    {
+      "id": 11,
+      "question": "Consider the standard database schema for Sailors (S) and Reserves (R): Reserves (R) has M = 1,000 pages with p_R = 100 tuples per page; Sailors (S) has N = 500 pages with p_S = 80 tuples per page. If we execute a Simple (tuple-based) Nested Loop Join with no buffering optimizations, what are the exact physical I/O costs if R is the outer relation, and if S is the outer relation respectively?",
+      "answers": [
+        {
+          "option": "A. R as outer: 501,000 I/Os; S as outer: 500,500 I/Os.",
+          "is_correct": false
+        },
+        {
+          "option": "B. R as outer: 50,001,000 I/Os; S as outer: 40,000,500 I/Os.",
+          "is_correct": true
+        },
+        {
+          "option": "C. R as outer: 1,500 I/Os; S as outer: 1,500 I/Os.",
+          "is_correct": false
+        },
+        {
+          "option": "D. R as outer: 100,000,000 I/Os; S as outer: 80,000,000 I/Os.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. R as Outer formula: M + (p_R x M x N). Total tuples in R = M x p_R = 1,000 x 100 = 100,000 tuples. For each of the 100,000 tuples, we scan the entire inner S (500 pages), so the cost = 1,000 + (100,000 x 500) = 50,001,000 I/Os. S as Outer formula: N + (p_S x N x M). Total tuples in S = N x p_S = 500 x 80 = 40,000 tuples. For each of the 40,000 tuples, we scan the entire inner R (1,000 pages), so the cost = 500 + (40,000 x 1,000) = 40,000,500 I/Os. A is incorrect because those are the costs for a Page-oriented Nested Loop Join, which is much cheaper. C is incorrect because it is just M + N, which is not nested loops. D is incorrect because it represents an incorrect calculation of the outer page reads."
+    },
+    {
+      "id": 12,
+      "question": "Using the same schema as Question 11 (Reserves M = 1,000 pages, Sailors N = 500 pages): what are the physical I/O costs of a Page-oriented Nested Loop Join if R is the outer relation, and if S is the outer relation respectively?",
+      "answers": [
+        {
+          "option": "A. R as outer: 10,100 I/Os; S as outer: 10,100 I/Os.",
+          "is_correct": false
+        },
+        {
+          "option": "B. R as outer: 50,001,000 I/Os; S as outer: 40,000,500 I/Os.",
+          "is_correct": false
+        },
+        {
+          "option": "C. R as outer: 501,000 I/Os; S as outer: 500,500 I/Os.",
+          "is_correct": true
+        },
+        {
+          "option": "D. R as outer: 1,000,500 I/Os; S as outer: 500,000 I/Os.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is C. Page-oriented Nested Loop Join formula: if R is outer, Cost = M + (M x N) = 1,000 + (1,000 x 500) = 501,000 I/Os. If S is outer, Cost = N + (N x M) = 500 + (500 x 1,000) = 500,500 I/Os. A is incorrect because it represents Block Nested Loop Join costs under different buffer allocations. B is incorrect because it is the Simple (tuple-based) Nested Loop Join cost. D is incorrect because it represents arithmetic errors in evaluating the formula."
+    },
+    {
+      "id": 13,
+      "question": "Using the same schema (Reserves M = 1,000 pages, Sailors N = 500 pages), the database allocates a total of B = 102 buffer pages. The block size for the outer relation is configured as B - 2 = 100 pages, leaving 1 page as an input buffer for the inner relation and 1 page as an output buffer. What are the physical I/O costs of a Block Nested Loop Join when R is outer, and when S is outer respectively?",
+      "answers": [
+        {
+          "option": "A. R as outer: 6,000 I/Os; S as outer: 5,500 I/Os.",
+          "is_correct": true
+        },
+        {
+          "option": "B. R as outer: 10,000 I/Os; S as outer: 5,000 I/Os.",
+          "is_correct": false
+        },
+        {
+          "option": "C. R as outer: 501,000 I/Os; S as outer: 500,500 I/Os.",
+          "is_correct": false
+        },
+        {
+          "option": "D. R as outer: 1,100 I/Os; S as outer: 600 I/Os.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is A. Block Nested Loop Join cost formula: Cost = Scan Outer + (#Outer Blocks x Scan Inner), where #Outer Blocks = ceil(Pages of Outer / Block Size). R as Outer: Block Size = 100 pages, #Blocks = ceil(1,000 / 100) = 10 blocks, Cost = 1,000 + (10 x 500) = 1,000 + 5,000 = 6,000 I/Os. S as Outer: Block Size = 100 pages, #Blocks = ceil(500 / 100) = 5 blocks, Cost = 500 + (5 x 1,000) = 500 + 5,000 = 5,500 I/Os. B is incorrect because it omits the initial scan of the outer relation. C is incorrect because it is the cost when block size is exactly 1 page (Page-oriented NLJ). D is incorrect because it represents arithmetic errors."
+    },
+    {
+      "id": 14,
+      "question": "Using the same schema (Reserves M = 1,000, Sailors N = 500), the available database buffer pool is reduced to B = 92 pages, making the outer block size B - 2 = 90 pages. What are the physical I/O costs if R is outer, and if S is outer respectively, and how does the non-divisible block allocation affect performance?",
+      "answers": [
+        {
+          "option": "A. R as outer: 6,000 I/Os; S as outer: 5,500 I/Os (no change).",
+          "is_correct": false
+        },
+        {
+          "option": "B. R as outer: 7,000 I/Os; S as outer: 6,500 I/Os.",
+          "is_correct": true
+        },
+        {
+          "option": "C. R as outer: 12,000 I/Os; S as outer: 6,000 I/Os.",
+          "is_correct": false
+        },
+        {
+          "option": "D. R as outer: 11,000 I/Os; S as outer: 10,500 I/Os.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. R as Outer: Block Size = 90 pages, #Blocks = ceil(1,000 / 90) = ceil(11.11) = 12 blocks, Cost = 1,000 + (12 x 500) = 1,000 + 6,000 = 7,000 I/Os. S as Outer: Block Size = 90 pages, #Blocks = ceil(500 / 90) = ceil(5.55) = 6 blocks, Cost = 500 + (6 x 1,000) = 500 + 6,000 = 6,500 I/Os. Because the block size does not divide the relations evenly, more blocks are required, forcing more scans of the inner relation and increasing the cost. A is incorrect because it assumes the divisible buffer size of 102. C and D are incorrect because they represent incorrect evaluations of the ceiling function or formula."
+    },
+    {
+      "id": 15,
+      "question": "Using the same schema (Reserves M = 1,000, p_R = 100), we execute an Index Nested Loop Join with Reserves as the outer relation, and Sailors (S) as the inner relation. S has an index on the join column sid. For each of the 100,000 Reserves tuples, the cost of probing the S index is exactly 3 I/Os. The index on S is a clustered index, meaning retrieving the matching S record costs exactly 1 I/O. What is the exact physical I/O cost of this join?",
+      "answers": [
+        {
+          "option": "A. 401,000 I/Os",
+          "is_correct": true
+        },
+        {
+          "option": "B. 301,000 I/Os",
+          "is_correct": false
+        },
+        {
+          "option": "C. 501,000 I/Os",
+          "is_correct": false
+        },
+        {
+          "option": "D. 101,000 I/Os",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is A. Index Nested Loop Join cost formula: Cost = M + (Outer Tuples x Cost of finding matching S tuples). Outer Tuples = M x p_R = 1,000 x 100 = 100,000 tuples. Cost of finding S tuples = Index Probe Cost + Record Retrieval Cost = 3 (probe) + 1 (clustered) = 4 I/Os. Total Cost = 1,000 + (100,000 x 4) = 1,000 + 400,000 = 401,000 I/Os. B is incorrect because it omits the record retrieval cost of 1 I/O (using only the 3 I/Os index probe cost). C is incorrect because it represents an unclustered index search where record retrieval costs 2 I/Os instead of 1. D is incorrect because it represents arithmetic error in calculating the outer tuple count."
+    },
+    {
+      "id": 16,
+      "question": "During a standard Grace Hash Join of relations R and S, what are the two main phases of execution, and what physical I/O occurs in each phase assuming no partition overflow?",
+      "answers": [
+        {
+          "option": "A. Sorting Phase (reads and writes both relations) and Merging Phase (reads both relations).",
+          "is_correct": false
+        },
+        {
+          "option": "B. Partitioning Phase (both R and S are hashed and written to partition files on disk) and Probing Phase (each partition of R is loaded into memory as a hash table, and the corresponding partition of S is scanned to probe it).",
+          "is_correct": true
+        },
+        {
+          "option": "C. Tree-Traversal Phase (queries the B+ Tree) and Table-Scan Phase (retrieves rows from the heap file).",
+          "is_correct": false
+        },
+        {
+          "option": "D. Index Creation Phase (builds dynamic indexes) and Page-matching Phase (nested loops over indexes).",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. A standard Grace Hash Join executes in two phases: (1) Partitioning Phase: both R and S are read, passed through a hash function on the join column, and written out to disk as several partition files, costing 2 x (M + N) I/Os. (2) Probing Phase: the database processes partitions pairwise. For each pair, it loads the partition of the smaller relation into memory, builds an in-memory hash table, and then reads the partition of the larger relation page-by-page, probing the hash table for matches, costing M + N I/Os. A is incorrect because it describes a Sort-Merge Join, not a Hash Join. C and D are incorrect because they do not represent hash join operations."
+    },
+    {
+      "id": 17,
+      "question": "When comparing a Block Nested Loop Join (BNLJ) and an Index Nested Loop Join (INLJ), which of the following represents a situation where BNLJ is physically cheaper than INLJ?",
+      "answers": [
+        {
+          "option": "A. When the inner relation has a B+ Tree index, and the outer relation is extremely small (e.g., 1 tuple).",
+          "is_correct": false
+        },
+        {
+          "option": "B. When the inner relation's index is unclustered, and there are many matching inner records for each outer record, because the random I/O cost of retrieving unclustered data pages in INLJ will exceed the cost of scanning the inner relation in blocks.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Only when the database lacks memory to support an output buffer page.",
+          "is_correct": false
+        },
+        {
+          "option": "D. When the join column is a primary key on the inner relation, ensuring exactly one match per probe.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. In an INLJ, if the index is unclustered, retrieving each matching record can cost up to 1 random I/O. If each outer tuple matches many inner tuples, the total random physical disk reads scale linearly with the outer cardinality times the average match count. In contrast, BNLJ caps the inner page accesses by scanning the inner table sequentially in blocks. A is incorrect because if the outer relation is 1 tuple, INLJ is extremely cheap (just 1 index probe + 1 read), whereas BNLJ must scan the entire inner table at least once. C is incorrect because lack of an output buffer page breaks both algorithms; it does not determine their relative efficiency. D is incorrect because if there is exactly 1 match per probe, INLJ is highly optimized and almost always cheaper than BNLJ."
+    },
+    {
+      "id": 18,
+      "question": "A database system is running under severe memory pressure, and only B = 3 buffer pages are allocated for a Block Nested Loop Join. How does the algorithm behave under these constraints, and what is the cost formula?",
+      "answers": [
+        {
+          "option": "A. The join fails compilation because BNLJ requires a minimum of 10 buffer pages to execute.",
+          "is_correct": false
+        },
+        {
+          "option": "B. The outer block size becomes 1 page (B - 2 = 1), causing the BNLJ to behave exactly like a Page-oriented Nested Loop Join with a cost of M + M x N.",
+          "is_correct": true
+        },
+        {
+          "option": "C. The database automatically switches to an Index Nested Loop Join, bypassing the buffer constraint.",
+          "is_correct": false
+        },
+        {
+          "option": "D. The block size becomes 3 pages, and the output buffer is eliminated, causing data loss.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The block size for the outer relation in BNLJ is B - 2. If B = 3, the block size is 3 - 2 = 1 page, meaning the outer relation is processed in blocks of exactly 1 page. The cost formula becomes M + (1,000/1) x N = M + M x N, which is identical to the Page-oriented Nested Loop Join. A is incorrect because BNLJ can execute with any buffer size B >= 3. C is incorrect because the optimizer does not change physical algorithms dynamically during execution due to runtime memory pressure without query compilation. D is incorrect because the output buffer cannot be eliminated; otherwise, the join results cannot be written back to disk, and data loss never occurs."
+    },
+    {
+      "id": 19,
+      "question": "In a standard 2-pass Grace Hash Join, what is the mathematical relation between the size of the smaller relation (say S) and the number of buffer pages B required to ensure that no partition overflows its memory allocation during the probing phase?",
+      "answers": [
+        {
+          "option": "A. B >= S",
+          "is_correct": false
+        },
+        {
+          "option": "B. B >= sqrt(S) (approximately, since we need B - 2 >= S / (B - 1))",
+          "is_correct": true
+        },
+        {
+          "option": "C. B <= log2(S)",
+          "is_correct": false
+        },
+        {
+          "option": "D. There is no relationship; hash joins can run with B = 3 regardless of table size.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. In the partitioning phase, we split S into B - 1 partitions. Each partition has an approximate size of S / (B - 1) pages. In the probing phase, each partition of S must fit entirely in the available memory buffers to build the in-memory hash table. Since we need 1 page for the inner scan and 1 page for the output buffer, we have B - 2 pages available to hold S's partition. Thus, we must have B - 2 >= S / (B - 1), which simplifies to B approximately equal to sqrt(S). A is incorrect because it represents the requirement for a one-pass hash join, not a two-pass hash join. C is incorrect because logarithmic buffers are too small to hold partitions of S. D is incorrect because if S's partitions cannot fit in B - 2 buffers, partitions will overflow, requiring recursive partitioning or a nested-loop fallback."
+    },
+    {
+      "id": 20,
+      "question": "In an Index Nested Loop Join, how does the \"cost of finding matching S tuples\" vary based on the index's representation Alternatives (1, 2, and 3) for data entries?",
+      "answers": [
+        {
+          "option": "A. Alternative 1 contains the actual data records in the index, so finding the tuples requires 0 extra I/Os; Alternatives 2 and 3 require traversing pointers to the data pages, costing extra I/Os.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Alternative 1 is an unclustered index, making it the most expensive representation.",
+          "is_correct": false
+        },
+        {
+          "option": "C. All Alternatives have identical costs because index probes always load the entire relation into memory.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Alternatives 2 and 3 bypass index traversal, reading from the heap file directly.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is A. Under Alternative 1, the index data entry is the actual data record itself, so once the index leaf is reached, the record is found with no additional disk access. Under Alternatives 2 and 3, the index entries are pointers (RIDs or lists of RIDs) to the actual data pages, requiring an extra disk read to fetch the record, which can be clustered (1 I/O) or unclustered (up to 1 I/O per record). B is incorrect because Alternative 1 is a clustered data representation, not unclustered. C is incorrect because the physical representation of data entries drastically changes the I/O costs. D is incorrect because traversal is mandatory to search the key."
+    },
+    {
+      "id": 21,
+      "question": "A database table 'products' has N_Tuples = 10,000 and N_Pages = 200. A query has the following filter: WHERE category = 'Electronics' AND brand = 'Sony'. The system catalog contains the following statistics: there is an index I1 on 'category' with NKeys(I1) = 5 distinct values, and an index I2 on 'brand' with NKeys(I2) = 20 distinct values. Assuming the predicates are completely independent, what is the combined Reduction Factor (RF) and the estimated result cardinality (in tuples) of this query?",
+      "answers": [
+        {
+          "option": "A. Combined RF = 0.25; Estimated Cardinality = 2,500 tuples.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Combined RF = 0.01; Estimated Cardinality = 100 tuples.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Combined RF = 0.05; Estimated Cardinality = 500 tuples.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Combined RF = 0.005; Estimated Cardinality = 50 tuples.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Reduction Factor for an equality term col = value is RF = 1 / NKeys(I). RF(category = 'Electronics') = 1 / NKeys(I1) = 1 / 5 = 0.2. RF(brand = 'Sony') = 1 / NKeys(I2) = 1 / 20 = 0.05. Assuming independence, the combined RF is the product of the individual RFs: 0.2 x 0.05 = 0.01 (or 1/100). Estimated Result Cardinality = N_Tuples x Combined RF = 10,000 x 0.01 = 100 tuples. A, C and D are incorrect because they represent mathematical errors in multiplying the reduction factors."
+    },
+    {
+      "id": 22,
+      "question": "A database optimizer is estimating the size of a join between Sailors (S) and Reserves (R) on the predicate S.sid = R.sid. The system catalog contains the following statistics: NKeys(I_S) = 100 (distinct sid values in Sailors) and NKeys(I_R) = 500 (distinct sid values in Reserves). According to the System R cost model, what is the Reduction Factor (RF) for this join predicate?",
+      "answers": [
+        {
+          "option": "A. RF = 1 / 100 = 0.01",
+          "is_correct": false
+        },
+        {
+          "option": "B. RF = 1 / 500 = 0.002",
+          "is_correct": true
+        },
+        {
+          "option": "C. RF = 1 / 600 = 0.0016",
+          "is_correct": false
+        },
+        {
+          "option": "D. RF = 1 / (100 * 500) = 0.00002",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. According to the System R formulas, the reduction factor for a join predicate on columns col1 = col2 is RF = 1 / max(NKeys(I1), NKeys(I2)). Therefore RF = 1 / max(100, 500) = 1 / 500 = 0.002. A is incorrect because it uses the minimum distinct key count instead of the maximum. C is incorrect because it sums the distinct keys, which is syntactically invalid. D is incorrect because it multiplies the keys, which represents the Cartesian product factor, not the join factor."
+    },
+    {
+      "id": 23,
+      "question": "An index I exists on the column 'salary'. The system catalog registers the boundaries of the index as Low(I) = 20,000 and High(I) = 120,000. A query contains the range filter: WHERE salary > 70,000. What is the estimated Reduction Factor (RF) for this range predicate assuming a uniform distribution of values?",
+      "answers": [
+        {
+          "option": "A. RF = 0.70",
+          "is_correct": false
+        },
+        {
+          "option": "B. RF = 0.50",
+          "is_correct": true
+        },
+        {
+          "option": "C. RF = 0.40",
+          "is_correct": false
+        },
+        {
+          "option": "D. RF = 0.30",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. According to the System R range predicate formula, RF = (High(I) - value) / (High(I) - Low(I)) = (120,000 - 70,000) / (120,000 - 20,000) = 50,000 / 100,000 = 0.50. A, C and D are incorrect because they represent math errors or incorrect selection of the bounds."
+    },
+    {
+      "id": 24,
+      "question": "Why are statistics in the database system catalog typically updated periodically rather than synchronously on every DML operation (INSERT/UPDATE/DELETE)?",
+      "answers": [
+        {
+          "option": "A. Because Oracle database engines lack the technical capability to compute statistics on active tables.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Because updating catalogs in real-time is too expensive, introducing massive transaction locking overhead and write amplification; since optimization relies on approximations anyway, slight inconsistencies are acceptable.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Because catalog updates can only occur when the database is in single-user maintenance mode.",
+          "is_correct": false
+        },
+        {
+          "option": "D. To prevent the query optimizer from dynamically modifying execution plans during an active user session.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. Database catalogs store aggregated statistics like NTuples and NPages. If these were updated synchronously for every single insert or delete, the catalog tables would become a massive bottleneck, suffering from severe lock contention. Since cost-based optimization operates on general cardinality approximations, slight out-of-date discrepancies do not significantly degrade the optimizer's choices. A is incorrect because the database is capable, but it is architecturally throttled for performance. C is incorrect because catalog updates are performed online (e.g., via DBMS_STATS in Oracle) without requiring maintenance downtime. D is incorrect because dynamic re-optimization is desirable; the delay in updating statistics is purely a performance trade-off."
+    },
+    {
+      "id": 25,
+      "question": "Let Sailors (S) have N_Tuples(S) = 40,000 and Reserves (R) have N_Tuples(R) = 100,000. We execute the query: SELECT * FROM Sailors S, Reserves R WHERE S.sid = R.sid AND S.rating = 8. The catalog shows: the column sid is a unique primary key in Sailors (NKeys(S.sid) = 40,000) and there are NKeys(R.sid) = 40,000 distinct values in Reserves; the column rating has an index with NKeys(rating) = 10 distinct values. Assuming independent predicates, what is the estimated result cardinality (in tuples) of the join?",
+      "answers": [
+        {
+          "option": "A. 10,000 tuples",
+          "is_correct": true
+        },
+        {
+          "option": "B. 100,000 tuples",
+          "is_correct": false
+        },
+        {
+          "option": "C. 1,000 tuples",
+          "is_correct": false
+        },
+        {
+          "option": "D. 4,000,000 tuples",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is A. Maximum number of tuples (Cartesian Product cardinality) = N_Tuples(S) x N_Tuples(R) = 40,000 x 100,000 = 4,000,000,000 tuples. Reduction Factor of the join predicate S.sid = R.sid is RF = 1 / max(40,000, 40,000) = 1 / 40,000. Reduction Factor of the selection S.rating = 8 is RF = 1 / 10 = 0.1. Estimated Result Cardinality = Max Tuples x RF(join) x RF(rating) = 4,000,000,000 x (1 / 40,000) x 0.1 = 100,000 x 0.1 = 10,000 tuples. B, C and D are incorrect because they represent mathematical errors in applying the reduction factors."
+    },
+    {
+      "id": 26,
+      "question": "Why must the query optimizer prune the plan space of candidate execution plans, and what represents a standard heuristic strategy used during this process?",
+      "answers": [
+        {
+          "option": "A. Because checking all plans is impossible since equivalent relational expressions do not exist.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Because the number of possible join trees grows exponentially with the number of relations in the query; the optimizer uses heuristics (like \"avoiding Cartesian products\" and \"pushing selections down\") to eliminate obviously inefficient plans from cost estimation.",
+          "is_correct": true
+        },
+        {
+          "option": "C. To ensure that the execution engine only processes one relational operator per transaction.",
+          "is_correct": false
+        },
+        {
+          "option": "D. To force the database to use index scans instead of table scans under all circumstances.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. For a query joining several relations, the number of possible join combinations and physical algorithms is massive. Running detailed cost estimations for every single plan is prohibitively expensive. Hence, the optimizer uses algebraic heuristics to prune the search space, focusing only on plans that are structurally promising (such as pushing selections down to reduce intermediate tuple sizes). A is incorrect because equivalent expressions do exist in large numbers. C is incorrect because multiple operators are executed in a plan tree. D is incorrect because index scans are not always preferred over table scans."
+    },
+    {
+      "id": 27,
+      "question": "Which of the following represents a mathematically valid relational algebra equivalence rule that allows a query optimizer to push selections below a join?",
+      "answers": [
+        {
+          "option": "A. sigma_theta(E1 JOIN E2) is equivalent to sigma_theta(E1) JOIN E2 (where theta contains only attributes of E1).",
+          "is_correct": true
+        },
+        {
+          "option": "B. sigma_theta(E1 JOIN E2) is equivalent to E1 JOIN sigma_theta(E2) (where theta contains attributes of both relations).",
+          "is_correct": false
+        },
+        {
+          "option": "C. sigma_theta(E1 JOIN E2) is equivalent to sigma_theta(E1) x sigma_theta(E2).",
+          "is_correct": false
+        },
+        {
+          "option": "D. pi_L(E1 JOIN E2) is equivalent to sigma_theta(E1 JOIN E2).",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is A. If the selection condition theta only references columns that belong to relation E1, the selection can be applied directly to E1 before the join executes. This is a fundamental equivalence rule that reduces the cardinality of the join inputs early. B is incorrect because if theta involves attributes of both tables (e.g., E1.id = E2.id), the selection cannot be pushed into one relation; it must be evaluated as the join condition itself. C is incorrect because it transforms a join into a Cartesian product of selections, which changes the relational operations incorrectly. D is incorrect because it equates projection (pi) with selection (sigma), which is a fundamental syntax error."
+    },
+    {
+      "id": 28,
+      "question": "What is the fundamental assumption made when the database optimizer multiplies multiple reduction factors to estimate the size of a query's result, and how does a violation of this assumption affect the system?",
+      "answers": [
+        {
+          "option": "A. Assumption of Column Collisions; violation causes infinite loops during query optimization.",
+          "is_correct": false
+        },
+        {
+          "option": "B. Assumption of Predicate Independence; if columns are highly correlated (e.g., City = 'London' and ZipCode = 'EC1'), the optimizer will severely underestimate the result size, potentially selecting an inefficient join algorithm.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Assumption of Sequential Ordering; violation forces the database to crash.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Assumption of Index Exclusivity; violation prevents the parser from executing.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is B. The System R cost model multiplies individual reduction factors assuming that the predicates are completely independent of each other. If they are correlated, the actual result size will be much larger than estimated. This underestimation can trick the optimizer into choosing a plan optimized for few rows (like an Index Nested Loop Join) when a Hash Join or Full Table Scan would be significantly faster. A, C and D are incorrect because they represent fabricated database behaviors."
+    },
+    {
+      "id": 29,
+      "question": "Which of the following correctly defines a physical \"Execution Plan\" and distinguishes it from a basic relational algebra \"Query Plan\"?",
+      "answers": [
+        {
+          "option": "A. A query plan contains physical file paths, while an execution plan contains SQL code.",
+          "is_correct": false
+        },
+        {
+          "option": "B. A query plan defines what data is requested, while an execution plan is stored only on client workstations.",
+          "is_correct": false
+        },
+        {
+          "option": "C. An execution plan defines both the relational algebra operators (the query plan) and the specific physical algorithms (e.g., Block Nested Loops, Grace Hash Join, Index Scan) chosen to evaluate each operator.",
+          "is_correct": true
+        },
+        {
+          "option": "D. They are identical; there is no distinction in database theory.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is C. A query plan is the logical representation of the query in relational algebra. An execution plan (or physical query plan) adds the physical implementation details: it specifies exactly which physical algorithms will be executed to evaluate each logical operator in the tree. A is incorrect because physical paths are handled by the storage layer, not directly exposed as the core differentiator in execution plans. B and D are incorrect because they do not capture the logical-to-physical mapping."
+    },
+    {
+      "id": 30,
+      "question": "Why is evaluating a query by computing a Cartesian product (R x S) followed by a selection (sigma on R.id = S.id) extremely inefficient compared to evaluating a direct Join (R JOIN S) using a dedicated join algorithm?",
+      "answers": [
+        {
+          "option": "A. Because Cartesian product results in a physical write of |R| x |S| intermediate tuples to disk, which must then be read back, whereas dedicated join algorithms evaluate the join condition on the fly, writing only matching rows.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Because Cartesian products are restricted to single-user databases.",
+          "is_correct": false
+        },
+        {
+          "option": "C. Because the selection operator cannot be executed if a Cartesian product is used.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Because Cartesian products automatically delete the source tables.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Correct answer is A. The Cartesian product produces every possible combination of rows, scaling to a size of |R| x |S|. Writing this massive intermediate table to disk and reading it back is extremely expensive in terms of I/O. Dedicated join algorithms (such as BNLJ, Hash Join, or Sort-Merge) stream data and apply the filter condition immediately in memory, ensuring that only the qualifying matched tuples are written, drastically reducing physical disk I/O. B, C and D are incorrect because they are absurd and fabricated database limitations."
+    }
+  ]
+}
