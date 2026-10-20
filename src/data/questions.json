@@ -1,0 +1,680 @@
+{
+  "description": "Management, Economics, Marketing, and Business Concepts - Model End-Semester Examination",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which of the following are the four main functions of management?",
+      "answers": [
+        {
+          "option": "A. Planning",
+          "is_correct": true
+        },
+        {
+          "option": "B. Organizing",
+          "is_correct": true
+        },
+        {
+          "option": "C. Leading",
+          "is_correct": true
+        },
+        {
+          "option": "D. Controlling",
+          "is_correct": true
+        },
+        {
+          "option": "E. Eliminating uncertainty",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The four main functions of management are Planning (setting objectives and preparing plans), Organizing (assigning responsibilities and allocating resources), Leading (motivating staff and communicating vision), and Controlling (comparing actual performance with planned targets). Option E is incorrect because management cannot eliminate all uncertainty before operations commence."
+    },
+    {
+      "id": 2,
+      "question": "Which of the following are true about a matrix structure?",
+      "answers": [
+        {
+          "option": "A. It combines functional and divisional structures where employees report to more than one manager.",
+          "is_correct": true
+        },
+        {
+          "option": "B. It improves the sharing of specialized resources.",
+          "is_correct": true
+        },
+        {
+          "option": "C. It eliminates all conflicts and authority clashes.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Clear communication alone erases conflicting priorities.",
+          "is_correct": false
+        },
+        {
+          "option": "E. Functional departments are abolished.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "A matrix structure combines functional and divisional structures where employees report to more than one manager (both functional and project managers) and it improves the sharing of specialized resources. However, it does not eliminate all conflicts or authority clashes, clear communication alone doesn't automatically erase conflicting priorities, and functional departments are not abolished."
+    },
+    {
+      "id": 3,
+      "question": "A cable provider increases price from Rs. 2,000 to Rs. 2,400 and subscribers decrease from 1,000 to 800. Which of the following are correct?",
+      "answers": [
+        {
+          "option": "A. The price increase is 20%.",
+          "is_correct": true
+        },
+        {
+          "option": "B. The subscriber decrease is 20%.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Price Elasticity of Demand is -1 (unitary elastic).",
+          "is_correct": true
+        },
+        {
+          "option": "D. Monthly revenue increased after the price change.",
+          "is_correct": false
+        },
+        {
+          "option": "E. Demand is perfectly inelastic.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Price increase: (400/2000)=20%. Subscriber decrease: (200/1000)=20%. Price Elasticity of Demand = (-20%)/(+20%) = -1 (unitary elastic). Initial revenue = 2,000 × 1,000 = Rs. 2,000,000. Afterward = 2,400 × 800 = Rs. 1,920,000, so revenue decreased."
+    },
+    {
+      "id": 4,
+      "question": "Which of the following are true about costs in the short run?",
+      "answers": [
+        {
+          "option": "A. Office rental represents a short-run fixed cost.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Usage-based cloud charges are variable costs.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Fixed cost per user falls as user count rises due to spreading fixed expenses over more users.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Total fixed cost increases as user growth rises.",
+          "is_correct": false
+        },
+        {
+          "option": "E. Marginal cost is the cost of serving one additional unit.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Office rental represents a short-run fixed cost. Usage-based cloud charges scale with activity, making them variable costs. Fixed cost per user falls as user count rises due to spreading fixed expenses over more users. Marginal cost is defined as the cost of serving one additional unit. Total fixed cost remains constant regardless of user growth."
+    },
+    {
+      "id": 5,
+      "question": "A company divides retailers into groups, selects small retailers as its focus, and promotes ease of use and affordability. Which of the following are correct?",
+      "answers": [
+        {
+          "option": "A. Dividing retailers into groups represents Segmentation.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Selecting small retailers represents Targeting.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Promoting ease of use and affordability represents Positioning.",
+          "is_correct": true
+        },
+        {
+          "option": "D. These steps together form the STP model.",
+          "is_correct": true
+        },
+        {
+          "option": "E. This relates to completing the product life cycle.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Dividing retailers into groups represents Segmentation, selecting small retailers represents Targeting, and promoting ease of use and affordability represents Positioning. Together, these steps form the STP model. Option E is incorrect because product life cycle completion is unrelated to these marketing setup steps."
+    },
+    {
+      "id": 6,
+      "question": "An online ad campaign had 50,000 impressions, 2,000 clicks, 100 subscriptions, and cost Rs. 200,000. Which of the following are correct?",
+      "answers": [
+        {
+          "option": "A. Click-through rate (CTR) is 4%.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Click-to-subscription conversion rate is 5%.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Customer acquisition cost (CAC) is Rs. 2,000 per subscription.",
+          "is_correct": true
+        },
+        {
+          "option": "D. 2,000 customers were acquired.",
+          "is_correct": false
+        },
+        {
+          "option": "E. Net profit can be calculated from the given information.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "CTR = 2,000/50,000 = 4%. Click-to-subscription conversion rate = 100/2,000 = 5%. CAC = Rs. 200,000/100 = Rs. 2,000 per subscription. Option D is incorrect because 100 subscriptions were generated. Option E is incorrect because revenues/prices per subscription are unknown."
+    },
+    {
+      "id": 7,
+      "question": "Which of the following practices support effective Human Resource Management (HRM) and reduce turnover?",
+      "answers": [
+        {
+          "option": "A. Professional development",
+          "is_correct": true
+        },
+        {
+          "option": "B. Fair performance-based rewards",
+          "is_correct": true
+        },
+        {
+          "option": "C. Work-life balance initiatives",
+          "is_correct": true
+        },
+        {
+          "option": "D. Restricting communication",
+          "is_correct": false
+        },
+        {
+          "option": "E. Regular feedback and career guidance",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Professional development, fair performance-based rewards, work-life balance, engagement, regular feedback, and career guidance all support effective Human Resource Management (HRM) and reduce turnover. Restricting communication is counterproductive."
+    },
+    {
+      "id": 8,
+      "question": "Which of the following are true about a Scrum Master?",
+      "answers": [
+        {
+          "option": "A. They emphasize facilitation over command-and-control.",
+          "is_correct": true
+        },
+        {
+          "option": "B. They support collaboration and communication.",
+          "is_correct": true
+        },
+        {
+          "option": "C. They make all technical decisions for the team.",
+          "is_correct": false
+        },
+        {
+          "option": "D. They use people-oriented leadership.",
+          "is_correct": true
+        },
+        {
+          "option": "E. They discourage team members from suggesting process improvements.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "A Scrum Master emphasizes facilitation over command-and-control, supports collaboration and communication, and uses people-oriented leadership. Options C and E are incorrect because the Scrum Master does not make technical decisions for the team, and team members are fully encouraged to suggest process improvements."
+    },
+    {
+      "id": 9,
+      "question": "Given Revenue Rs. 12m, Cost of Sales Rs. 5m, Operating Expenses Rs. 4m, Assets Rs. 15m, Liabilities Rs. 6m. Which of the following are correct?",
+      "answers": [
+        {
+          "option": "A. Gross Profit is Rs. 7m.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Operating Profit is Rs. 3m.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Equity is Rs. 9m.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Gross Profit is Rs. 3m.",
+          "is_correct": false
+        },
+        {
+          "option": "E. Liabilities exceed equity.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Gross Profit = Revenue (Rs. 12m) - Cost of Sales (Rs. 5m) = Rs. 7m. Operating Profit = Gross Profit (Rs. 7m) - Operating Expenses (Rs. 4m) = Rs. 3m. Equity = Assets (Rs. 15m) - Liabilities (Rs. 6m) = Rs. 9m. Liabilities (Rs. 6m) do not exceed equity (Rs. 9m)."
+    },
+    {
+      "id": 10,
+      "question": "Which of the following can cause a profitable company to face cash shortages?",
+      "answers": [
+        {
+          "option": "A. Unpaid customer invoices (accounts receivable).",
+          "is_correct": true
+        },
+        {
+          "option": "B. Heavy cash outflows for equipment purchases.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Accounting profit guarantees immediate cash availability.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Working-capital bottlenecks.",
+          "is_correct": true
+        },
+        {
+          "option": "E. Cash-flow management is unnecessary if profitable.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "A profitable company can face cash shortages due to unpaid customer invoices (accounts receivable), heavy cash outflows for equipment purchases, or working-capital bottlenecks. Accounting profit does not guarantee immediate cash availability, and cash-flow management remains critical regardless of profitability."
+    },
+    {
+      "id": 11,
+      "question": "Which of the following are true regarding open-source code in commercial applications?",
+      "answers": [
+        {
+          "option": "A. You must examine the license because many impose specific modification/distribution obligations.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Open-source means unconditional redistribution with zero compliance obligations.",
+          "is_correct": false
+        },
+        {
+          "option": "C. Copyright law applies to open-source software.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Some open-source licenses have specific compliance requirements.",
+          "is_correct": true
+        },
+        {
+          "option": "E. Open-source software must always be purchased for commercial use.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Using open-source code in commercial apps requires examining the license because many impose specific modification/distribution obligations, and copyright law applies to open-source software. Open-source does not mean unconditional redistribution or zero compliance obligations, and they do not always need to be purchased."
+    },
+    {
+      "id": 12,
+      "question": "An AI hiring model exhibits bias due to historical training data. Which responses are appropriate?",
+      "answers": [
+        {
+          "option": "A. Audit the data and model outputs for bias.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Introduce human oversight in the hiring process.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Ignore the bias since it's based on historical data.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Improve transparency and fairness measures.",
+          "is_correct": true
+        },
+        {
+          "option": "E. Assume historical data is inherently fair.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "When an AI hiring model exhibits bias due to historical training data, appropriate responses include auditing data/outputs, introducing human oversight, and improving transparency and fairness. Ignoring bias or assuming historical data is inherently fair is unacceptable."
+    },
+    {
+      "id": 13,
+      "question": "Which of the following are true about testing a basic marketplace with a small group of users?",
+      "answers": [
+        {
+          "option": "A. It implements the Minimum Viable Product (MVP) concept.",
+          "is_correct": true
+        },
+        {
+          "option": "B. It helps validate business assumptions.",
+          "is_correct": true
+        },
+        {
+          "option": "C. It reduces market uncertainty.",
+          "is_correct": true
+        },
+        {
+          "option": "D. It requires building every possible feature upfront.",
+          "is_correct": false
+        },
+        {
+          "option": "E. It aligns with Lean Startup principles.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Testing a basic marketplace with a small group of users implements the Minimum Viable Product (MVP) concept, helps validate business assumptions, reduces market uncertainty, and aligns with Lean Startup principles. An MVP avoids building every possible feature upfront."
+    },
+    {
+      "id": 14,
+      "question": "If a technically successful startup struggles commercially, which actions are appropriate?",
+      "answers": [
+        {
+          "option": "A. Research customer needs.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Reassess the value proposition.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Develop more features without customer feedback.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Re-evaluate target markets and pricing strategies.",
+          "is_correct": true
+        },
+        {
+          "option": "E. Assume technical success guarantees commercial success.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "If a technically successful startup struggles commercially, appropriate actions include researching customer needs, reassessing the value proposition, and re-evaluating target markets and pricing strategies. Developing features without feedback or assuming technical success guarantees commercial success are fallacies."
+    },
+    {
+      "id": 15,
+      "question": "Which of the following are true about project lifecycles and process groups?",
+      "answers": [
+        {
+          "option": "A. Project lifecycles describe sequential project phases.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Process groups describe overarching management activities.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Monitoring and controlling spans multiple phases.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Process groups occur only once per project lifecycle.",
+          "is_correct": false
+        },
+        {
+          "option": "E. Planning can be revisited (iterative planning).",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Project lifecycles describe sequential project phases, whereas process groups describe overarching management activities. Monitoring and controlling spans multiple phases, and planning can be revisited (iterative planning). Process groups (like planning or executing) can occur multiple times throughout a project lifecycle."
+    },
+    {
+      "id": 16,
+      "question": "Which of the following are correct for stakeholder engagement?",
+      "answers": [
+        {
+          "option": "A. Stakeholder analysis helps plan engagement.",
+          "is_correct": true
+        },
+        {
+          "option": "B. High-power/high-interest stakeholders (like the Vice Chancellor) should be managed closely.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Students should be excluded from engagement efforts.",
+          "is_correct": false
+        },
+        {
+          "option": "D. High-interest/low-power stakeholders (like students) should be kept informed and their feedback gathered.",
+          "is_correct": true
+        },
+        {
+          "option": "E. Send identical information to all stakeholders regardless of their needs.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Stakeholder analysis helps plan engagement. High-power/high-interest stakeholders (like the Vice Chancellor) should be managed closely, while high-interest/low-power stakeholders (like students) should be kept informed and their feedback gathered. Excluding students or sending identical information to all stakeholders ignores their unique influence and informational needs."
+    },
+    {
+      "id": 17,
+      "question": "Which of the following statements about communication methods are correct?",
+      "answers": [
+        {
+          "option": "A. An urgent problem-solving meeting is interactive communication.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Emailing reports is push communication.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Using a shared repository is pull communication.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Push communication guarantees the recipient understood the message.",
+          "is_correct": false
+        },
+        {
+          "option": "E. Method selection depends heavily on urgency and stakeholder needs.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "An urgent problem-solving meeting is interactive communication, emailing reports is push communication, and using a shared repository is pull communication. Method selection depends heavily on urgency and stakeholder needs. Push communication does not guarantee that the recipient understood the message."
+    },
+    {
+      "id": 18,
+      "question": "When scope changes are requested after baseline approval, which actions are required?",
+      "answers": [
+        {
+          "option": "A. Assess impacts on cost, schedule, and resources.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Implement changes immediately without review.",
+          "is_correct": false
+        },
+        {
+          "option": "C. Follow the agreed change control procedure.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Update baselines only after formal approval.",
+          "is_correct": true
+        },
+        {
+          "option": "E. Treat all requests as automatically approved.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "When scope changes are requested after baseline approval, the project team must assess impacts on cost, schedule, and resources, follow the agreed change control procedure, and update baselines only after formal approval. Implementing immediately or treating requests as automatically approved violates change management protocols."
+    },
+    {
+      "id": 19,
+      "question": "Given PV = 5m, EV = 4m, AC = 4.5m, which of the following are correct?",
+      "answers": [
+        {
+          "option": "A. Cost Variance (CV) = EV - AC = -Rs. 0.5m.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Schedule Variance (SV) = -Rs. 0.5m (project ahead of schedule).",
+          "is_correct": false
+        },
+        {
+          "option": "C. Cost Performance Index (CPI) = EV/AC ≈ 0.89.",
+          "is_correct": true
+        },
+        {
+          "option": "D. The project is ahead of schedule and under budget.",
+          "is_correct": false
+        },
+        {
+          "option": "E. Schedule Performance Index (SPI) = 1.0.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "CV = EV - AC = 4 - 4.5 = -Rs. 0.5m. SV = EV - PV = 4 - 5 = -Rs. 1m (project is behind schedule). CPI = EV/AC = 4/4.5 ≈ 0.89. SPI = EV/PV = 4/5 = 0.80. The project is behind schedule and over budget."
+    },
+    {
+      "id": 20,
+      "question": "For a project with activities A, B, C, D having the described durations and dependencies, which of the following are correct?",
+      "answers": [
+        {
+          "option": "A. Activity A has duration 3 days.",
+          "is_correct": true
+        },
+        {
+          "option": "B. The project has multiple paths (A-B-D and A-C-D).",
+          "is_correct": true
+        },
+        {
+          "option": "C. Activity C has total float of 1 day.",
+          "is_correct": true
+        },
+        {
+          "option": "D. All activities are on the critical path.",
+          "is_correct": false
+        },
+        {
+          "option": "E. The project can be completed in less than 10 days.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Activity durations & dependencies: A = 3 days. Paths A-B-D vs A-C-D exist. Activity C has 1 day total float and minimum project duration is 10 days."
+    },
+    {
+      "id": 21,
+      "question": "Which of the following are part of procurement management?",
+      "answers": [
+        {
+          "option": "A. Preparing technical RFPs.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Evaluating costs, reliability, and capabilities of suppliers.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Negotiating SLAs.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Monitoring supplier performance.",
+          "is_correct": true
+        },
+        {
+          "option": "E. Always choosing the lowest price regardless of other factors.",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Procurement management includes preparing technical RFPs, evaluating costs, reliability, and capabilities, negotiating SLAs, and monitoring supplier performance. Procurement should evaluate overall value and compliance rather than blindly choosing the lowest price."
+    },
+    {
+      "id": 22,
+      "question": "When developer workloads conflict across projects, which management actions are appropriate?",
+      "answers": [
+        {
+          "option": "A. Review utilization across projects.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Reallocate resources based on priority and capacity.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Ignore the conflicts and let teams self-resolve.",
+          "is_correct": false
+        },
+        {
+          "option": "D. Coordinate with functional and project managers.",
+          "is_correct": true
+        },
+        {
+          "option": "E. Factor in availability when revising schedules.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "When developer workloads conflict across projects, appropriate management actions include reviewing utilization, reallocating based on priority and capacity, coordinating with functional and project managers, and factoring in availability when revising schedules. Ignoring conflicts is incorrect."
+    },
+    {
+      "id": 23,
+      "question": "Which of the following are true about risks and issues?",
+      "answers": [
+        {
+          "option": "A. A future potential outage represents a risk.",
+          "is_correct": true
+        },
+        {
+          "option": "B. An outage happening right now is an issue.",
+          "is_correct": true
+        },
+        {
+          "option": "C. A backup gateway mitigates the risk.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Risk management stops after the risk plan is approved.",
+          "is_correct": false
+        },
+        {
+          "option": "E. Probability and impact metrics are used to prioritize risks.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "A future potential outage represents a risk, whereas an outage happening right now is an issue. A backup gateway mitigates the risk, and probability and impact metrics are used to prioritize risks. Risk management is an ongoing process that does not stop after plan approval."
+    },
+    {
+      "id": 24,
+      "question": "Which of the following support quality management for applications?",
+      "answers": [
+        {
+          "option": "A. Defining measurable security and performance requirements.",
+          "is_correct": true
+        },
+        {
+          "option": "B. Testing continuously throughout development.",
+          "is_correct": true
+        },
+        {
+          "option": "C. Conducting code reviews.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Adding more features automatically improves quality.",
+          "is_correct": false
+        },
+        {
+          "option": "E. Setting user-story acceptance criteria.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Quality management for applications is supported by defining measurable security and performance requirements, testing continuously throughout development, conducting code reviews, and setting user-story acceptance criteria. Adding more features does not automatically equate to higher quality (and can introduce defects/complexity)."
+    },
+    {
+      "id": 25,
+      "question": "Which of the following are true about integration management?",
+      "answers": [
+        {
+          "option": "A. It assesses cross-area impacts of changes.",
+          "is_correct": true
+        },
+        {
+          "option": "B. It applies integrated change control.",
+          "is_correct": true
+        },
+        {
+          "option": "C. It recognizes that scope, schedule, cost, and risk are deeply interdependent.",
+          "is_correct": true
+        },
+        {
+          "option": "D. Developers can implement changes without informing the project manager.",
+          "is_correct": false
+        },
+        {
+          "option": "E. It ensures approved changes are properly reflected in all plans and documentation.",
+          "is_correct": true
+        }
+      ],
+      "explanation": "Integration management assesses cross-area impacts, applies integrated change control, recognizes that scope, schedule, cost, and risk are deeply interdependent, and ensures approved changes are properly reflected in all plans and documentation. Developers cannot implement changes without informing the project manager or following change control."
+    }
+  ]
+}
